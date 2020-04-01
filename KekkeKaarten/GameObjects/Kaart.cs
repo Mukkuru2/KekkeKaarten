@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Centipede.GameObjects
+namespace KekkeKaarten.GameObjects
 {
     class Kaart : SpriteGameObject
     {
