@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using KekkeKaarten.GameObjects;
+using Centipede.GameObjects;
 
 namespace KekkeKaarten
 {
@@ -14,6 +16,8 @@ namespace KekkeKaarten
         public PlayingState()
         {
             this.Add(new SpriteGameObject("BackGround"));
+            this.Add(new Kaart());
+            this.Add(new MouseSprite());
         }
         public override void HandleInput(InputHelper inputHelper)
         {
