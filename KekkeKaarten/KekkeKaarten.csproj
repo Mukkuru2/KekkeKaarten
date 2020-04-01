@@ -41,6 +41,14 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+  <Compile Include="GameState\GameOverState.cs" />
+    <Compile Include="GameState\PlayingState.cs" />
+    <Compile Include="GameState\StartState.cs" />
+    <Compile Include="GameObjects\Kaart.cs" />
+    <Compile Include="GameState\GameOverState.cs" />
+    <Compile Include="GameState\PlayingState.cs" />
+    <Compile Include="GameState\StartState.cs" />
+    <Compile Include="GameObjects\Kaart.cs" />
     <Compile Include="KekkeKaarten.cs" />
     <Compile Include="GameManagement\AnimatedGameObject.cs" />
     <Compile Include="GameManagement\Animation.cs" />
@@ -77,8 +85,8 @@
     <None Include="app.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GameObjects\" />
     <Folder Include="GameStates\" />
+    <Folder Include="GameObjects\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />

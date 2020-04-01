@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Centipede;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -17,11 +18,18 @@ namespace KekkeKaarten
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            screen = new Point(470, 550);
+            screen = new Point(1920, 1080);
             ApplyResolutionSettings();
+
+            GameStateManager.AddGameState("PlayingState", new PlayingState());
+            GameStateManager.AddGameState("StartState", new StartState());
+            GameStateManager.AddGameState("GameOverState", new GameOverState());
+
+            GameStateManager.SwitchTo("StartState");
 
             // TODO: use this.Content to load your game content here
         }
-        
+
     }
 }
+
