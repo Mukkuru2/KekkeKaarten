@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="GameObjects\Enemy.cs" />
+    <Compile Include="GameObjects\HealthBar.cs" />
     <Compile Include="GameObjects\MouseSprite.cs" />
     <Compile Include="GameState\GameOverState.cs" />
     <Compile Include="GameState\PlayingState.cs" />
@@ -79,7 +80,6 @@
     <Content Include="Content\BackGround.png" />
     <Content Include="Content\cursor.jpg" />
     <Content Include="Content\IntroScreen.png" />
-    <Content Include="Content\Kaart.jpg" />
     <Content Include="Content\YouDied.jpeg" />
     <Content Include="Icon.ico" />
   </ItemGroup>

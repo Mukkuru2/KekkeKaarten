@@ -20,6 +20,7 @@ namespace KekkeKaarten
             this.Add(new SpriteGameObject("BackGround"));
 
             this.Add(new Enemy());
+            this.Add(new HealthBar(new Vector2(166, 65)));
 
             this.Add(Cards);
             for (int i = 0; i < 3; i++)
