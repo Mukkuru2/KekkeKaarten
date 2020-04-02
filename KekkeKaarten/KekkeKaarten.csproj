@@ -75,6 +75,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\BackGround.png" />
+    <Content Include="Content\cursor.jpg" />
+    <Content Include="Content\IntroScreen.png" />
+    <Content Include="Content\Kaart.jpg" />
+    <Content Include="Content\YouDied.jpeg" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>

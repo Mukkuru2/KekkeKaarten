@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,28 +8,34 @@ using System.Threading.Tasks;
 
 namespace KekkeKaarten.GameObjects
 {
-    class Kaart : SpriteGameObject
+    class Kaart : RotatingSpriteGameObject
     {
-        public Kaart(): base("kaart")
+        private float scalar = 1;
+        private const float scaleIncrease = 1.2f;
+
+        public Kaart() : base("kaart")
         {
             position.X = 500;
             position.Y = 500;
-            
         }
-        public override void HandleInput(InputHelper inputHelper)
+
+        public float CardScalar
         {
-            base.HandleInput(inputHelper);
-            if (inputHelper.MousePosition.X >= position.X && inputHelper.MousePosition.X <= position.X + sprite.Width &&
-                inputHelper.MousePosition.Y >= position.Y && inputHelper.MousePosition.Y <= position.Y + sprite.Height) {
-                position.Y = 500; 
-            }
-            else {
-                position.Y = 600;
-                    }
+            get { return scalar; }
+            set { scalar = value; }
         }
+
+        public override void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
+            if (!visible || sprite == null)
+                return;
+
+            spriteBatch.Draw(sprite.Sprite, GlobalPosition, null, Color.White, Angle - MathHelper.ToRadians(offsetDegrees), Origin, scalar, SpriteEffects.None, 0);
+        }
+
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
+            
             
         }
     }
