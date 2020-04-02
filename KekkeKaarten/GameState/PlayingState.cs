@@ -14,7 +14,9 @@ namespace KekkeKaarten
     class PlayingState : GameObjectList
     {
         private GameObjectList Cards = new GameObjectList();
+        private GameObjectList cardText = new GameObjectList();
         private MouseSprite mouseSprite = new MouseSprite();
+        public string[] numbers = new string[] { "1", "3", "4" };
         public PlayingState()
         {
             this.Add(new SpriteGameObject("BackGround"));
@@ -22,9 +24,11 @@ namespace KekkeKaarten
             this.Add(new Enemy());
 
             this.Add(Cards);
+            this.Add(cardText);
             for (int i = 0; i < 3; i++)
             {
                 Cards.Add(new Card(new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 500)));
+                cardText.Add(new CardText(numbers[i], new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 500)));
             }
 
             this.Add(mouseSprite);
