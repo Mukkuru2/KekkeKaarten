@@ -41,11 +41,12 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GameObjects\Enemy.cs" />
     <Compile Include="GameObjects\MouseSprite.cs" />
     <Compile Include="GameState\GameOverState.cs" />
     <Compile Include="GameState\PlayingState.cs" />
     <Compile Include="GameState\StartState.cs" />
-    <Compile Include="GameObjects\Kaart.cs" />
+    <Compile Include="GameObjects\Card.cs" />
     <Compile Include="KekkeKaarten.cs" />
     <Compile Include="GameManagement\AnimatedGameObject.cs" />
     <Compile Include="GameManagement\Animation.cs" />
