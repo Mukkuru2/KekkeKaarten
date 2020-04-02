@@ -13,5 +13,11 @@ namespace Centipede.GameObjects
             position.X = (GameEnvironment.Screen.X / 2) - (sprite.Width / 2);
             position.Y = 300;
         }
+
+
+        public override void Reset()
+        {
+            base.Reset();
+        }
     }
 }
