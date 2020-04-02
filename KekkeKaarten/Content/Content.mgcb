@@ -37,18 +37,6 @@
 /processorParam:TextureFormat=Color
 /build:cursor.jpg
 
-#begin images.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:images.png;spr_card.png
-
 #begin IntroScreen.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -61,7 +49,7 @@
 /processorParam:TextureFormat=Color
 /build:IntroScreen.png
 
-#begin Kaart.jpg
+#begin spr_card.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -71,7 +59,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Kaart.jpg
+/build:spr_card.png
 
 #begin spr_Enemy.png
 /importer:TextureImporter
