@@ -41,8 +41,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GameObjects\CardText.cs" />
     <Compile Include="GameObjects\Enemy.cs" />
-    <Compile Include="GameObjects\HealthBar.cs" />
     <Compile Include="GameObjects\MouseSprite.cs" />
     <Compile Include="GameState\GameOverState.cs" />
     <Compile Include="GameState\PlayingState.cs" />
@@ -79,13 +79,16 @@
   <ItemGroup>
     <Content Include="Content\BackGround.png" />
     <Content Include="Content\cursor.jpg" />
+    <Content Include="Content\spr_card.png" />
     <Content Include="Content\IntroScreen.png" />
+    <Content Include="Content\spr_Enemy.png" />
     <Content Include="Content\YouDied.jpeg" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
     <None Include="app.manifest" />
+    <None Include="Content\GameFont.spritefont" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

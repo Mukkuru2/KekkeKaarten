@@ -13,7 +13,7 @@ namespace KekkeKaarten.GameObjects
         private float scalar = 1;
         private bool enlarged = false;
 
-        public Card(Vector2 startPosition) : base("Spr_Cards")
+        public Card(Vector2 startPosition) : base("spr_card")
         {
             position = startPosition;
         }
