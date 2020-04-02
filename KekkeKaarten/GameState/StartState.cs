@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using KekkeKaarten.CSVhandling;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -13,6 +14,7 @@ namespace KekkeKaarten
     {
         public StartState()
         {
+            CSVimporter.GetCSV();
             this.Add(new SpriteGameObject("IntroScreen"));
         }
 

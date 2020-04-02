@@ -1,0 +1,175 @@
+mission_id;id;Question type;Question;Did you know?;Difficulty level;Display type;Verification status;Comments;Answers
+6579;54537;select;"Kijk naar het plaatje.
+
+Hoeveel procent van de cirkel is roze gekleurd?";De helft van de cirkel is gekleurd. De helft van iets is 50%.;1;Standard;verified;;10%;25%;50%;75%
+6579;54538;select;"Kijk naar het plaatje.
+
+Hoeveel procent van de cirkel is roze gekleurd?";Een kwart van iets is 25%.;1;Standard;verified;;10%;15%;25%;30%
+6579;54531;select;"Merel heeft drie soorten boeken: leesboeken, stripboeken en kookboeken. 
+75% van alle boeken zijn leesboeken. 
+20% is stripboeken.
+
+Hoeveel procent van alle boeken is kookboeken?";"Alle boeken samen zijn 100%.
+
+75 + 20 = 95%
+
+Je houdt dan nog 100 - 95 = 5% over!";1;Standard;verified;;5%;10%;15%;20%
+6579;54575;select;"Waar of niet waar?
+
+25% is hetzelfde als 1/4.";25% en 1/4 zijn allebei een kwart!;1;Standard;verified;;waar;niet waar
+6579;54576;select;"Waar of niet waar?
+
+75% is hetzelfde als 3/4.";75% en 3/4 zijn allebei driekwart!;1;Standard;verified;fb;waar;niet waar
+6579;54580;select;"Een zonnebril kost 10 euro. Er zit 50% korting op.
+
+Hoeveel kost de zonnebril nu?";"50% is de helft.
+
+De helft van 10 euro is 5 euro.
+
+10 - 5 = 5 euro!";1;Standard;verified;Benoem dat het hier om korting gaat.;5 euro;8 euro;6 euro;4 euro
+6579;54562;select;"Een stel flippers kost 20 euro. Er zit 10% korting op.
+
+Hoeveel kosten de flippers nu?";"100% is 20 euro
+10% is dan 2 euro
+20 - 2 = 18 euro";1;Standard;verified;Benoem dat het hier om korting gaat.;18 euro;16 euro;14 euro;12 euro
+6579;94852;select;"Kies de juiste breuk.
+20% = ...";"5/5 is 100%.
+
+20% past 5 keer in 100%, want 5 x 20 = 100.
+
+20% is dus 1/5 deel van 100%.";1;Standard;verified;;1/10;1/20;1/2;1/5
+6579;94807;select;"Kies het juiste antwoord.
+1/100 = ...%";"100/100 is 100%.
+
+1/100 deel van alles is dus 100 : 100 = 1%!";1;Standard;verified;;10;50;100;1
+6579;94810;select;"Martin heeft 80 euro op de bank staan. Na een jaar krijgt hij 5% rente.
+
+Hoeveel euro heeft Martin na een jaar op de bank staan?";"10% van 80 = 8 euro, dus
+5% van 80 = 4 euro
+
+80 + 4 = 84 euro";1;Catapult cans;verified;;84 euro;88 euro;82 euro;86 euro
+6579;54583;open;"Reken uit.
+
+40% van 80 = ...";"10% van 80 is 80 : 10 = 8.
+40% is dan 4 x 8 = 32.";2;Standard;verified;;32
+6579;54584;open;"Reken uit.
+
+75% van 120 = ...";"25% past 4 keer in 100%.
+25% van 120 is dus 120 : 4 = 30.
+75% van 120 is dan 3 x 30 = 90.";2;Standard;verified;;90;negentig
+6579;94816;select;"In een klas zitten 30 kinderen. 30% van de kinderen heeft bruin haar.
+Hoeveel kinderen hebben bruin haar?";"10% van 30 kinderen is 30 : 10 = 3 kinderen.
+
+30% van 30 kinderen is dan 3 x 3 = 9 kinderen.";2;Catapult cans;verified;;9 kinderen;10 kinderen;1 kind;15 kinderen
+6579;54589;select;"Een pot pindakaas weegt normaal 600 gram. Vanwege een actie krijg je er deze week 20% bij.
+
+Hoeveel weegt de pot pindakaas nu?";"600 gram = 100%, dus
+60 gram = 10%
+
+Er komt 20% bij, dus 2 x 60 = 120 gram
+
+600 + 120 = 720 gram";2;Standard;verified;;720 gram;700 gram;740 gram;680 gram
+6579;54590;select;"Een asiel heeft 60 honden. 50% is langharig.
+
+Pascal wil uitrekenen hoeveel honden er langharig zijn. Welke som kan hij gebruiken?";"60 x 1 = 60
+1 is in een keersom dus 100%.
+
+Dat betekent dat 50% in een keersom 0,50 is.";2;Standard;verified;;60 x 0,50;60 x 1,50;60 x 0,25;60 x 0,75
+6579;54581;select;"Wat is een groter deel?
+
+20% of 1/6?";"20% past 5 keer in 100%.
+20% is dus hetzelfde als 1/5 deel.
+
+1/5 is groter dan 1/6.
+20% is dus groter dan 1/6!";2;Standard;verified;"Ik vind de afbeelding niet zo mooi ;) Een liggend plaatje doen?
+
+
+wat is groter of wat is meer?
+
+Ik denk: groter, van een groter deel. Of dat meer is hangt af van de hoeveelheid.";20%;1/6
+6579;54587;select;Welke breuk is hetzelfde als 25%?;"25% is 25% van 100%, dus 25/100.
+
+25/100 = 5/20 = 1/4";2;Standard;verified;;25/100;75/100;40/100;4/100
+6579;94813;Extreme multiselect;Welke <u>drie</u> breuken zijn hetzelfde als 10%?;"10% is 10% van 100%, dus 10/100.
+
+10/100 = 5/50 = 1/10";2;Bubble popper;verified;;10/100;1/10;90/100;2/5;5/50;9/900;1/9;1/90;20/20;20/90
+6579;54567;select;Hoeveel is 75% van 1?;"1 = 100%
+
+50% (de helft) is dan 0,5.
+
+75% (driekwart) is dan 0,75.";2;Standard;verified;;0,75;0,25;0,50;0,33
+6579;54569;select;"Een flat heeft 50 deuren. 20% van de deuren is rood.
+
+Frits wil uitrekenen hoeveel deuren er rood zijn. Welke som kan hij gebruiken?";"50 x 1 = 50
+1 is in een keersom dus 100%.
+
+Dat betekent dat 50% in een keersom 0,50 is. En 20% = 0,20!";2;Standard;verified;plaatje van een flat of een rode deur ipv deze? (zulke komen al zo vaak voor);50 x 0,20;50 x 0,50;50 x 0,40;50 x 0,80
+6579;94822;select;Welke breuk komt het dichtst in de buurt van 48%?;"48% is bijna 50%.
+
+50% is de helft, dus 1/2!";3;Catapult cans;verified;;1/2;1/4;4/6;3/5
+6579;54612;select;Welke breuk komt het dichtst in de buurt van 22%?;"25% is een kwart en dus 1/4.
+
+Maar 22% zit dichter bij de 20%.
+En 20% is 1/5!";3;Standard;verified;;1/5;1/4;1/3;1/6
+6579;54621;open;"Vul het juiste kommagetal in.
+
+Richard heeft 40 kanaries. 35% van de kanaries is ziek.
+
+Welke som hoort hierbij? 40 x ... = 14";"40 x 1 = 40
+1 is in een keersom dus 100%.
+
+Dat betekent dat 50% in een keersom 0,50 is. En 35% = 0,35!";3;Standard;verified;;0,35
+6579;54585;multiselect;Welke breuken zijn hetzelfde als 40%?;"2/5 = 100 : 5 x 2 = 40%
+
+2/5 = 4/10 = 40/100";3;Standard;verified;;4/100;40/100;2/5;1/4
+6579;54582;select;"Kijk naar het plaatje.
+
+Wat is meer?";"20% van 300 is 300 : 5 = 60.
+
+1/3 van 105 is 105 : 3 = 35.
+2/3 van 105 is dan 35 x 2 = 70.
+
+2/3 van 105 is dus meer dan 20% van 300!";3;Standard;verified;Vraag: 20% van 300 of 2/3 van 105? kan weg toch? Staat al in de afbeelding.;20% van 300;2/3 van 105
+6579;54613;select;"Kijk naar het plaatje. Mét korting kost de televisie 240 euro.
+
+Hoeveel kostte de televisie eerst?";"Met 20% korting kost de televisie 240 euro.
+240 euro is dus 80%.
+
+Als 80% = 240 euro, dan is 10% = 30 euro.
+20% is dan 60 euro.
+
+De televisie kostte dus: 240 + 60 = 300 euro.";3;Standard;verified;In vraag of op plaatje nog duidelijker maken dat de 20%-korting er dus al af is?;260 euro;280 euro;300 euro;320 euro
+6579;54619;open;"Kijk naar het plaatje. Mét korting kost de televisie 60 euro.
+
+Hoeveel kostte de televisie eerst?";"Met 75% korting kost de televisie 60 euro.
+60 euro is dus 25%.
+
+Als 25% = 60 euro, dan is 100% = 240 euro!";3;Standard;verified;"aanvulling wjd, bv: 
+Als 25% = 60 euro, dan is 100% = 240 euro!
+Want 4 x 60 = 240 euro oid.";240 euro;240,-;240;(E)240;(E) 240;(E)240,-;(E) 240,-;€240;€ 240;€240,-;€ 240,-
+6579;54623;open;"Django heeft 15 muizen. 3 muizen hebben een hap uit hun oor.
+
+Hoeveel procent van de muizen heeft GEEN hap uit hun oor?";"15 : 3 = 5
+3 muizen van de 15 is dus 1/5 deel.
+1/5 deel van 100 is 20.
+
+20% van de muizen heeft dus een hap uit hun oor.
+
+Dat betekent dat 80% van de muizen geen hap uit hun oor heeft!";3;Standard;verified;Muisje een hap uit het oor geven? :);80%;80 %;80 procent;80procent;80
+6579;54622;open;Hoeveel is 66% van 450?;"Reken uit in stappen.
+
+10% van 450 = 45.
+60% is dan 45 x 6 = 270.
+6% is dan 270 : 10 = 27.
+
+66% van 450 is dus 270 + 27 = 297!";3;Standard;verified;ander plaatje, deze soort komt vaak voor;297
+6579;94820;select;"Begin 2012 zet Micky 150 euro op de bank. Ieder jaar krijgt ze 2% rente.
+Als Mickey geen geld opneemt, hoeveel euro heeft ze dan in 2014 op de bank staan?";"1% van 150 euro is 1,50.
+2% van 150 euro is dan 1,50 x 2 = 3 euro.
+In 2013 staat er dus 150 + 3 = 153 euro op de bank.
+
+In 2014 krijgt Micky over dit <u>nieuwe</u> bedrag weer 2% korting.
+1% van 153 euro is 1,53.
+2% van 153 euro is dan 1,53 x 2 = 3,06.
+
+153 + 3,06 = 156,06";3;Catapult boards;verified;;156,06;153;156;153,06

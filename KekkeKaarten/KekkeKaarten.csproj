@@ -9,8 +9,8 @@
     <ProjectGuid>{6FAC7E83-C68E-45FA-B629-BE82C8936C9E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Centipede</RootNamespace>
-    <AssemblyName>Centipede</AssemblyName>
+    <RootNamespace>KekkeKaarten</RootNamespace>
+    <AssemblyName>KekkeKaarten</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>Windows</MonoGamePlatform>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -41,6 +41,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CSVhandling\CSVimporter.cs" />
     <Compile Include="GameObjects\Enemy.cs" />
     <Compile Include="GameObjects\MouseSprite.cs" />
     <Compile Include="GameState\GameOverState.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MonoGame.Framework">
       <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
     </Reference>
@@ -87,6 +89,9 @@
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
     <None Include="app.manifest" />
+    <None Include="CSVhandling\missions_rekenen_export.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
