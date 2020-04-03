@@ -12,9 +12,9 @@ Comment functions accordingly:
 
 // Summary:<br />
 // [Summary. Lorem Ipsum Dolor Sit Amet]<br />
-// Parameters:
-//   param:
-//     This is a parameter
-//
-// Returns:
-//    Cockslammer
+// Parameters:<br />
+//   param:<br />
+//     This is a parameter<br />
+//<br />
+// Returns:<br />
+//    Cockslammer<br />
