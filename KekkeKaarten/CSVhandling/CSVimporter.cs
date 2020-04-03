@@ -26,7 +26,7 @@ namespace KekkeKaarten.CSVhandling
             List<string> missionID = new List<string>();
             List<string> id = new List<string>();
             List<string> question = new List<string>();
-            List<string> DYK = new List<string>();
+            List<string> didYouKnow = new List<string>();
             List<string> difficulty = new List<string>();
             List<string> comments = new List<string>();
             List<string> correctanswer = new List<string>();
@@ -40,11 +40,19 @@ namespace KekkeKaarten.CSVhandling
                 missionID.Add(values[0]);
                 id.Add(values[1]);
                 question.Add(values[3]);
-                DYK.Add(values[4]);
+                didYouKnow.Add(values[4]);
                 difficulty.Add(values[5]);
                 comments.Add(values[8]);
                 correctanswer.Add(values[9]);
+            
             }
+            fullList.Add(missionID);
+            fullList.Add(id);
+            fullList.Add(question);
+            fullList.Add(didYouKnow);
+            fullList.Add(difficulty);
+            fullList.Add(comments);
+            fullList.Add(correctanswer);
             return fullList;
         }
     }
