@@ -10,8 +10,8 @@ Make sure your variables are private if they can be
 
 Comment functions accordingly:
 
-/// \<summary>
-/// [Summary. Lorem Ipsum Dolor Sit Amet]
-/// \</summary>
-/// \<param name="paramName">\</param>
+/// \<summary><br />
+/// [Summary. Lorem Ipsum Dolor Sit Amet]<br />
+/// \</summary><br />
+/// \<param name="paramName">\</param><br />
 /// [more parameters]
