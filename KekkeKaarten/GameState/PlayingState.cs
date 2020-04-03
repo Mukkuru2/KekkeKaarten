@@ -55,6 +55,9 @@ namespace KekkeKaarten
                 {
                     card.CardEnlarged = true;
                     card.CardScalar = 1.2f;
+                    
+                    SetCollisionMask(card);
+                    
                     Vector2 tempPos = card.Position;
                     tempPos.X -= card.Sprite.Width * 0.1f;
                     tempPos.Y -= card.Sprite.Height * 0.1f;
@@ -65,12 +68,25 @@ namespace KekkeKaarten
                 {
                     card.CardEnlarged = false;
                     card.CardScalar = 1;
+
+                    SetCollisionMask(card);
+                    
                     Vector2 tempPos = card.Position;
                     tempPos.X += card.Sprite.Width * 0.1f;
                     tempPos.Y += card.Sprite.Height * 0.1f;
                     card.Position = tempPos;
                 }
             }
+        }
+        private void SetCollisionMask(Card card) {
+            Color[] colorData = new Color[card.Sprite.Sprite.Width * card.Sprite.Sprite.Height];
+            bool[] tempCollisionMask = new bool[(int)(card.Sprite.Sprite.Width * card.Sprite.Sprite.Height * Math.Pow(card.CardScalar, 2))];
+            card.Sprite.Sprite.GetData(colorData);
+            for (int i = 0; i < colorData.Length; ++i)
+            {
+                tempCollisionMask[(int)(i * card.CardScalar)] = colorData[i].A != 0;
+            }
+            card.Sprite.CollisionMask = tempCollisionMask;
         }
     }
 }

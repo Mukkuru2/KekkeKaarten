@@ -29,7 +29,8 @@ namespace KekkeKaarten.GameObjects
             set { enlarged = value; }
         }
 
-        public override void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
+        public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        {
             if (!visible || sprite == null)
                 return;
 
@@ -49,8 +50,7 @@ namespace KekkeKaarten.GameObjects
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            
-            
+
         }
     }
 }

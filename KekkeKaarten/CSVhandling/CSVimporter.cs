@@ -10,7 +10,7 @@ namespace KekkeKaarten.CSVhandling
 {
     public static class CSVimporter
     {
-        static string path = @"CSVhandling/missions_rekenen_export.csv";
+        static readonly string path = @"CSVhandling/missions_rekenen_export.csv";
         static TextFieldParser csvParser = new TextFieldParser(path);
 
         public static List<List<string>> GetCSV()
@@ -46,6 +46,7 @@ namespace KekkeKaarten.CSVhandling
                 correctanswer.Add(values[9]);
             
             }
+
             fullList.Add(missionID);
             fullList.Add(id);
             fullList.Add(question);

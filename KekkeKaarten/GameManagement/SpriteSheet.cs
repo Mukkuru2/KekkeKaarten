@@ -15,7 +15,7 @@ public class SpriteSheet
     {
         // retrieve the sprite
         sprite = GameEnvironment.AssetManager.GetSprite(assetname);
-        
+
         // construct the collision mask
         Color[] colorData = new Color[sprite.Width * sprite.Height];
         collisionMask = new bool[sprite.Width * sprite.Height];
@@ -43,6 +43,10 @@ public class SpriteSheet
         {
             sheetRows = int.Parse(colRow[1]);
         }
+    }
+
+    public bool[] CollisionMask {
+        set { collisionMask = value; }
     }
 
     public void Draw(SpriteBatch spriteBatch, Vector2 position, Vector2 origin)
