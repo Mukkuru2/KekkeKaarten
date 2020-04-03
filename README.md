@@ -4,9 +4,9 @@ PAD project
 
 Code Conventions:
 
-Full code in English
-HvA code conventions
-Make sure your variables are private if they can be
+Full code in English<br />
+HvA code conventions<br />
+Make sure your variables are private if they can be<br />
 
 Comment functions accordingly:
 
