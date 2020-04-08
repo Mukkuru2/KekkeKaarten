@@ -8,6 +8,8 @@ Full code in English<br />
 HvA code conventions<br />
 Make sure your variables are private if they can be<br />
 
+Drive link: https://drive.google.com/drive/folders/1a4Bmu0oLdKU2XzOOgplC9ktB1Hb6-L9f?usp=sharing
+
 Comment functions accordingly:
 
 // Summary:<br />
@@ -17,4 +19,4 @@ Comment functions accordingly:
 //        This is a parameter<br />
 //<br />
 //    Returns:<br />
-//        Cockslammer<br />
+//        [return value]<br />
