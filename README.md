@@ -13,10 +13,10 @@ Drive link: https://drive.google.com/drive/folders/1a4Bmu0oLdKU2XzOOgplC9ktB1Hb6
 Comment functions accordingly:
 
 // Summary:<br />
-//    [Summary. Lorem Ipsum Dolor Sit Amet]<br />
+// <hr />[Summary. Lorem Ipsum Dolor Sit Amet]<br />
 // Parameters:<br />
-//    param:<br />
-//        This is a parameter<br />
+// <hr />param:<br />
+// <hr /><hr />This is a parameter<br />
 //<br />
-//    Returns:<br />
-//        [return value]<br />
+// <hr />Returns:<br />
+// <hr /><hr />[return value]<br />
