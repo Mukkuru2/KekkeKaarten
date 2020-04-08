@@ -16,9 +16,9 @@ Comment functions accordingly:
 <p>
 // Summary:<br />
 // 	&emsp;[Summary. Lorem Ipsum Dolor Sit Amet]<br />
-// 		&emsp;&emsp;Parameters:<br />
-// param:<br />
-// 	&emsp;This is a parameter<br />
+// 		Parameters:<br />
+// &emsp;param:<br />
+// 	&emsp;&emsp;This is a parameter<br />
 //<br />
 // Returns:<br />
 // 	&emsp;[return value]<br />
