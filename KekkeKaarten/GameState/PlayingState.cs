@@ -16,9 +16,10 @@ namespace KekkeKaarten
         private GameObjectList Cards = new GameObjectList();
         private MouseSprite mouseSprite = new MouseSprite();
         public string[] numbers = new string[] { "1", "3", "4" };
+        public bool drag = false;
         public PlayingState()
         {
-            this.Add(new SpriteGameObject("BackGround"));
+            this.Add(new SpriteGameObject("spr_battle_screen"));
 
             this.Add(new Enemy());
             this.Add(new HealthBar(new Vector2(166, 65)));
@@ -42,6 +43,14 @@ namespace KekkeKaarten
             {
                 GameEnvironment.GameStateManager.SwitchTo("GameOverState");
             }
+
+            if (inputHelper.MouseLeftButtonDown())
+            {
+                drag = true;
+            }
+            else { drag = false; }
+
+
         }
 
         public override void Update(GameTime gameTime)

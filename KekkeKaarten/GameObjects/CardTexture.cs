@@ -12,10 +12,12 @@ namespace KekkeKaarten.GameObjects
     {
         private float scalar = 1;
         private bool enlarged = false;
+        public Vector2 ReturnLocation;
 
         public CardTexture(Vector2 startPosition) : base("spr_card")
         {
             position = startPosition;
+            ReturnLocation = startPosition;
         }
 
         public float CardScalar

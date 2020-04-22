@@ -10,6 +10,7 @@ namespace KekkeKaarten.GameObjects
 {
     class CardText : TextGameObject
     {
+        
         public CardText(string number, Vector2 startPosition) : base("GameFont")
         {
             Text = number;

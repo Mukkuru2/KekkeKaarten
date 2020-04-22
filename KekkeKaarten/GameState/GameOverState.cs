@@ -13,7 +13,7 @@ namespace KekkeKaarten
     {
         public GameOverState()
         {
-            this.Add(new SpriteGameObject("YouDied"));
+            this.Add(new SpriteGameObject("spr_end_screen"));
         }
 
         public override void HandleInput(InputHelper inputHelper)

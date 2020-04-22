@@ -11,7 +11,7 @@ namespace Centipede.GameObjects
 {
     class HealthBar : SpriteGameObject
     {
-        public HealthBar(Vector2 startposition) : base("HealthBar")
+        public HealthBar(Vector2 startposition) : base("spr_health")
         {
             position = startposition;
         }

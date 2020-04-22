@@ -15,7 +15,7 @@ namespace KekkeKaarten
         public StartState()
         {
             CSVimporter.GetCSV();
-            this.Add(new SpriteGameObject("IntroScreen"));
+            this.Add(new SpriteGameObject("spr_start_screen"));
         }
 
         public override void HandleInput(InputHelper inputHelper)
