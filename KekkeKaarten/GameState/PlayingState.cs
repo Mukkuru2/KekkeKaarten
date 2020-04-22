@@ -83,21 +83,22 @@ namespace KekkeKaarten
                             tempPos.Y -= cardTexture.Sprite.Height * 0.1f;
                             cardTexture.Position = tempPos;
                         }
-                        else if (!cardTexture.CollidesWith(mouseSprite) &&
-                            cardTexture.CardEnlarged)
-                        {
-                            cardTexture.CardEnlarged = false;
-                            cardTexture.CardScalar = 1;
+                    }
+                    else if (!cardTexture.CollidesWith(mouseSprite) &&
+                        cardTexture.CardEnlarged)
+                    {
+                        cardTexture.CardEnlarged = false;
+                        cardTexture.CardScalar = 1;
 
-                            SetCollisionMask(cardTexture);
+                        SetCollisionMask(cardTexture);
 
-                            Vector2 tempPos = cardTexture.Position;
-                            tempPos.X += cardTexture.Sprite.Width * 0.1f;
-                            tempPos.Y += cardTexture.Sprite.Height * 0.1f;
-                            cardTexture.Position = tempPos;
-                        }
+                        Vector2 tempPos = cardTexture.Position;
+                        tempPos.X += cardTexture.Sprite.Width * 0.1f;
+                        tempPos.Y += cardTexture.Sprite.Height * 0.1f;
+                        cardTexture.Position = tempPos;
                     }
                 }
+                
             } 
             
         }
