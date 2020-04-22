@@ -11,6 +11,7 @@ namespace KekkeKaarten.GameObjects
     {
         public GameObjectList cardTextures = new GameObjectList();
         public Vector2 ReturnLocation;
+        public bool drag = false;
         public Card(string nummer, Vector2 position): base()
         {
             this.position = position;

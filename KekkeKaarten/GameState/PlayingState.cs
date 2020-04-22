@@ -60,15 +60,16 @@ namespace KekkeKaarten
             {
                 foreach (CardTexture cardTexture in card.cardTextures.Children)
                 {
-
+                    
                     if (cardTexture.CollidesWith(mouseSprite))
-
                     {
+                         
                         if (drag)
                         {
-                            card.Position = mouseSprite.Position - new Vector2(40, 200);
+                            card.drag = true;
+                            
                         }
-                        else { card.Position = card.ReturnLocation; }
+                        else { card.drag = false; }
 
 
                         if (!cardTexture.CardEnlarged)
@@ -84,23 +85,29 @@ namespace KekkeKaarten
                             cardTexture.Position = tempPos;
                         }
                     }
-                    else if (!cardTexture.CollidesWith(mouseSprite) &&
-                        cardTexture.CardEnlarged)
+                    else if (!cardTexture.CollidesWith(mouseSprite))
                     {
-                        cardTexture.CardEnlarged = false;
-                        cardTexture.CardScalar = 1;
+                        
+                        if (cardTexture.CardEnlarged)
+                        {
+                            cardTexture.CardEnlarged = false;
+                            cardTexture.CardScalar = 1;
 
-                        SetCollisionMask(cardTexture);
+                            SetCollisionMask(cardTexture);
 
-                        Vector2 tempPos = cardTexture.Position;
-                        tempPos.X += cardTexture.Sprite.Width * 0.1f;
-                        tempPos.Y += cardTexture.Sprite.Height * 0.1f;
-                        cardTexture.Position = tempPos;
+                            Vector2 tempPos = cardTexture.Position;
+                            tempPos.X += cardTexture.Sprite.Width * 0.1f;
+                            tempPos.Y += cardTexture.Sprite.Height * 0.1f;
+                            cardTexture.Position = tempPos;
+                        }
                     }
+                    if (card.drag)
+                    {
+                        card.Position = mouseSprite.Position - new Vector2(40, 100);
+                    }
+                    else card.Position = card.ReturnLocation;
                 }
-                
-            } 
-            
+            }
         }
         private void SetCollisionMask(CardTexture card) {
             Color[] colorData = new Color[card.Sprite.Sprite.Width * card.Sprite.Sprite.Height];
