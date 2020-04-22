@@ -17,9 +17,10 @@ namespace KekkeKaarten
         private GameObjectList cardText = new GameObjectList();
         private MouseSprite mouseSprite = new MouseSprite();
         public string[] numbers = new string[] { "1", "3", "4" };
+        public bool drag = false;
         public PlayingState()
         {
-            this.Add(new SpriteGameObject("BackGround"));
+            this.Add(new SpriteGameObject("spr_battle_screen"));
 
             this.Add(new Enemy());
             this.Add(new HealthBar(new Vector2(166, 65)));
@@ -28,8 +29,8 @@ namespace KekkeKaarten
             this.Add(cardText);
             for (int i = 0; i < 3; i++)
             {
-                Cards.Add(new Card(new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 500)));
-                cardText.Add(new CardText(numbers[i], new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 500)));
+                Cards.Add(new Card(new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 800)));
+                cardText.Add(new CardText(numbers[i], new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 800)));
             }
 
             this.Add(mouseSprite);
@@ -43,6 +44,14 @@ namespace KekkeKaarten
             {
                 GameEnvironment.GameStateManager.SwitchTo("GameOverState");
             }
+
+            if (inputHelper.MouseLeftButtonDown())
+            {
+                drag = true;
+            }
+            else { drag = false; }
+
+
         }
 
         public override void Update(GameTime gameTime)
@@ -50,33 +59,50 @@ namespace KekkeKaarten
             base.Update(gameTime);
 
             foreach (Card card in Cards.Children) {
-                if (card.CollidesWith(mouseSprite) &&
-                    !card.CardEnlarged)
-                {
-                    card.CardEnlarged = true;
-                    card.CardScalar = 1.2f;
+                if (card.CollidesWith(mouseSprite)) 
                     
-                    SetCollisionMask(card);
-                    
-                    Vector2 tempPos = card.Position;
-                    tempPos.X -= card.Sprite.Width * 0.1f;
-                    tempPos.Y -= card.Sprite.Height * 0.1f;
-                    card.Position = tempPos;
-                }
-                else if (!card.CollidesWith(mouseSprite) &&
-                    card.CardEnlarged) 
                 {
-                    card.CardEnlarged = false;
-                    card.CardScalar = 1;
+                    if(drag)
+                    {
+                        card.Position = mouseSprite.Position - new Vector2(40,200);
+                    } 
+                    else { card.Position = card.ReturnLocation;  }
+                   
+                    
+                    if(!card.CardEnlarged)
+                    {
+                        card.CardEnlarged = true;
+                        card.CardScalar = 1.2f;
 
-                    SetCollisionMask(card);
+                        SetCollisionMask(card);
+
+                        Vector2 tempPos = card.Position;
+                        tempPos.X -= card.Sprite.Width * 0.1f;
+                        tempPos.Y -= card.Sprite.Height * 0.1f;
+                       
+                    }
                     
-                    Vector2 tempPos = card.Position;
-                    tempPos.X += card.Sprite.Width * 0.1f;
-                    tempPos.Y += card.Sprite.Height * 0.1f;
-                    card.Position = tempPos;
+                    
+                }
+                else if(!card.CollidesWith(mouseSprite))
+                    
+                    {
+                    if(card.CardEnlarged)
+                    {
+                        card.CardEnlarged = false;
+                        card.CardScalar = 1;
+
+                        SetCollisionMask(card);
+
+                        Vector2 tempPos = card.Position;
+                        tempPos.X += card.Sprite.Width * 0.1f;
+                        tempPos.Y += card.Sprite.Height * 0.1f;
+                        card.Position = card.ReturnLocation;
+                    }
                 }
             }
+
+
         }
         private void SetCollisionMask(Card card) {
             Color[] colorData = new Color[card.Sprite.Sprite.Width * card.Sprite.Sprite.Height];

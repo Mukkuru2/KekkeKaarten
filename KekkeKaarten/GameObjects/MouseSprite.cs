@@ -9,7 +9,7 @@ namespace Centipede.GameObjects
 {
     class MouseSprite : SpriteGameObject
     {
-        public MouseSprite(): base("cursor2") { }
+        public MouseSprite(): base("spr_cursor") { }
         public override void HandleInput(InputHelper inputHelper)
         {
             base.HandleInput(inputHelper);
