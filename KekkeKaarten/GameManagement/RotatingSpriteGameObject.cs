@@ -72,7 +72,13 @@ namespace KekkeKaarten
             if (!visible || sprite == null)
                 return;
 
-            spriteBatch.Draw(sprite.Sprite, GlobalPosition, null, Color.White, radians - MathHelper.ToRadians(offsetDegrees), Origin, 1.0f, SpriteEffects.None, 0);
+            SpriteEffects spriteEffects = SpriteEffects.None;
+            if (Mirror)
+            {
+                spriteEffects = SpriteEffects.FlipHorizontally;
+            }
+
+            spriteBatch.Draw(sprite.Sprite, GlobalPosition, null, Color.White, radians - MathHelper.ToRadians(offsetDegrees), Origin, 1.0f, spriteEffects, 0);
         }
 
         /// <summary>
