@@ -17,7 +17,7 @@ namespace KekkeKaarten.GameObjects
         public CardTexture(Vector2 startPosition) : base("spr_card")
         {
             position = startPosition;
-            ReturnLocation = startPosition;
+            
         }
 
         public float CardScalar
