@@ -41,6 +41,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Collisions\CardCollision.cs" />
     <Compile Include="CSVhandling\CSVimporter.cs" />
     <Compile Include="GameObjects\Card.cs" />
     <Compile Include="GameObjects\CardText.cs" />
