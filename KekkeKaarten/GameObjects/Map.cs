@@ -1,5 +1,6 @@
 ﻿using KekkeKaarten.GameObjects;
 using KekkeKaarten.GameObjects.MapObjects;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace KekkeKaarten.GameObjects
 {
     class Map : GameObjectGrid
     {
-        int[,] map;
+        public int[,] map;
+        public Vector2 spawn;
         public Map(int[,] mapData) : base(mapData.GetLength(0), mapData.GetLength(1))
         {
             this.map = mapData;
@@ -35,6 +37,7 @@ namespace KekkeKaarten.GameObjects
                         case 2:
                             grid[xMap, yMap] = new Floor();
                             //Player.location = this location
+                            spawn = new Vector2(xMap, yMap);
                             break;
                         case 3:
                             grid[xMap, yMap] = new GoldenStatue();

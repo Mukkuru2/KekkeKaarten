@@ -1,4 +1,5 @@
 ﻿using KekkeKaarten;
+using KekkeKaarten.GameState;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -24,6 +25,7 @@ namespace KekkeKaarten
             GameStateManager.AddGameState("PlayingState", new PlayingState());
             GameStateManager.AddGameState("StartState", new StartState());
             GameStateManager.AddGameState("GameOverState", new GameOverState());
+            GameStateManager.AddGameState("Overworld", new OverWorld());
 
             GameStateManager.SwitchTo("StartState");
 

@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using KekkeKaarten.GameObjects;
-using KekkeKaarten.GameObjects;
+using KekkeKaarten.Collisions;
 
 namespace KekkeKaarten
 {
@@ -37,7 +37,6 @@ namespace KekkeKaarten
             this.Add(mouseSprite);
             cardcollision = new CardCollision(mouseSprite, enemy);
             this.Add(cardcollision);
-
         }
         public override void HandleInput(InputHelper inputHelper)
         {

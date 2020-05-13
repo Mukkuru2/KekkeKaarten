@@ -17,7 +17,7 @@ namespace KekkeKaarten.GameManagement.MapLoading
         public LoadMap(string assetName) : base(assetName)
         {
             position = new Vector2(0, 0);
-            visible = false;
+            //visible = false;
         }
 
         public int[,] GetMap()
