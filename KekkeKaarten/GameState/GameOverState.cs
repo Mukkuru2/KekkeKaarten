@@ -13,7 +13,7 @@ namespace KekkeKaarten
     {
         public GameOverState()
         {
-            this.Add(new SpriteGameObject("spr_end_screen"));
+            this.Add(new SpriteGameObject("Backgrounds/endscreen"));
         }
 
         public override void HandleInput(InputHelper inputHelper)

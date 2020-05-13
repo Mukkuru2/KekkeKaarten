@@ -11,7 +11,7 @@ namespace KekkeKaarten.GameObjects
     class CardText : TextGameObject
     {
         
-        public CardText(string number, Vector2 startPosition) : base("GameFont")
+        public CardText(string number, Vector2 startPosition) : base("SpriteFonts/GameFont")
         {
             Text = number;
             position.X  = startPosition.X + 70;

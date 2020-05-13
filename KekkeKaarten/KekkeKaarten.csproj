@@ -42,10 +42,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CSVhandling\CSVimporter.cs" />
+    <Compile Include="GameManagement\MapLoading\LoadMap.cs" />
     <Compile Include="GameObjects\Card.cs" />
     <Compile Include="GameObjects\CardText.cs" />
     <Compile Include="GameObjects\Enemy.cs" />
     <Compile Include="GameObjects\HealthBar.cs" />
+    <Compile Include="GameObjects\Map.cs" />
+    <Compile Include="GameObjects\MapObjects\BossRoomTeleport.cs" />
+    <Compile Include="GameObjects\MapObjects\Floor.cs" />
+    <Compile Include="GameObjects\MapObjects\Marshland.cs" />
+    <Compile Include="GameObjects\MapObjects\GoldenStatue.cs" />
+    <Compile Include="GameObjects\MapObjects\Player.cs" />
+    <Compile Include="GameObjects\MapObjects\ToxicFloor.cs" />
+    <Compile Include="GameObjects\MapObjects\Wall.cs" />
     <Compile Include="GameObjects\MouseSprite.cs" />
     <Compile Include="GameState\GameOverState.cs" />
     <Compile Include="GameState\PlayingState.cs" />
@@ -81,21 +90,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\BackGround.png" />
-    <Content Include="Content\cursor.jpg" />
-    <Content Include="Content\cursor2.png" />
-    <Content Include="Content\HealthBar.png" />
-    <Content Include="Content\spr_card.png" />
-    <Content Include="Content\IntroScreen.png" />
-    <Content Include="Content\Spr_Cards.png" />
-    <Content Include="Content\spr_Enemy.png" />
-    <Content Include="Content\YouDied.jpeg" />
+    <Content Include="Content\Backgrounds\battlescreen.png" />
+    <Content Include="Content\Backgrounds\endscreen.jpeg" />
+    <Content Include="Content\Backgrounds\startscreen.png" />
+    <Content Include="Content\maps\Boss1_.png" />
+    <Content Include="Content\maps\Boss2.png" />
+    <Content Include="Content\maps\mapdatanature.png" />
+    <Content Include="Content\Spritesheets\sortingspritesheet.png" />
+    <Content Include="Content\Sprites\card.png" />
+    <Content Include="Content\Sprites\card1.png" />
+    <Content Include="Content\Sprites\card2.png" />
+    <Content Include="Content\Sprites\card_back.png" />
+    <Content Include="Content\Sprites\cursor.png" />
+    <Content Include="Content\Sprites\enemy.png" />
+    <Content Include="Content\Sprites\health.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
     <None Include="app.manifest" />
-    <None Include="Content\GameFont.spritefont" />
+    <None Include="Content\SpriteFonts\GameFont.spritefont" />
     <None Include="CSVhandling\missions_rekenen_export.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

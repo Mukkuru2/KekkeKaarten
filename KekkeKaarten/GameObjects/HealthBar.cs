@@ -7,11 +7,11 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace Centipede.GameObjects
+namespace KekkeKaarten.GameObjects
 {
     class HealthBar : SpriteGameObject
     {
-        public HealthBar(Vector2 startposition) : base("spr_health")
+        public HealthBar(Vector2 startposition) : base("Sprites/health")
         {
             position = startposition;
         }

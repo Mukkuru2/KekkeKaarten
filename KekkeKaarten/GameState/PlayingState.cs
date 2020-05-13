@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using KekkeKaarten.GameObjects;
-using Centipede.GameObjects;
+using KekkeKaarten.GameObjects;
 
 namespace KekkeKaarten
 {
@@ -19,7 +19,7 @@ namespace KekkeKaarten
         public bool drag = false;
         public PlayingState()
         {
-            this.Add(new SpriteGameObject("spr_battle_screen"));
+            this.Add(new SpriteGameObject("Backgrounds/battlescreen"));
 
             this.Add(new Enemy());
             this.Add(new HealthBar(new Vector2(166, 65)));

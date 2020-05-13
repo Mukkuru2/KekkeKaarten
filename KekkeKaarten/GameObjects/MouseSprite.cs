@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Centipede.GameObjects
+namespace KekkeKaarten.GameObjects
 {
     class MouseSprite : SpriteGameObject
     {
-        public MouseSprite(): base("spr_cursor") { }
+        public MouseSprite(): base("Sprites/cursor") { }
         public override void HandleInput(InputHelper inputHelper)
         {
             base.HandleInput(inputHelper);

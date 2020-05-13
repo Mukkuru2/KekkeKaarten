@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using KekkeKaarten.GameObjects.MapObjects;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 public class GameObjectGrid : GameObject
@@ -14,7 +15,7 @@ public class GameObjectGrid : GameObject
         {
             for (int y = 0; y < rows; y++)
             {
-                grid[x, y] = null;
+                grid[x, y] = new Wall();
             }
         }
     }

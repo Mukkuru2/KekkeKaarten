@@ -14,7 +14,7 @@ namespace KekkeKaarten.GameObjects
         private bool enlarged = false;
         public Vector2 ReturnLocation;
 
-        public CardTexture(Vector2 startPosition) : base("spr_card")
+        public CardTexture(Vector2 startPosition) : base("Sprites/card")
         {
             position = startPosition;
             
