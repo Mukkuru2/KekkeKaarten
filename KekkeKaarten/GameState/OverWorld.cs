@@ -21,7 +21,9 @@ namespace KekkeKaarten.GameState
             this.Add(player);
             foreach (Map map in maps.Children)
             {
-                player.Position = map.Objects[(int)(map.spawn.X), (int)(map.spawn.Y)].Position;
+                player.loca = map.spawn;
+                player.preloca = player.loca;
+                player.Position = map.Objects[(int)(player.loca.X), (int)(player.loca.Y)].Position;
 
             }
         }
@@ -36,11 +38,16 @@ namespace KekkeKaarten.GameState
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            foreach (Map map in maps.Children)
+            if (!(player.preloca == player.loca))
             {
-                if(map.map.GetLength(0) >= player.loca.X && map.map.GetLength(1) >= player.loca.Y && 0 <= player.loca.X && 0 <= player.loca.Y)
-                player.Position = map.Objects[(int)(player.loca.X), (int)(player.loca.Y)].Position;
-
+                foreach (Map map in maps.Children)
+                {
+                    if (map.map.GetLength(0) >= player.loca.X && map.map.GetLength(1) >= player.loca.Y && 0 <= player.loca.X && 0 <= player.loca.Y)
+                    {
+                        player.Position = map.Objects[(int)(player.loca.X), (int)(player.loca.Y)].Position;
+                        player.preloca = player.loca;
+                    }
+                }
             }
         }
 
