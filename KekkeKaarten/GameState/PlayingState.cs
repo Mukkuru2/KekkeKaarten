@@ -13,15 +13,17 @@ namespace KekkeKaarten
 {
     class PlayingState : GameObjectList
     {
-        private GameObjectList Cards = new GameObjectList();
-        private MouseSprite mouseSprite = new MouseSprite();
+        public static GameObjectList Cards = new GameObjectList();
+        public MouseSprite mouseSprite = new MouseSprite();
         public string[] numbers = new string[] { "1", "3", "4" };
-        public bool drag = false;
+        public CardCollision cardcollision;
+        Enemy enemy;
+        
         public PlayingState()
         {
             this.Add(new SpriteGameObject("Backgrounds/battlescreen"));
 
-            this.Add(new Enemy());
+            this.Add(enemy = new Enemy());
             this.Add(new HealthBar(new Vector2(166, 65)));
 
             this.Add(Cards);
@@ -33,7 +35,8 @@ namespace KekkeKaarten
             }
 
             this.Add(mouseSprite);
-
+            cardcollision = new CardCollision(mouseSprite, enemy);
+            this.Add(cardcollision);
 
         }
         public override void HandleInput(InputHelper inputHelper)
@@ -44,11 +47,7 @@ namespace KekkeKaarten
                 GameEnvironment.GameStateManager.SwitchTo("GameOverState");
             }
 
-            if (inputHelper.MouseLeftButtonDown())
-            {
-                drag = true;
-            }
-            else { drag = false; }
+       
 
 
         }
@@ -56,60 +55,9 @@ namespace KekkeKaarten
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            foreach (Card card in Cards.Children)
-            {
-                foreach (CardTexture cardTexture in card.cardTextures.Children)
-                {
-                    
-                    if (cardTexture.CollidesWith(mouseSprite))
-                    {
-                         
-                        if (drag)
-                        {
-                            card.drag = true;
-                            
-                        }
-                        else { card.drag = false; }
-
-
-                        if (!cardTexture.CardEnlarged)
-                        {
-                            cardTexture.CardEnlarged = true;
-                            cardTexture.CardScalar = 1.2f;
-
-                            SetCollisionMask(cardTexture);
-
-                            Vector2 tempPos = cardTexture.Position;
-                            tempPos.X -= cardTexture.Sprite.Width * 0.1f;
-                            tempPos.Y -= cardTexture.Sprite.Height * 0.1f;
-                            cardTexture.Position = tempPos;
-                        }
-                    }
-                    else if (!cardTexture.CollidesWith(mouseSprite))
-                    {
-                        
-                        if (cardTexture.CardEnlarged)
-                        {
-                            cardTexture.CardEnlarged = false;
-                            cardTexture.CardScalar = 1;
-
-                            SetCollisionMask(cardTexture);
-
-                            Vector2 tempPos = cardTexture.Position;
-                            tempPos.X += cardTexture.Sprite.Width * 0.1f;
-                            tempPos.Y += cardTexture.Sprite.Height * 0.1f;
-                            cardTexture.Position = tempPos;
-                        }
-                    }
-                    if (card.drag)
-                    {
-                        card.Position = mouseSprite.Position - new Vector2(40, 100);
-                    }
-                    else card.Position = card.ReturnLocation;
-                }
-            }
+ 
         }
-        private void SetCollisionMask(CardTexture card) {
+        public static void SetCollisionMask(CardTexture card) {
             Color[] colorData = new Color[card.Sprite.Sprite.Width * card.Sprite.Sprite.Height];
             bool[] tempCollisionMask = new bool[(int)(card.Sprite.Sprite.Width * card.Sprite.Sprite.Height * Math.Pow(card.CardScalar, 2))];
             card.Sprite.Sprite.GetData(colorData);
