@@ -41,7 +41,7 @@ namespace KekkeKaarten.GameObjects
                         case 2:
                             grid[xMap, yMap] = new Floor("Sprites/Map/floor", position);
                             //Player.location = this location
-                            spawn = new Vector2(xMap, yMap);
+                            spawn = position;
                             break;
                         case 3:
                             grid[xMap, yMap] = new GoldenStatue("Sprites/Map/floor", position);

@@ -1,5 +1,6 @@
 ﻿using KekkeKaarten.GameManagement.MapLoading;
 using KekkeKaarten.GameObjects;
+using KekkeKaarten.GameObjects.MapObjects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -13,7 +14,7 @@ namespace KekkeKaarten.GameState
     class OverWorld : GameObjectList
     {
         GameObjectList maps = new GameObjectList();
-        OverworldPlayer player = new OverworldPlayer();
+        Player player = new Player();
         public OverWorld() : base()
         {
             LoadMaps();

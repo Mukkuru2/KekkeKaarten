@@ -57,7 +57,6 @@
     <Compile Include="GameObjects\MapObjects\ToxicFloor.cs" />
     <Compile Include="GameObjects\MapObjects\Wall.cs" />
     <Compile Include="GameObjects\MouseSprite.cs" />
-    <Compile Include="GameObjects\OverworldPlayer.cs" />
     <Compile Include="GameState\GameOverState.cs" />
     <Compile Include="GameState\OverWorld.cs" />
     <Compile Include="GameState\PlayingState.cs" />
