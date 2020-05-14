@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using KekkeKaarten.GameObjects;
-using KekkeKaarten.GameObjects;
+using KekkeKaarten.Collisions;
 
 namespace KekkeKaarten
 {

@@ -94,9 +94,9 @@
     <Content Include="Content\Backgrounds\battlescreen.png" />
     <Content Include="Content\Backgrounds\endscreen.jpeg" />
     <Content Include="Content\Backgrounds\startscreen.png" />
-    <Content Include="Content\maps\Boss1_.png" />
-    <Content Include="Content\maps\Boss2.png" />
-    <Content Include="Content\maps\mapdatanature.png" />
+    <Content Include="Content\Maps\Boss1_.png" />
+    <Content Include="Content\Maps\Boss2.png" />
+    <Content Include="Content\Maps\mapdatanature.png" />
     <Content Include="Content\Spritesheets\sortingspritesheet.png" />
     <Content Include="Content\Sprites\card.png" />
     <Content Include="Content\Sprites\card1.png" />
@@ -105,6 +105,8 @@
     <Content Include="Content\Sprites\cursor.png" />
     <Content Include="Content\Sprites\enemy.png" />
     <Content Include="Content\Sprites\health.png" />
+    <Content Include="Content\Sprites\Map\floor.png" />
+    <Content Include="Content\Sprites\Map\wall.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>

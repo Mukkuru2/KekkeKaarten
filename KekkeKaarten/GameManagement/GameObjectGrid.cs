@@ -15,7 +15,7 @@ public class GameObjectGrid : GameObject
         {
             for (int y = 0; y < rows; y++)
             {
-                grid[x, y] = new Wall();
+                grid[x, y] = null;
             }
         }
     }
