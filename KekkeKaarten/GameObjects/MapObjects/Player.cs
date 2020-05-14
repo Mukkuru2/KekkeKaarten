@@ -11,7 +11,7 @@ namespace KekkeKaarten.GameObjects.MapObjects
         SpriteGameObject right = new SpriteGameObject("Sprites/playerright");
         int walktimer = 10;
         int walk = 10;
-        public Vector2 loca;
+        public Vector2 loca, preloca;
 
         public Player() : base()
         {
