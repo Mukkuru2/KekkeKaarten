@@ -14,15 +14,13 @@ namespace KekkeKaarten
 {
     class StartState : GameObjectList
     {
-        GameObjectList maps = new GameObjectList();
 
         public StartState()
         {
             CSVimporter.GetCSV();
             this.Add(new SpriteGameObject("Backgrounds/startscreen"));
 
-            LoadMaps();
-            this.Add(maps);
+            
         }
 
         public override void HandleInput(InputHelper inputHelper)
@@ -30,18 +28,15 @@ namespace KekkeKaarten
             base.HandleInput(inputHelper);
             if (inputHelper.KeyPressed(Keys.Space))
             {
-                GameEnvironment.GameStateManager.SwitchTo("PlayingState");
+                GameEnvironment.GameStateManager.SwitchTo("Overworld");
             }
         }
-
-        public void LoadMaps() {
-            GameObjectList mapData = new GameObjectList();
-
-            mapData.Add(new LoadMap("maps/mapdatanature"));
-
-            foreach (LoadMap map in mapData.Children) {
-                maps.Add(new Map(map.GetMap()));
-            }
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+            
         }
+
+        
     }
 }

@@ -37,7 +37,6 @@ namespace KekkeKaarten
             this.Add(mouseSprite);
             cardcollision = new CardCollision(mouseSprite, enemy);
             this.Add(cardcollision);
-
         }
         public override void HandleInput(InputHelper inputHelper)
         {

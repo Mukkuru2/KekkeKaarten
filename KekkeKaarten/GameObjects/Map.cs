@@ -16,7 +16,8 @@ namespace KekkeKaarten.GameObjects
 
         private const int tileLength = 32;
 
-        int[,] map;
+        public int[,] map;
+        public Vector2 spawn;
         public Map(int[,] mapData) : base(mapData.GetLength(0), mapData.GetLength(1))
         {
             this.map = mapData;
@@ -40,6 +41,7 @@ namespace KekkeKaarten.GameObjects
                         case 2:
                             grid[xMap, yMap] = new Floor("Sprites/Map/floor", position);
                             //Player.location = this location
+                            spawn = new Vector2(xMap, yMap);
                             break;
                         case 3:
                             grid[xMap, yMap] = new GoldenStatue("Sprites/Map/floor", position);

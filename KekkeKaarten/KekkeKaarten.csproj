@@ -57,7 +57,9 @@
     <Compile Include="GameObjects\MapObjects\ToxicFloor.cs" />
     <Compile Include="GameObjects\MapObjects\Wall.cs" />
     <Compile Include="GameObjects\MouseSprite.cs" />
+    <Compile Include="GameObjects\OverworldPlayer.cs" />
     <Compile Include="GameState\GameOverState.cs" />
+    <Compile Include="GameState\OverWorld.cs" />
     <Compile Include="GameState\PlayingState.cs" />
     <Compile Include="GameState\StartState.cs" />
     <Compile Include="GameObjects\CardTexture.cs" />
@@ -91,6 +93,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\BackGround.png" />
+    <Content Include="Content\cursor.jpg" />
+    <Content Include="Content\cursor2.png" />
+    <Content Include="Content\HealthBar.png" />
+    <Content Include="Content\Sprites\player.PNG" />
+    <Content Include="Content\Sprites\playerleft.png" />
+    <Content Include="Content\Sprites\playerright.png" />
+    <Content Include="Content\Sprites\playerup.PNG" />
+    <Content Include="Content\spr_card.png" />
+    <Content Include="Content\IntroScreen.png" />
+    <Content Include="Content\Spr_Cards.png" />
+    <Content Include="Content\spr_Enemy.png" />
+    <Content Include="Content\YouDied.jpeg" />
     <Content Include="Content\Backgrounds\battlescreen.png" />
     <Content Include="Content\Backgrounds\endscreen.jpeg" />
     <Content Include="Content\Backgrounds\startscreen.png" />
