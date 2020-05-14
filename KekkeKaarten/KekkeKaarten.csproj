@@ -92,19 +92,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\BackGround.png" />
-    <Content Include="Content\cursor.jpg" />
-    <Content Include="Content\cursor2.png" />
-    <Content Include="Content\HealthBar.png" />
     <Content Include="Content\Sprites\player.PNG" />
     <Content Include="Content\Sprites\playerleft.png" />
     <Content Include="Content\Sprites\playerright.png" />
     <Content Include="Content\Sprites\playerup.PNG" />
-    <Content Include="Content\spr_card.png" />
-    <Content Include="Content\IntroScreen.png" />
-    <Content Include="Content\Spr_Cards.png" />
-    <Content Include="Content\spr_Enemy.png" />
-    <Content Include="Content\YouDied.jpeg" />
     <Content Include="Content\Backgrounds\battlescreen.png" />
     <Content Include="Content\Backgrounds\endscreen.jpeg" />
     <Content Include="Content\Backgrounds\startscreen.png" />

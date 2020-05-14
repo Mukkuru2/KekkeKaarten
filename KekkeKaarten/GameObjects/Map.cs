@@ -14,7 +14,7 @@ namespace KekkeKaarten.GameObjects
     class Map : GameObjectGrid
     {
 
-        private const int tileLength = 32;
+        private const int tileLength = 64;
 
         public int[,] map;
         public Vector2 spawn;
