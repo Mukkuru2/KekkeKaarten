@@ -13,18 +13,18 @@ namespace KekkeKaarten.GameState
 {
     class OverWorld : GameObjectList
     {
-        GameObjectList maps = new GameObjectList();
         Player player = new Player();
+        GameObjectList maps = StartState.Maps;
+
         public OverWorld() : base()
         {
-            LoadMaps();
+
             this.Add(maps);
             this.Add(player);
             foreach (Map map in maps.Children)
             {
-                player.loca = map.spawn;
-                player.preloca = player.loca;
-                player.Position = map.Objects[(int)(player.loca.X), (int)(player.loca.Y)].Position;
+                player.locationOnGrid = map.Spawn;
+                player.lastLocationOnGrid = player.locationOnGrid;
 
             }
         }
@@ -39,29 +39,34 @@ namespace KekkeKaarten.GameState
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            if (!(player.preloca == player.loca))
+            if (!(player.lastLocationOnGrid == player.locationOnGrid))
             {
                 foreach (Map map in maps.Children)
                 {
-                    if (map.map.GetLength(0) >= player.loca.X && map.map.GetLength(1) >= player.loca.Y && 0 <= player.loca.X && 0 <= player.loca.Y)
+                    if (map.map.GetLength(0) >= player.locationOnGrid.X && map.map.GetLength(1) >= player.locationOnGrid.Y && 0 <= player.locationOnGrid.X && 0 <= player.locationOnGrid.Y)
                     {
-                        player.Position = map.Objects[(int)(player.loca.X), (int)(player.loca.Y)].Position;
-                        player.preloca = player.loca;
+                        player.Position = map.Objects[(int)(player.locationOnGrid.X), (int)(player.locationOnGrid.Y)].Position;
+                        player.lastLocationOnGrid = player.locationOnGrid;
                     }
                 }
             }
+
+            foreach (Map map in maps.Children)
+            {
+                CenterMap(map);
+            }
         }
 
-        public void LoadMaps()
+        private void CenterMap(GameObjectGrid map)
         {
-            GameObjectList mapData = new GameObjectList();
-
-            mapData.Add(new LoadMap("maps/mapdatanature"));
-
-            foreach (LoadMap map in mapData.Children)
+            /*for (int yMap = 0; yMap < map..GetLength(0); yMap++)
             {
-                maps.Add(new Map(map.GetMap()));
-            }
+                for (int xMap = 0; xMap < grid.GetLength(1); xMap++)
+                {
+                    Vector2 position = new Vector2(tileLength * xMap, tileLength * yMap);
+                    grid[xMap, yMap].Position = new Vector2(position + tileLength * );
+                }
+            }*/
         }
     }
 }

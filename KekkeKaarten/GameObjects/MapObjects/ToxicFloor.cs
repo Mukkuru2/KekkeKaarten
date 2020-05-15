@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace KekkeKaarten.GameObjects.MapObjects
 {
-    class ToxicFloor : SpriteGameObject
+    class ToxicFloor : MapObject
     {
         public ToxicFloor(String asset, Vector2 position) : base(asset)
         {

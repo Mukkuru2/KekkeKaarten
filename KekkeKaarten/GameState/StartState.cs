@@ -15,12 +15,15 @@ namespace KekkeKaarten
     class StartState : GameObjectList
     {
 
+        private static GameObjectList maps = new GameObjectList();
+
+        public static GameObjectList Maps { get => maps; set => maps = value; }
+
         public StartState()
         {
             CSVimporter.GetCSV();
+            LoadMaps();
             this.Add(new SpriteGameObject("Backgrounds/startscreen"));
-
-            
         }
 
         public override void HandleInput(InputHelper inputHelper)
@@ -33,10 +36,20 @@ namespace KekkeKaarten
         }
         public override void Update(GameTime gameTime)
         {
-            base.Update(gameTime);
-            
+            base.Update(gameTime);   
         }
 
-        
+        public void LoadMaps()
+        {
+            GameObjectList mapData = new GameObjectList();
+
+            mapData.Add(new LoadMap("maps/mapdatanature"));
+
+            foreach (LoadMap map in mapData.Children)
+            {
+                maps.Add(new Map(map.GetMap()));
+            }
+        }
+
     }
 }

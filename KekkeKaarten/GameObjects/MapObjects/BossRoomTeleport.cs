@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace KekkeKaarten.GameObjects.MapObjects
 {
-    class BossRoomTeleport : SpriteGameObject
+    class BossRoomTeleport : MapObject
     {
         public BossRoomTeleport(String asset, Vector2 position) : base(asset)
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace KekkeKaarten.GameObjects.MapObjects
 {
-    class GoldenStatue : SpriteGameObject
+    class GoldenStatue : MapObject
     {
         public GoldenStatue(String asset, Vector2 position) : base(asset)
         {

@@ -9,9 +9,9 @@ namespace KekkeKaarten.GameObjects.MapObjects
         SpriteGameObject down = new SpriteGameObject("Sprites/player");
         SpriteGameObject left = new SpriteGameObject("Sprites/playerleft");
         SpriteGameObject right = new SpriteGameObject("Sprites/playerright");
-        int walktimer = 10;
+        int walkTimer = 10;
         int walk = 10;
-        public Vector2 loca, preloca;
+        public Vector2 locationOnGrid, lastLocationOnGrid;
 
         public Player() : base()
         {
@@ -28,50 +28,47 @@ namespace KekkeKaarten.GameObjects.MapObjects
         public override void HandleInput(InputHelper inputHelper)
         {
             base.HandleInput(inputHelper);
-            if (walktimer == walk)
+            if (walkTimer == walk)
             {
                 if (inputHelper.IsKeyDown(Keys.Up))
                 {
-                    loca.Y--;
-                    //position.Y -= 20;
+                    locationOnGrid.Y--;
                     up.Visible = true;
                     down.Visible = false;
                     left.Visible = false;
                     right.Visible = false;
-                    walktimer = 0;
+                    walkTimer = 0;
                 }
                 if (inputHelper.IsKeyDown(Keys.Down))
                 {
-                    loca.Y++;
-                    //position.Y += 20;
+                    locationOnGrid.Y++;
                     up.Visible = false;
                     down.Visible = true;
                     left.Visible = false;
                     right.Visible = false;
-                    walktimer = 0;
+                    walkTimer = 0;
                 }
                 if (inputHelper.IsKeyDown(Keys.Left))
                 {
-                    loca.X--;
-                    //position.X -= 20;
+                    locationOnGrid.X--;
                     up.Visible = false;
                     down.Visible = false;
                     left.Visible = true;
                     right.Visible = false;
-                    walktimer = 0;
+                    walkTimer = 0;
                 }
                 if (inputHelper.IsKeyDown(Keys.Right))
                 {
-                    loca.X++;
+                    locationOnGrid.X++;
                     //position.X += 20;
                     up.Visible = false;
                     down.Visible = false;
                     left.Visible = false;
                     right.Visible = true;
-                    walktimer = 0;
+                    walkTimer = 0;
                 }
             }
-            else walktimer++;
+            else walkTimer++;
         }
         public override void Update(GameTime gameTime)
         {

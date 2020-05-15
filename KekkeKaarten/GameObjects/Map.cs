@@ -17,12 +17,14 @@ namespace KekkeKaarten.GameObjects
         private const int tileLength = 64;
 
         public int[,] map;
-        public Vector2 spawn;
+        private Vector2 spawn;
         public Map(int[,] mapData) : base(mapData.GetLength(0), mapData.GetLength(1))
         {
             this.map = mapData;
             Reset();
         }
+
+        public Vector2 Spawn { get => spawn; set => spawn = value; }
 
         public override void Reset()
         {
@@ -31,7 +33,10 @@ namespace KekkeKaarten.GameObjects
                 for (int xMap = 0; xMap < map.GetLength(1); xMap++)
                 {
                     Vector2 position = new Vector2(tileLength * xMap, tileLength * yMap);
-                    switch (map[xMap, yMap]) {
+
+                    //the ints on the map represent a gameobject, the specifics 
+                    switch (map[xMap, yMap])
+                    {
                         case 0:
                             grid[xMap, yMap] = new Wall("Sprites/Map/wall", position);
                             break;
@@ -41,7 +46,7 @@ namespace KekkeKaarten.GameObjects
                         case 2:
                             grid[xMap, yMap] = new Floor("Sprites/Map/floor", position);
                             //Player.location = this location
-                            spawn = position;
+                            spawn = new Vector2(xMap, yMap);
                             break;
                         case 3:
                             grid[xMap, yMap] = new GoldenStatue("Sprites/Map/floor", position);
@@ -61,6 +66,12 @@ namespace KekkeKaarten.GameObjects
                     }
                 }
             }
+            base.Reset();
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
         }
     }
 }

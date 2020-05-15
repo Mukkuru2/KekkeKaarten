@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace KekkeKaarten.GameObjects.MapObjects
 {
-    class Marshland : SpriteGameObject
+    class Marshland : MapObject
     {
         public Marshland(String asset, Vector2 position) : base(asset)
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace KekkeKaarten.GameObjects.MapObjects
 {
-    class Floor : SpriteGameObject
+    class Floor : MapObject
     {
         public Floor(String asset, Vector2 position) : base(asset)
         {
