@@ -9,6 +9,7 @@ namespace KekkeKaarten.GameObjects.MapObjects
         SpriteGameObject down = new SpriteGameObject("Sprites/player");
         SpriteGameObject left = new SpriteGameObject("Sprites/playerleft");
         SpriteGameObject right = new SpriteGameObject("Sprites/playerright");
+        
         int walkTimer = 10;
         int walk = 10;
         public Vector2 locationOnGrid, lastLocationOnGrid;
@@ -32,6 +33,7 @@ namespace KekkeKaarten.GameObjects.MapObjects
             {
                 if (inputHelper.IsKeyDown(Keys.Up))
                 {
+                    lastLocationOnGrid = locationOnGrid;
                     locationOnGrid.Y--;
                     up.Visible = true;
                     down.Visible = false;
@@ -41,6 +43,7 @@ namespace KekkeKaarten.GameObjects.MapObjects
                 }
                 if (inputHelper.IsKeyDown(Keys.Down))
                 {
+                    lastLocationOnGrid = locationOnGrid;
                     locationOnGrid.Y++;
                     up.Visible = false;
                     down.Visible = true;
@@ -50,6 +53,7 @@ namespace KekkeKaarten.GameObjects.MapObjects
                 }
                 if (inputHelper.IsKeyDown(Keys.Left))
                 {
+                    lastLocationOnGrid = locationOnGrid;
                     locationOnGrid.X--;
                     up.Visible = false;
                     down.Visible = false;
@@ -59,8 +63,8 @@ namespace KekkeKaarten.GameObjects.MapObjects
                 }
                 if (inputHelper.IsKeyDown(Keys.Right))
                 {
+                    lastLocationOnGrid = locationOnGrid;
                     locationOnGrid.X++;
-                    //position.X += 20;
                     up.Visible = false;
                     down.Visible = false;
                     left.Visible = false;

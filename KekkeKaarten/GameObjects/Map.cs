@@ -14,17 +14,17 @@ namespace KekkeKaarten.GameObjects
     class Map : GameObjectGrid
     {
 
-        private const int tileLength = 64;
-
         public int[,] map;
-        private Vector2 spawn;
+        private Vector2 playerSpawn;
         public Map(int[,] mapData) : base(mapData.GetLength(0), mapData.GetLength(1))
         {
             this.map = mapData;
+            cellWidth = 64;
+            cellHeight = 64;
             Reset();
         }
 
-        public Vector2 Spawn { get => spawn; set => spawn = value; }
+        public Vector2 PlayerSpawn { get => playerSpawn; set => playerSpawn = value; }
 
         public override void Reset()
         {
@@ -32,36 +32,36 @@ namespace KekkeKaarten.GameObjects
             {
                 for (int xMap = 0; xMap < map.GetLength(1); xMap++)
                 {
-                    Vector2 position = new Vector2(tileLength * xMap, tileLength * yMap);
+                    Vector2 position = new Vector2(cellWidth * xMap, cellHeight * yMap);
 
                     //the ints on the map represent a gameobject, the specifics 
                     switch (map[xMap, yMap])
                     {
                         case 0:
-                            grid[xMap, yMap] = new Wall("Sprites/Map/wall", position);
+                            Add(new Wall("Sprites/Map/wall", position), xMap, yMap);
                             break;
                         case 1:
-                            grid[xMap, yMap] = new Floor("Sprites/Map/floor", position);
+                            Add(new Floor("Sprites/Map/floor", position), xMap, yMap);
                             break;
                         case 2:
-                            grid[xMap, yMap] = new Floor("Sprites/Map/floor", position);
+                            Add(new Floor("Sprites/Map/floor", position), xMap, yMap);
                             //Player.location = this location
-                            spawn = new Vector2(xMap, yMap);
+                            playerSpawn = new Vector2(xMap, yMap);
                             break;
                         case 3:
-                            grid[xMap, yMap] = new GoldenStatue("Sprites/Map/floor", position);
+                            Add(new GoldenStatue("Sprites/Map/floor", position), xMap, yMap);
                             break;
                         case 4:
-                            grid[xMap, yMap] = new BossRoomTeleport("Sprites/Map/floor", position);
+                            Add(new BossRoomTeleport("Sprites/Map/floor", position), xMap, yMap);
                             break;
                         case 5:
-                            grid[xMap, yMap] = new Marshland("Sprites/Map/floor", position);
+                            Add(new Marshland("Sprites/Map/floor", position), xMap, yMap);
                             break;
                         case 6:
-                            grid[xMap, yMap] = new ToxicFloor("Sprites/Map/floor", position);
+                            Add(new ToxicFloor("Sprites/Map/floor", position), xMap, yMap);
                             break;
                         default:
-                            grid[xMap, yMap] = new Wall("Sprites/Map/wall", position);
+                            Add(new Wall("Sprites/Map/wall", position), xMap, yMap);
                             break;
                     }
                 }

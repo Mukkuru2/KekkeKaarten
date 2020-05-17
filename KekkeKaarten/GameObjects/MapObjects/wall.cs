@@ -12,6 +12,7 @@ namespace KekkeKaarten.GameObjects.MapObjects
         public Wall(String asset, Vector2 position) : base(asset)
         {
             this.position = position;
+            IsSolid = true;
         }
     }
 }

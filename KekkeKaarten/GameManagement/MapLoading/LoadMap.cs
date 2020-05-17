@@ -25,6 +25,9 @@ namespace KekkeKaarten.GameManagement.MapLoading
             Color[] colorData = new Color[sprite.Width * sprite.Height];
             sprite.Sprite.GetData(colorData);
             int[,] map = new int[sprite.Width, sprite.Height];
+
+            Console.WriteLine(colorData[105 + 104 * Height]);
+
             for (int yMap = 0; yMap < sprite.Width; yMap++)
             {
                 for (int xMap = 0; xMap < sprite.Height; xMap++)
@@ -43,7 +46,7 @@ namespace KekkeKaarten.GameManagement.MapLoading
                         map[xMap, yMap] = 1;
                     }
                     //color purple : player spawn : 2
-                    if (color == new Color(255, 0, 255))
+                    if (color == new Color(254, 0, 254))
                     {
                         map[xMap, yMap] = 2;
                     }
@@ -52,7 +55,7 @@ namespace KekkeKaarten.GameManagement.MapLoading
                     {
                         map[xMap, yMap] = 3;
                     }
-                    //color blue : boss room entract : 4
+                    //color blue : boss room entrance : 4
                     if (color == new Color(0, 0, 255))
                     {
                         map[xMap, yMap] = 4;

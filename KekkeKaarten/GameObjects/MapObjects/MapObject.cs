@@ -7,9 +7,11 @@ namespace KekkeKaarten.GameObjects.MapObjects
 {
     public class MapObject : SpriteGameObject
     {
-        protected bool isSolid;
+        private bool isSolid;
         public MapObject(string assetName) : base(assetName)
         {
         }
+
+        public bool IsSolid { get => isSolid; set => isSolid = value; }
     }
 }
