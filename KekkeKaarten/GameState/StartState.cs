@@ -21,7 +21,7 @@ namespace KekkeKaarten
 
         public StartState()
         {
-            CSVimporter.GetCSV();
+            CSVimporter.GetCSV(20);
             LoadMaps();
             this.Add(new SpriteGameObject("Backgrounds/startscreen"));
         }

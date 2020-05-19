@@ -12,24 +12,19 @@ namespace KekkeKaarten.CSVhandling
     {
         static readonly string path = @"CSVhandling/missions_rekenen_export.csv";
         static TextFieldParser csvParser = new TextFieldParser(path);
+        static Random random = new Random();
 
-        public static List<List<string>> GetCSV()
+        public static List<GameQuestion> GetCSV(int questionAmount)
         {
 
             csvParser.CommentTokens = new string[] { "#" };
             csvParser.SetDelimiters(new string[] { ";" });
             csvParser.HasFieldsEnclosedInQuotes = true;
 
-            List<List<string>> fullList = new List<List<string>>(); ;
+            List<GameQuestion> QuestionList = new List<GameQuestion>();
 
+            //The provided CSV files are structures like this:
             //mission_id;id;Question type;Question;Did you know?;Difficulty level;Display type;Verification status;Comments;Answers
-            List<string> missionID = new List<string>();
-            List<string> id = new List<string>();
-            List<string> question = new List<string>();
-            List<string> didYouKnow = new List<string>();
-            List<string> difficulty = new List<string>();
-            List<string> comments = new List<string>();
-            List<string> correctanswer = new List<string>();
 
             csvParser.ReadLine();
 
@@ -37,24 +32,15 @@ namespace KekkeKaarten.CSVhandling
             {
                 string[] values = csvParser.ReadFields();
 
-                missionID.Add(values[0]);
-                id.Add(values[1]);
-                question.Add(values[3]);
-                didYouKnow.Add(values[4]);
-                difficulty.Add(values[5]);
-                comments.Add(values[8]);
-                correctanswer.Add(values[9]);
-            
+                QuestionList.Add(new GameQuestion(values[0], values[1], values[3], values[4], values[5], values[8], values[9]));
             }
 
-            fullList.Add(missionID);
-            fullList.Add(id);
-            fullList.Add(question);
-            fullList.Add(didYouKnow);
-            fullList.Add(difficulty);
-            fullList.Add(comments);
-            fullList.Add(correctanswer);
-            return fullList;
+            while (QuestionList.Count > questionAmount)
+            {
+                QuestionList.RemoveAt(random.Next(0, QuestionList.Count));
+            }
+
+            return QuestionList;
         }
     }
 }
