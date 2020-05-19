@@ -47,6 +47,7 @@
     <Compile Include="GameObjects\Card.cs" />
     <Compile Include="GameObjects\CardText.cs" />
     <Compile Include="GameObjects\Enemy.cs" />
+    <Compile Include="GameObjects\Hand.cs" />
     <Compile Include="GameObjects\HealthBar.cs" />
     <Compile Include="GameObjects\Map.cs" />
     <Compile Include="GameObjects\MapObjects\BossRoomTeleport.cs" />

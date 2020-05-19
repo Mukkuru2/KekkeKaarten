@@ -12,13 +12,15 @@ namespace KekkeKaarten.GameObjects
         public GameObjectList cardTextures = new GameObjectList();
         public Vector2 ReturnLocation;
         public bool drag = false;
-        public Card(string nummer, Vector2 position): base()
+        public bool rightAnswer;
+        public Card(string nummer, Vector2 position, bool Rightanswer) : base()
         {
             this.position = position;
             ReturnLocation = position;
             this.Add(cardTextures);
             cardTextures.Add(new CardTexture(new Vector2(0, 0)));
             this.Add(new CardText(nummer, new Vector2(0, 0)));
+            this.rightAnswer = Rightanswer;
         }
 
         public override void Update(GameTime gameTime)

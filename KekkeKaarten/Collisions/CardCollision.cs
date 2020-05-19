@@ -18,7 +18,7 @@ namespace KekkeKaarten.Collisions
         Enemy enemy;
         public CardCollision(MouseSprite mouse, Enemy enemy)
         {
-            
+
             this.mouse = mouse;
             this.enemy = enemy;
         }
@@ -36,7 +36,7 @@ namespace KekkeKaarten.Collisions
 
         public override void Update(GameTime gameTime)
         {
-            foreach (Card card in PlayingState.Cards.Children)
+            foreach (Card card in Hand.Cards.Children)
             {
                 foreach (CardTexture cardTexture in card.cardTextures.Children)
                 {
@@ -95,12 +95,17 @@ namespace KekkeKaarten.Collisions
 
                     if (card.drag)
                     {
-                        if (enemy.CollidesWith(cardTexture))
+                        if (card.rightAnswer)
                         {
-                            enemy.Position = new Vector2(0, -1000);
-                            cardTexture.Position = cardTexture.ReturnLocation;
-                            Console.WriteLine(cardTexture.Position);
+                            if (enemy.CollidesWith(cardTexture))
+                            {
+                                enemy.Position = new Vector2(0, -1000);
+                                card.Position = card.ReturnLocation;
+                                Console.WriteLine(cardTexture.Position);
+                                card.drag = false;
+                                Hand.addcard = true;
 
+                            }
                         }
                     }
 
