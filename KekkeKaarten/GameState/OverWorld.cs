@@ -49,7 +49,6 @@ namespace KekkeKaarten.GameState
                     MapObject currentTile = (MapObject)map.Objects[(int)(player.locationOnGrid.X), (int)(player.locationOnGrid.Y)];
                     if (!currentTile.IsSolid)
                     {
-                        CenterMap(map);
                         player.Position = map.Objects[(int)(player.locationOnGrid.X), (int)(player.locationOnGrid.Y)].GlobalPosition;
                         player.lastLocationOnGrid = player.locationOnGrid;
                     }
@@ -57,7 +56,9 @@ namespace KekkeKaarten.GameState
                     {
                         player.locationOnGrid = player.lastLocationOnGrid;
                     }
+                    CenterMap(map);
                 }
+
             }
 
 
@@ -73,18 +74,22 @@ namespace KekkeKaarten.GameState
             if (player.GlobalPosition.X <= 600)
             {
                 map.Position = map.Position + new Vector2(map.CellWidth, 0);
+                player.Position = player.Position + new Vector2(map.CellWidth, 0);
             }
             else if (player.GlobalPosition.X >= GameEnvironment.Screen.X - 600)
             {
                 map.Position = map.Position + new Vector2(-map.CellWidth, 0);
+                player.Position = player.Position + new Vector2(-map.CellWidth, 0);
             }
             else if (player.GlobalPosition.Y <= 400)
             {
                 map.Position = map.Position + new Vector2(0, map.CellHeight);
+                player.Position = player.Position + new Vector2(0, map.CellHeight);
             }
             else if (player.GlobalPosition.Y >= GameEnvironment.Screen.Y - 400)
             {
                 map.Position = map.Position + new Vector2(0, -map.CellHeight);
+                player.Position = player.Position + new Vector2(0, -map.CellHeight);
             }
         }
     }

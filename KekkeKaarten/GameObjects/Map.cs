@@ -41,24 +41,24 @@ namespace KekkeKaarten.GameObjects
                             Add(new Wall("Sprites/Map/wall", position), xMap, yMap);
                             break;
                         case 1:
-                            Add(new Floor("Sprites/Map/floor", position), xMap, yMap);
+                            Add(new Floor("Sprites/Map/grass", position), xMap, yMap);
                             break;
                         case 2:
-                            Add(new Floor("Sprites/Map/floor", position), xMap, yMap);
+                            Add(new Floor("Sprites/Map/grass", position), xMap, yMap);
                             //Player.location = this location
                             playerSpawn = new Vector2(xMap, yMap);
                             break;
                         case 3:
-                            Add(new GoldenStatue("Sprites/Map/floor", position), xMap, yMap);
+                            Add(new GoldenStatue("Sprites/Map/statue", position), xMap, yMap);
                             break;
                         case 4:
-                            Add(new BossRoomTeleport("Sprites/Map/floor", position), xMap, yMap);
+                            Add(new BossRoomTeleport("Sprites/Map/grass", position), xMap, yMap);
                             break;
                         case 5:
-                            Add(new Marshland("Sprites/Map/floor", position), xMap, yMap);
+                            Add(new Marshland("Sprites/Map/swamp", position), xMap, yMap);
                             break;
                         case 6:
-                            Add(new ToxicFloor("Sprites/Map/floor", position), xMap, yMap);
+                            Add(new ToxicFloor("Sprites/Map/toxic", position), xMap, yMap);
                             break;
                         default:
                             Add(new Wall("Sprites/Map/wall", position), xMap, yMap);
