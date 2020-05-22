@@ -15,7 +15,8 @@ namespace KekkeKaarten.GameState
     {
         Player player = new Player();
         GameObjectList maps = StartState.Maps;
-
+        int currentMove , enemyTotal = 0;
+        
         public OverWorld() : base()
         {
 
@@ -29,6 +30,13 @@ namespace KekkeKaarten.GameState
                 player.Position = map.Objects[(int)(player.locationOnGrid.X), (int)(player.locationOnGrid.Y)].GlobalPosition;
                 player.lastLocationOnGrid = player.locationOnGrid;
             }
+            foreach (GameObject obj in children)
+            {
+                if (obj is Player || obj is Enemy)
+                {
+                    enemyTotal++;
+                }
+            }
         }
         public override void HandleInput(InputHelper inputHelper)
         {
@@ -40,7 +48,31 @@ namespace KekkeKaarten.GameState
         }
         public override void Update(GameTime gameTime)
         {
-            base.Update(gameTime);
+            position += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            int movementCounter = 0;
+            bool canMove = true;
+
+            foreach (GameObject obj in children)
+            {
+                if (obj is Player || obj is Enemy)
+                {
+                    if (movementCounter == currentMove && canMove == true)
+                    {
+                        canMove = false;
+                        currentMove++;
+                    }
+                    movementCounter++;
+
+                }
+                else
+                {
+                    obj.Update(gameTime);
+                }
+            }
+            if (currentMove == enemyTotal)
+            {
+                currentMove = 0;
+            }
 
             if (!(player.lastLocationOnGrid == player.locationOnGrid))
             {
