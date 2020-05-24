@@ -17,10 +17,20 @@ namespace KekkeKaarten.GameState
         GameObjectList maps = StartState.Maps;
         Map currentMap;
 
+        int currentMove, enemyTotal = 0;
+
         public OverWorld() : base()
         {
             SetMap("Overworld");
             this.Add(player);
+
+            foreach (GameObject obj in children)
+            {
+                if (obj is Player || obj is Enemy)
+                {
+                    enemyTotal++;
+                }
+            }
 
         }
         public override void HandleInput(InputHelper inputHelper)
@@ -35,6 +45,31 @@ namespace KekkeKaarten.GameState
         {
             base.Update(gameTime);
 
+            int movementCounter = 0;
+            bool canMove = true;
+
+            foreach (GameObject obj in children)
+            {
+                if (obj is Player || obj is Enemy)
+                {
+                    if (movementCounter == currentMove && canMove == true)
+                    {
+                        canMove = false;
+                        currentMove++;
+                    }
+                    movementCounter++;
+
+                }
+                else
+                {
+                    obj.Update(gameTime);
+                }
+            }
+            if (currentMove == enemyTotal)
+            {
+                currentMove = 0;
+            }
+
             if (!(player.lastLocationOnGrid == player.locationOnGrid))
             {
 
@@ -44,11 +79,11 @@ namespace KekkeKaarten.GameState
                     player.Position = currentTile.GlobalPosition;
                     player.lastLocationOnGrid = player.locationOnGrid;
 
-                    if (currentTile.GetType() == typeof(GoldenStatue))
+                    if (currentTile is GoldenStatue)
                     {
                         //set bool taken for that specific statue to true, add +1 golden card to player
                     }
-                    if (currentTile.GetType() == typeof(BossRoomTeleport))
+                    if (currentTile is BossRoomTeleport)
                     {
                         SetMap("BossRoom");
                     }
