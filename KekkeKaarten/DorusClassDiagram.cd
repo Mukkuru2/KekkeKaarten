@@ -3,7 +3,7 @@
   <Class Name="KekkeKaarten.CSVhandling.CSVimporter">
     <Position X="3.25" Y="5.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAAAAAAAAACAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAAAAAAAAAAACAAAAAAABAAAAAAQAAAAAAAA=</HashCode>
       <FileName>CSVhandling\CSVimporter.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -49,13 +49,6 @@
       <FileName>GameObjects\MapObjects\Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KekkeKaarten.GameState.OverWorld">
-    <Position X="8.25" Y="5.25" Width="2.25" />
-    <TypeIdentifier>
-      <HashCode>AIQAAACAAAAAAAAAACAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
-      <FileName>GameState\OverWorld.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="KekkeKaarten.StartState">
     <Position X="5.75" Y="5.25" Width="2.25" />
     <TypeIdentifier>
@@ -66,7 +59,7 @@
   <Class Name="KekkeKaarten.GameObjects.MapObjects.MapObject">
     <Position X="11.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\MapObjects\MapObject.cs</FileName>
     </TypeIdentifier>
   </Class>

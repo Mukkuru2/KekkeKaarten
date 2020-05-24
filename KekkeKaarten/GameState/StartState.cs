@@ -43,7 +43,8 @@ namespace KekkeKaarten
         {
             GameObjectList mapData = new GameObjectList();
 
-            mapData.Add(new LoadMap("maps/mapdatanature"));
+            mapData.Add(new LoadMap("maps/mapdatanature", -1, "Overworld"));
+            mapData.Add(new LoadMap("maps/mapdatabossroom", -1, "BossRoom"));
 
             foreach (LoadMap map in mapData.Children)
             {

@@ -14,7 +14,7 @@ namespace KekkeKaarten.GameManagement.MapLoading
     {
 
         //Dictionary<Color, int> gameObjectList;
-        public LoadMap(string assetName) : base(assetName)
+        public LoadMap(string assetName, int layer, String id) : base(assetName, layer, id)
         {
             position = new Vector2(0, 0);
             //visible = false;
@@ -25,8 +25,6 @@ namespace KekkeKaarten.GameManagement.MapLoading
             Color[] colorData = new Color[sprite.Width * sprite.Height];
             sprite.Sprite.GetData(colorData);
             int[,] map = new int[sprite.Width, sprite.Height];
-
-            Console.WriteLine(colorData[105 + 104 * Height]);
 
             for (int yMap = 0; yMap < sprite.Width; yMap++)
             {
@@ -69,6 +67,27 @@ namespace KekkeKaarten.GameManagement.MapLoading
                     if (color == new Color(0, 85, 0))
                     {
                         map[xMap, yMap] = 6;
+                    }
+
+
+                    //Enemies
+                    //Enemy1
+                    if (color == new Color(100, 0, 0)) {
+                        map[xMap, yMap] = 7;
+                    }
+                    if (color == new Color(150, 0, 0))
+                    {
+                        map[xMap, yMap] = 8;
+                    }
+                    if (color == new Color(0, 0, 100))
+                    {
+                        map[xMap, yMap] = 9;
+                    }
+
+                    //Boss
+                    if (color == new Color(69, 69, 69))
+                    {
+                        map[xMap, yMap] = 10;
                     }
 
                 }

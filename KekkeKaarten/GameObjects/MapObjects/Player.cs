@@ -14,7 +14,7 @@ namespace KekkeKaarten.GameObjects.MapObjects
         int walk = 10;
         public Vector2 locationOnGrid, lastLocationOnGrid;
 
-        public Player() : base()
+        public Player() : base(1)
         {
             this.Add(up);
             this.Add(down);

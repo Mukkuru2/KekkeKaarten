@@ -3,6 +3,7 @@ using KekkeKaarten.GameObjects.MapObjects;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -28,6 +29,7 @@ namespace KekkeKaarten.GameObjects
 
         public override void Reset()
         {
+            visible = false;
             for (int yMap = 0; yMap < map.GetLength(0); yMap++)
             {
                 for (int xMap = 0; xMap < map.GetLength(1); xMap++)
@@ -59,6 +61,18 @@ namespace KekkeKaarten.GameObjects
                             break;
                         case 6:
                             Add(new ToxicFloor("Sprites/Map/toxic", position), xMap, yMap);
+                            break;
+                        case 7:
+                            Add(new Floor("Sprites/Map/grass", position), xMap, yMap);
+                            break;
+                        case 8:
+                            Add(new Floor("Sprites/Map/grass", position), xMap, yMap); 
+                            break;
+                        case 9:
+                            Add(new Floor("Sprites/Map/grass", position), xMap, yMap); 
+                            break;
+                        case 10:
+                            Add(new Floor("Sprites/Map/grass", position), xMap, yMap); 
                             break;
                         default:
                             Add(new Wall("Sprites/Map/wall", position), xMap, yMap);
