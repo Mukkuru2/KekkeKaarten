@@ -1,5 +1,6 @@
 ﻿using KekkeKaarten.GameObjects;
 using KekkeKaarten.GameObjects.MapObjects;
+using KekkeKaarten.GameObjects.MapObjects.Enemies;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,9 @@ namespace KekkeKaarten.GameObjects
 
     class Map : GameObjectGrid
     {
+        private GameObjectList enemies = new GameObjectList();
 
-        public int[,] map;
+        private int[,] map;
         private Vector2 playerSpawn;
         public Map(int[,] mapData) : base(mapData.GetLength(0), mapData.GetLength(1))
         {
@@ -26,6 +28,7 @@ namespace KekkeKaarten.GameObjects
         }
 
         public Vector2 PlayerSpawn { get => playerSpawn; set => playerSpawn = value; }
+        public GameObjectList Enemies { get => enemies; set => enemies = value; }
 
         public override void Reset()
         {
@@ -36,7 +39,7 @@ namespace KekkeKaarten.GameObjects
                 {
                     Vector2 position = new Vector2(cellWidth * xMap, cellHeight * yMap);
 
-                    //the ints on the map represent a gameobject, the specifics 
+                    //the ints on the map represent a gameobject, the specifics can be found in LoadMaps
                     switch (map[xMap, yMap])
                     {
                         case 0:
@@ -54,7 +57,7 @@ namespace KekkeKaarten.GameObjects
                             Add(new GoldenStatue("Sprites/Map/statue", position), xMap, yMap);
                             break;
                         case 4:
-                            Add(new BossRoomTeleport("Sprites/Map/grass", position), xMap, yMap);
+                            Add(new BossRoomTeleport("Sprites/Map/teleporter", position), xMap, yMap);
                             break;
                         case 5:
                             Add(new Marshland("Sprites/Map/swamp", position), xMap, yMap);
@@ -64,12 +67,15 @@ namespace KekkeKaarten.GameObjects
                             break;
                         case 7:
                             Add(new Floor("Sprites/Map/grass", position), xMap, yMap);
+                            enemies.Add(new ChessHorse(new Vector2(xMap, yMap)));
                             break;
                         case 8:
-                            Add(new Floor("Sprites/Map/grass", position), xMap, yMap); 
+                            Add(new Floor("Sprites/Map/grass", position), xMap, yMap);
+                            enemies.Add(new Slime(new Vector2(xMap, yMap)));
                             break;
                         case 9:
-                            Add(new Floor("Sprites/Map/grass", position), xMap, yMap); 
+                            Add(new Floor("Sprites/Map/grass", position), xMap, yMap);
+                            enemies.Add(new Harpy(new Vector2(xMap, yMap)));
                             break;
                         case 10:
                             Add(new Floor("Sprites/Map/grass", position), xMap, yMap); 

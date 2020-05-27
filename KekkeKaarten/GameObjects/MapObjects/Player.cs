@@ -1,20 +1,31 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace KekkeKaarten.GameObjects.MapObjects
 {
     class Player : GameObjectList
     {
+        private readonly Dictionary<Keys, Vector2> MovementDict = new Dictionary<Keys, Vector2>();
+
         SpriteGameObject up = new SpriteGameObject("Sprites/playerup");
         SpriteGameObject down = new SpriteGameObject("Sprites/player");
         SpriteGameObject left = new SpriteGameObject("Sprites/playerleft");
         SpriteGameObject right = new SpriteGameObject("Sprites/playerright");
         
-        int walkTimer = 10;
-        int walk = 10;
-        public Vector2 locationOnGrid, lastLocationOnGrid;
+        private int walkTimer = 10;
+        private int walk = 10;
 
-        public Player() : base(1)
+        private int cardStatuesTaken = 0;
+
+        private Vector2 locationOnGrid, lastLocationOnGrid;
+
+        public int CardStatuesTaken { get => cardStatuesTaken; set => cardStatuesTaken = value; }
+        public Vector2 LocationOnGrid { get => locationOnGrid; set => locationOnGrid = value; }
+        public Vector2 LastLocationOnGrid { get => lastLocationOnGrid; set => lastLocationOnGrid = value; }
+
+        public Player() : base(1) // in front of everything else
         {
             this.Add(up);
             this.Add(down);
@@ -24,6 +35,12 @@ namespace KekkeKaarten.GameObjects.MapObjects
             up.Visible = false;
             left.Visible = false;
             right.Visible = false;
+
+            MovementDict.Add(Keys.Up, new Vector2(0 , -1));
+            MovementDict.Add(Keys.Down, new Vector2(0 , 1));
+            MovementDict.Add(Keys.Left, new Vector2(-1, 0));
+            MovementDict.Add(Keys.Right, new Vector2(1 , 0));
+            
         }
 
         public override void HandleInput(InputHelper inputHelper)
@@ -31,6 +48,27 @@ namespace KekkeKaarten.GameObjects.MapObjects
             base.HandleInput(inputHelper);
             if (walkTimer == walk)
             {
+
+                for(int i = 0; i < MovementDict.Count; i++)
+                {
+                    KeyValuePair<Keys, Vector2> kvp = MovementDict.ElementAt(i);
+                    if (inputHelper.IsKeyDown(kvp.Key))
+                    {
+                        lastLocationOnGrid = locationOnGrid;
+                        locationOnGrid += kvp.Value;
+                        walkTimer = 0;
+
+                        foreach (SpriteGameObject dir in this.children) {
+                            dir.Visible = false;
+                        }
+
+                        this.children.ElementAt(i).Visible = true;
+
+                        break;
+                    }
+                }
+
+                /*
                 if (inputHelper.IsKeyDown(Keys.Up))
                 {
                     lastLocationOnGrid = locationOnGrid;
@@ -71,6 +109,7 @@ namespace KekkeKaarten.GameObjects.MapObjects
                     right.Visible = true;
                     walkTimer = 0;
                 }
+                */
             }
             else walkTimer++;
         }

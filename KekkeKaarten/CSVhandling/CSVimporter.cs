@@ -24,7 +24,7 @@ namespace KekkeKaarten.CSVhandling
 
             List<GameQuestion> QuestionList = new List<GameQuestion>();
 
-            //The provided CSV files are structures like this:
+            //The provided CSV files are structured like this:
             //mission_id;id;Question type;Question;Did you know?;Difficulty level;Display type;Verification status;Comments;Answers
 
             csvParser.ReadLine();
@@ -41,9 +41,9 @@ namespace KekkeKaarten.CSVhandling
                         wrongAnswers[1] = values[11];
                         wrongAnswers[2] = values[12];
                     }
-                    catch 
-                    { 
-                    //TODO: what if values don't exist? make a way to get other values here
+                    catch
+                    {
+                        //TODO: what if values don't exist? make a way to get other values here
                     }
 
                     QuestionList.Add(new GameQuestion(values[0], values[1], values[3], values[4], values[5], values[8], values[9], wrongAnswers));

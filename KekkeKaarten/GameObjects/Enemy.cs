@@ -18,7 +18,6 @@ namespace KekkeKaarten.GameObjects
             this.Mirror = true;
         }
 
-
         public override void Reset()
         {
             base.Reset();
