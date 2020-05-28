@@ -78,7 +78,7 @@
     <Compile Include="GameObjects\MapObjects\ToxicFloor.cs" />
     <Compile Include="GameObjects\MapObjects\Wall.cs" />
     <Compile Include="GameObjects\MouseSprite.cs" />
-    <Compile Include="GameObjects\Player.cs" />
+    <Compile Include="GameObjects\PlayerFight.cs" />
     <Compile Include="GameState\GameOverState.cs" />
     <Compile Include="GameState\OverWorld.cs" />
     <Compile Include="GameState\PlayingState.cs" />
@@ -115,16 +115,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Maps\mapdatanature.png" />
-    <Content Include="Content\Sprites\player.PNG" />
-    <Content Include="Content\Sprites\playerleft.png" />
-    <Content Include="Content\Sprites\playerright.png" />
-    <Content Include="Content\Sprites\playerup.PNG" />
     <Content Include="Content\Backgrounds\battlescreen.png" />
     <Content Include="Content\Backgrounds\endscreen.jpeg" />
     <Content Include="Content\Backgrounds\startscreen.png" />
     <Content Include="Content\Maps\Boss1_.png" />
     <Content Include="Content\Maps\Boss2.png" />
+    <Content Include="Content\Maps\MainMap.png" />
+    <Content Include="Content\Maps\mapdatabossroom.png" />
+    <Content Include="Content\Maps\mapdatanature.png" />
+    <Content Include="Content\Spritesheets\123 clone %282%29.png" />
+    <Content Include="Content\Spritesheets\Derpy Black Eyed Girl.png" />
+    <Content Include="Content\Spritesheets\ghost.png" />
     <Content Include="Content\Spritesheets\sortingspritesheet.png" />
     <Content Include="Content\Sprites\card.png" />
     <Content Include="Content\Sprites\card1.png" />
@@ -133,7 +134,18 @@
     <Content Include="Content\Sprites\cursor.png" />
     <Content Include="Content\Sprites\enemy.png" />
     <Content Include="Content\Sprites\health.png" />
-    <Content Include="Content\Sprites\Map\floor.png" />
+    <Content Include="Content\Sprites\Map\grass.png" />
+    <Content Include="Content\Sprites\Map\harpy.png" />
+    <Content Include="Content\Sprites\Map\horse.png" />
+    <Content Include="Content\Sprites\Map\player.PNG" />
+    <Content Include="Content\Sprites\Map\playerleft.png" />
+    <Content Include="Content\Sprites\Map\playerright.png" />
+    <Content Include="Content\Sprites\Map\playerup.PNG" />
+    <Content Include="Content\Sprites\Map\slime.png" />
+    <Content Include="Content\Sprites\Map\statue.png" />
+    <Content Include="Content\Sprites\Map\swamp.png" />
+    <Content Include="Content\Sprites\Map\teleporter.png" />
+    <Content Include="Content\Sprites\Map\toxic.png" />
     <Content Include="Content\Sprites\Map\wall.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
