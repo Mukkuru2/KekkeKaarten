@@ -11,6 +11,9 @@ namespace KekkeKaarten.GameObjects.MapObjects.Enemies
     {
         private static readonly Vector2[] PossibleMoves = GetMoves();
 
+        private bool canMove;
+
+        public bool CanMove { get => canMove; set => canMove = value; }
         public ChessHorse(Vector2 positionOnGrid) : base("Sprites/Map/horse", positionOnGrid)
         {
             damage = 3;
@@ -21,23 +24,31 @@ namespace KekkeKaarten.GameObjects.MapObjects.Enemies
 
         public override void Move(Map map, Player player)
         {
-            //set initial values, there will always have to be a move better then bestMove
-            int bestMove = 100000;
-            int bestMoveIndex = -1;
-
-            //loop through possible moves and 
-            for (int i = 0; i < PossibleMoves.Length; i++) 
+            if (canMove)
             {
-                Vector2 move = PossibleMoves[i];
-                int moveDist = (int)Math.Abs(locationOnGrid.X + move.X - player.LocationOnGrid.X) + (int)Math.Abs(locationOnGrid.Y + move.Y - player.LocationOnGrid.Y);
-                MapObject targetTile = (MapObject)map.Objects[(int)(locationOnGrid.X + move.X), (int)(locationOnGrid.Y + move.Y)];
-                if (moveDist < bestMove
-                    && !targetTile.IsSolid) {
-                    bestMove = moveDist;
-                    bestMoveIndex = i;
+                //set initial values, there will always have to be a move better then bestMove
+                int bestMove = 100000;
+                int bestMoveIndex = -1;
+
+                //loop through possible moves and 
+                for (int i = 0; i < PossibleMoves.Length; i++)
+                {
+                    Vector2 move = PossibleMoves[i];
+                    int moveDist = (int)Math.Abs(locationOnGrid.X + move.X - player.LocationOnGrid.X) + (int)Math.Abs(locationOnGrid.Y + move.Y - player.LocationOnGrid.Y);
+                    MapObject targetTile = (MapObject)map.Objects[(int)(locationOnGrid.X + move.X), (int)(locationOnGrid.Y + move.Y)];
+                    if (moveDist < bestMove
+                        && !targetTile.IsSolid)
+                    {
+                        bestMove = moveDist;
+                        bestMoveIndex = i;
+                    }
                 }
+                locationOnGrid += PossibleMoves[bestMoveIndex];
+                canMove = false;
             }
-            locationOnGrid += PossibleMoves[bestMoveIndex];
+            else {
+                canMove = true;
+            }
         }
 
         public static Vector2[] GetMoves()
