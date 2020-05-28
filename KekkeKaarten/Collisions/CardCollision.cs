@@ -124,6 +124,7 @@ namespace KekkeKaarten.Collisions
                                 card.drag = false;
                                 hit = true;
                                 card.ChangeLocation();
+                                enemy.Position = enemy.returnPosition;
 
                             }
                         }
