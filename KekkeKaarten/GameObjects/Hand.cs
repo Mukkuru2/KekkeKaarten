@@ -57,7 +57,7 @@ namespace KekkeKaarten.GameObjects
         public void ChangeCards()
         {          
             questionarray = questionnaam.ToArray();          
-            randomRightAnswer = GameEnvironment.Random.Next(0, 20);
+            randomRightAnswer = GameEnvironment.Random.Next(0, 19);
                  
             whichCardIsCorrect = GameEnvironment.Random.Next(0, numberOfCards);
 
@@ -70,12 +70,12 @@ namespace KekkeKaarten.GameObjects
             for (int i = 0; i < numberOfCards; i++)
             {
                 
-                randomWrongAnswer = GameEnvironment.Random.Next(0, 20);
-                for (int x = 0; x < numberOfCards; x++)
+                randomWrongAnswer = GameEnvironment.Random.Next(0, 19);
+                for (int x = 0; x < answernumber; x++)
                 {
-                    if(answers[x] == questionarray[randomWrongAnswer].Correctanswer)
+                    while(answers[x] == questionarray[randomWrongAnswer].Correctanswer)
                     {
-                         randomWrongAnswer = GameEnvironment.Random.Next(0, 20);
+                         randomWrongAnswer = GameEnvironment.Random.Next(0, 19);
 
                     }
                     
@@ -108,6 +108,10 @@ namespace KekkeKaarten.GameObjects
             for (int i = 0; i < numberOfCards; i++)
             {
                 Cards.Remove(Cards.Children.ElementAt(Cards.Children.Count - 1));
+          
+            }
+            for (int i = 0; i < answernumber; i++)
+            {
                 answers[i] = "";
                 answernumber = 0;
             }
