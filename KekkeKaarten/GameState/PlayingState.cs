@@ -25,10 +25,8 @@ namespace KekkeKaarten
         PlayerFight player;
        
 
-        static int currentEnemy = 0;
-        int previousEnemy = 0;
         public static Enemy Enemy { get => enemy; set => enemy = value; }
-        public static int CurrentEnemy { get => currentEnemy; set => currentEnemy = value; }
+
         public PlayingState()
         {
             this.Add(new SpriteGameObject("Backgrounds/battlescreen"));

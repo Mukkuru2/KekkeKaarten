@@ -78,7 +78,8 @@ namespace KekkeKaarten.GameObjects
                             enemies.Add(new Harpy(new Vector2(xMap, yMap)));
                             break;
                         case 10:
-                            Add(new Floor("Sprites/Map/grass", position), xMap, yMap); 
+                            Add(new Floor("Sprites/Map/grass", position), xMap, yMap);
+                            enemies.Add(new Boss(new Vector2(xMap, yMap)));
                             break;
                         default:
                             Add(new Wall("Sprites/Map/wall", position), xMap, yMap);

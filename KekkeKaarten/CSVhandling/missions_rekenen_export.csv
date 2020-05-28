@@ -1,10 +1,4 @@
 mission_id;id;Question type;Question;Did you know?;Difficulty level;Display type;Verification status;Comments;Answers
-6579;54537;select;"Kijk naar het plaatje.
-
-Hoeveel procent van de cirkel is roze gekleurd?";De helft van de cirkel is gekleurd. De helft van iets is 50%.;1;Standard;verified;;10%;25%;50%;75%
-6579;54538;select;"Kijk naar het plaatje.
-
-Hoeveel procent van de cirkel is roze gekleurd?";Een kwart van iets is 25%.;1;Standard;verified;;10%;15%;25%;30%
 6579;54531;select;"Merel heeft drie soorten boeken: leesboeken, stripboeken en kookboeken. 
 75% van alle boeken zijn leesboeken. 
 20% is stripboeken.
@@ -14,12 +8,12 @@ Hoeveel procent van alle boeken is kookboeken?";"Alle boeken samen zijn 100%.
 75 + 20 = 95%
 
 Je houdt dan nog 100 - 95 = 5% over!";1;Standard;verified;;5%;10%;15%;20%
-6579;54575;select;"Waar of niet waar?
-
-25% is hetzelfde als 1/4.";25% en 1/4 zijn allebei een kwart!;1;Standard;verified;;waar;niet waar
-6579;54576;select;"Waar of niet waar?
-
-75% is hetzelfde als 3/4.";75% en 3/4 zijn allebei driekwart!;1;Standard;verified;fb;waar;niet waar
+#6579;54575;select;"Waar of niet waar?
+#
+#25% is hetzelfde als 1/4.";25% en 1/4 zijn allebei een kwart!;1;Standard;verified;;waar;niet waar
+#6579;54576;select;"Waar of niet waar?
+#
+#75% is hetzelfde als 3/4.";75% en 3/4 zijn allebei driekwart!;1;Standard;verified;fb;waar;niet waar
 6579;54580;select;"Een zonnebril kost 10 euro. Er zit 50% korting op.
 
 Hoeveel kost de zonnebril nu?";"50% is de helft.

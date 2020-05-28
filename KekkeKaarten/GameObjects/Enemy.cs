@@ -14,7 +14,7 @@ namespace KekkeKaarten.GameObjects
         public  int timeToKill = 5;
         public Vector2 returnPosition;
         public SpriteSheet[] sprites;
-        public  int health;     
+        public int health;
         public int damage;
         public int enemyID;
         public int previousenemyID;
@@ -27,10 +27,11 @@ namespace KekkeKaarten.GameObjects
 
             this.Mirror = true;
             RunToPlayer();
-            sprites = new SpriteSheet[3];
+            sprites = new SpriteSheet[4];
             sprites[0] = new SpriteSheet("Sprites/Map/slime");
             sprites[1] = new SpriteSheet("Sprites/Map/harpy");
             sprites[2] = new SpriteSheet("Sprites/Map/horse");
+            sprites[3] = new SpriteSheet("Sprites/Map/boss");
         }
 
         public override void Reset()
@@ -48,6 +49,7 @@ namespace KekkeKaarten.GameObjects
             base.Update(gameTime);
             if (previousenemyID != enemyID)
             {
+                RunToPlayer();
                 sprite = sprites[enemyID];
                 previousenemyID = enemyID;
             }
