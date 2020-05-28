@@ -15,6 +15,10 @@ namespace KekkeKaarten
         {
             this.Add(new SpriteGameObject("Backgrounds/endscreen"));
         }
+        public override void Reset()
+        {
+            base.Reset();
+        }
 
         public override void HandleInput(InputHelper inputHelper)
         {
@@ -22,7 +26,9 @@ namespace KekkeKaarten
             if (inputHelper.KeyPressed(Keys.Space))
             {
                 GameEnvironment.GameStateManager.SwitchTo("StartState");
+                StartState.ResetGame = true;
             }
         }
+        
     }
 }  

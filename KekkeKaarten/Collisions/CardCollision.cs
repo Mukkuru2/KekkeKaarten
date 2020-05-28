@@ -47,7 +47,7 @@ namespace KekkeKaarten.Collisions
 
             if(player.CollidesWith(enemy))
             {
-                player.hp--;
+                PlayerFight.HP-= enemy.damage;
                 enemy.Position = enemy.returnPosition;
             }
             foreach (Card card in Hand.Cards.Children)
@@ -141,7 +141,7 @@ namespace KekkeKaarten.Collisions
                 {
                     Hand.numberOfCards++;
                 }
-                
+                enemy.health -= 25;
                 
                 hand.ChangeCards();
                 

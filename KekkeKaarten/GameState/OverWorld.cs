@@ -152,7 +152,7 @@ namespace KekkeKaarten.GameState
             FullCenterMap();
             player.Position = currentMap.Objects[(int)(player.LocationOnGrid.X), (int)(player.LocationOnGrid.Y)].GlobalPosition;
             player.LastLocationOnGrid = player.LocationOnGrid;
-
+            
             enemies = currentMap.Enemies;
             foreach (EnemyMap enemy in enemies.Children)
             {

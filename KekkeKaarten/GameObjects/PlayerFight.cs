@@ -9,7 +9,8 @@ namespace KekkeKaarten
 {
     class PlayerFight : SpriteGameObject
     {
-        public int hp = 1;
+        public static int hp = 10;
+        public static int HP { get => hp; set => hp = value; }
         public PlayerFight(Vector2 spawnposition) : base("Sprites/Map/player")
         {
             Position = spawnposition;
