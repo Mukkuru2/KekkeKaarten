@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="KekkeKaarten.Collisions.CardCollision" Collapsed="true">
+    <Position X="51" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAECBAAAAAwAiAAAAAEAAAAAAAAAJAAAAAAAAAAI=</HashCode>
+      <FileName>Collisions\CardCollision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.CSVhandling.CSVimporter" Collapsed="true">
+    <Position X="75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAACAAAAAAABAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>CSVhandling\CSVimporter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.CSVhandling.GameQuestion" Collapsed="true">
+    <Position X="73.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiQACRAAAAkQAAAAAAACAAAAQgAAAEAAAAAAAAIkA=</HashCode>
+      <FileName>CSVhandling\GameQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AnimatedGameObject" Collapsed="true">
+    <Position X="24" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAACAAAAAAAAgEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameManagement\AnimatedGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Animation" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAAAAAAAAAAIAAAAAQAAAAEACAAgAAAIAAAACA=</HashCode>
+      <FileName>GameManagement\Animation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AssetManager" Collapsed="true">
+    <Position X="71.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAEAAAAAAAAAkAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>GameManagement\AssetManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Collision" Collapsed="true">
+    <Position X="73.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameManagement\Collision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawingHelper" Collapsed="true">
+    <Position X="71.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameManagement\DrawingHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameEnvironment" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BJQAAECQAAAAAgIABIAAIAQAAAAAJAwAAAQAAAAAAAQ=</HashCode>
+      <FileName>GameManagement\GameEnvironment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameObject" Collapsed="true">
+    <Position X="36.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAACAAACABiBgAAABYAAAACAAAAAMAAQADAAEAgA=</HashCode>
+      <FileName>GameManagement\GameObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameObjectGrid" Collapsed="true">
+    <Position X="44.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAACAAAIABkBAAAAAIAAAACAAAAEAAAAAwAgAAEA=</HashCode>
+      <FileName>GameManagement\GameObjectGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameObjectList" Collapsed="true">
+    <Position X="60" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAACAAAAABgQAAAAEBAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameManagement\GameObjectList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameSettingsManager" Collapsed="true">
+    <Position X="75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameManagement\GameSettingsManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameStateManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="71.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAQAAABgAAAAQAAAIUAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>GameManagement\GameStateManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="InputHelper" Collapsed="true">
+    <Position X="73.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASIAAAgAAAAAAAAAAIAAUBCAAAAAAAAAAAAQABSgAA=</HashCode>
+      <FileName>GameManagement\InputHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpriteGameObject" Collapsed="true">
+    <Position X="22.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAABAAAAgAAAAAABEQAgDAAAAAQAAAAAAgIAAA=</HashCode>
+      <FileName>GameManagement\SpriteGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpriteSheet" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAEAABAAAAgEAAACAAEAAgBAABAAQAAQAAAAIAEE=</HashCode>
+      <FileName>GameManagement\SpriteSheet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextGameObject" Collapsed="true">
+    <Position X="47.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAggAAACAAAAAAAAAAAACIAAAAiAAAAAA=</HashCode>
+      <FileName>GameManagement\TextGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameManagement.MapLoading.LoadMap" Collapsed="true">
+    <Position X="26.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameManagement\MapLoading\LoadMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.RotatingSpriteGameObject" Collapsed="true">
+    <Position X="28.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAAAAAAAgAAAgAAAEAAAAAAAAASAEQAAAAAAAI=</HashCode>
+      <FileName>GameManagement\RotatingSpriteGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.PlayerFight" Collapsed="true">
+    <Position X="30.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>GameObjects\PlayerFight.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameOverState" Collapsed="true">
+    <Position X="64.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameState\GameOverState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.PlayingState" Collapsed="true">
+    <Position X="66.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAgCAAAAAAgBgAAAAAAAAAAAIAgABAAAAAAAAAAI=</HashCode>
+      <FileName>GameState\PlayingState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.StartState" Collapsed="true">
+    <Position X="53.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAAACAAAAABAGAAAABAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>GameState\StartState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.KekkeKaarten" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>KekkeKaarten.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.Program" Collapsed="true">
+    <Position X="75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.Card" Collapsed="true">
+    <Position X="60" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAAAAADggIAABCAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Card.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.CardText" Collapsed="true">
+    <Position X="48.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\CardText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.CardTexture" Collapsed="true">
+    <Position X="28.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQAAAAAAIAgAAAAAAAAAAACAAAAAAAAAAAQgIAAA=</HashCode>
+      <FileName>GameObjects\CardTexture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.Enemy" Collapsed="true">
+    <Position X="33" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQAAAAAAhgAAAAAABAAAACAAABAEAAAAAACAgAg=</HashCode>
+      <FileName>GameObjects\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.Hand" Collapsed="true">
+    <Position X="69" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAABAAAIABEAAAAAAAAAAIAAZAAAAAAAgAAgAIAFA=</HashCode>
+      <FileName>GameObjects\Hand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.HealthBar" Collapsed="true">
+    <Position X="3.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\HealthBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.Map" Collapsed="true">
+    <Position X="44.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAEAAAAAAABAAABAAAAAAAAAEAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MouseSprite" Collapsed="true">
+    <Position X="21.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MouseSprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.Question" Collapsed="true">
+    <Position X="46.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Question.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.BossRoomTeleport" Collapsed="true">
+    <Position X="10.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MapObjects\BossRoomTeleport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.Floor" Collapsed="true">
+    <Position X="15" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MapObjects\Floor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.GoldenStatue" Collapsed="true">
+    <Position X="17.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQ=</HashCode>
+      <FileName>GameObjects\MapObjects\GoldenStatue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.GoldenStatueOff" Collapsed="true">
+    <Position X="19.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MapObjects\GoldenStatueOff.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.MapObject" Collapsed="true">
+    <Position X="12.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MapObjects\MapObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.Marshland" Collapsed="true">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MapObjects\Marshland.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.Player" Collapsed="true">
+    <Position X="55.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQCIICAAAACAAEAAAABBACAAIAIAACAACAAAgAAgAA=</HashCode>
+      <FileName>GameObjects\MapObjects\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.ToxicFloor" Collapsed="true">
+    <Position X="8.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MapObjects\ToxicFloor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.Wall" Collapsed="true">
+    <Position X="12.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MapObjects\Wall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.Boss" Collapsed="true">
+    <Position X="39.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MapObjects\Enemies\Boss.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.ChessHorse" Collapsed="true">
+    <Position X="42" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAIQgAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MapObjects\Enemies\ChessHorse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.EnemyMap" Collapsed="true">
+    <Position X="38.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAIAAgAAAAAAAAAAAAKAAAACAAAAAAAAAAAg=</HashCode>
+      <FileName>GameObjects\MapObjects\Enemies\EnemyMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.Harpy" Collapsed="true">
+    <Position X="35.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAIQgAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MapObjects\Enemies\Harpy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.Slime" Collapsed="true">
+    <Position X="37.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MapObjects\Enemies\Slime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameState.OverWorld" Collapsed="true">
+    <Position X="57.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAAACAAAAABAAAACAAAAEAAAEAACABAAAAAAARAAA=</HashCode>
+      <FileName>GameState\OverWorld.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameState.WinState" Collapsed="true">
+    <Position X="62.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAAgAAAAEAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>GameState\WinState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IGameLoopObject" Collapsed="true">
+    <Position X="71.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameManagement\IGameLoopObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
