@@ -18,7 +18,8 @@ namespace KekkeKaarten.Collisions
         public bool hold = false;
         public bool StopHolding = false; // i dont know why
         bool hit = false;
-        
+        bool wronghit = false;
+
         MouseSprite mouse;
         Enemy enemy;
         Hand hand;
@@ -44,15 +45,16 @@ namespace KekkeKaarten.Collisions
             }
             else { drag = false; }
 
-            
+
         }
 
         public override void Update(GameTime gameTime)
         {
 
-            if(player.CollidesWith(enemy))
+            if (player.CollidesWith(enemy))
             {
-                PlayerFight.HP-= enemy.damage;
+                PlayerFight.HP -= enemy.damage;
+                
                 enemy.Position = enemy.returnPosition;
             }
             foreach (Card card in Hand.Cards.Children)
@@ -109,9 +111,9 @@ namespace KekkeKaarten.Collisions
                     if (card.drag)
                     {
                         card.Position = mouse.Position - new Vector2(40, 100);
-                      
+
                     }
-                    else 
+                    else
                     {
                         card.Position = card.ReturnLocation;
 
@@ -125,13 +127,13 @@ namespace KekkeKaarten.Collisions
                             {
                                 //enemy.Position = new Vector2(0, -1000);
                                 card.Position = card.ReturnLocation;
-                                
+                                Console.WriteLine(cardTexture.Position);
                                 card.drag = false;
                                 hit = true;
                                 card.ChangeLocation();
                                 enemy.Position = enemy.returnPosition;
-                                int multiplier = 1;
-                                if (Difficulty =="1")
+                                int multiplier = 0;
+                                if (Difficulty == "1")
                                 {
                                     multiplier = 1;
                                 }
@@ -152,7 +154,29 @@ namespace KekkeKaarten.Collisions
                                     multiplier = 5;
                                 }
                                 WinState.Points += multiplier * 10;
-                                Console.WriteLine(WinState.Points);
+
+                            }
+                        }
+                        if (!card.rightAnswer)
+                        {
+                            if (enemy.CollidesWith(cardTexture))
+                            {
+                                if (Hand.numberOfCards == 3)
+                                {
+                                    PlayerFight.hp -= enemy.damage;
+                                    wronghit = false;
+
+
+                                }
+                                else
+                                {
+                                    wronghit = true;
+                                }
+
+                                enemy.Position = enemy.returnPosition;
+
+
+
 
                             }
                         }
@@ -162,20 +186,28 @@ namespace KekkeKaarten.Collisions
 
 
             }
-            if(hit)
+            if (hit)
             {
                 hand.DeleteCards();
-                if(Hand.numberOfCards < 6)
+                if (Hand.numberOfCards < 6)
                 {
                     Hand.numberOfCards++;
                 }
                 enemy.health -= 25;
-                
+
                 hand.ChangeCards();
-                
-                
-               
+
+
+
                 hit = false;
+            }
+            if (wronghit)
+            {
+                
+                hand.DeleteCards();
+                Hand.numberOfCards--;
+                hand.ChangeCards();
+
             }
         }
     }
