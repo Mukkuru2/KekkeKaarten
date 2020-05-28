@@ -14,7 +14,7 @@ namespace KekkeKaarten.GameObjects
         public Question(string number) : base("SpriteFonts/GameFont")
         {
             Text = number;
-            position.X = GameEnvironment.Screen.X / 3;
+            position.X = GameEnvironment.Screen.X / 4;
             position.Y = 200;
             Color = Color.Black;
         }
