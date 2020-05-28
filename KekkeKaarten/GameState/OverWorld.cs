@@ -1,4 +1,4 @@
-﻿        using KekkeKaarten.GameManagement.MapLoading;
+﻿using KekkeKaarten.GameManagement.MapLoading;
 using KekkeKaarten.GameObjects;
 using KekkeKaarten.GameObjects.MapObjects;
 using KekkeKaarten.GameObjects.MapObjects.Enemies;
@@ -43,29 +43,9 @@ namespace KekkeKaarten.GameState
         {
             base.Update(gameTime);
 
-            foreach (EnemyMap enemy in enemies.Children)
-            {
-                foreach (SpriteGameObject player in player.Children)
-                {
-                    if (player.CollidesWith(enemy))
-                    {
+            playerEnemyColision();
 
-                        GameEnvironment.GameStateManager.SwitchTo("PlayingState");
-                        
-                        if (PlayingState.Enemy.enemyID != enemy.enemyID)
-                        {
-                            PlayingState.Enemy.timeToKill = enemy.timeToKill;
-                            PlayingState.Enemy.damage = enemy.damage;
-                            PlayingState.Enemy.health = enemy.health;
-                            PlayingState.Enemy.enemyID = enemy.enemyID;
-                            
-                        }
-                        
-                        break;
-                    }
-                }
 
-            }
             if (enemyTurn == true)
             {
                 foreach (EnemyMap enemy in enemies.Children)
@@ -115,6 +95,32 @@ namespace KekkeKaarten.GameState
                     player.LocationOnGrid = player.LastLocationOnGrid;
                 }
                 CenterMap();
+            }
+            playerEnemyColision();
+        }
+        private void playerEnemyColision()
+        {
+            foreach (EnemyMap enemy in enemies.Children)
+            {
+                foreach (SpriteGameObject player in player.Children)
+                {
+                    if (player.CollidesWith(enemy))
+                    {
+
+                        GameEnvironment.GameStateManager.SwitchTo("PlayingState");
+
+                        if (PlayingState.Enemy.enemyID != enemy.enemyID)
+                        {
+                            PlayingState.Enemy.timeToKill = enemy.timeToKill;
+                            PlayingState.Enemy.damage = enemy.damage;
+                            PlayingState.Enemy.health = enemy.health;
+                            PlayingState.Enemy.enemyID = enemy.enemyID;
+
+                        }
+
+                        break;
+                    }
+                }
             }
         }
 
