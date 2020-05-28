@@ -13,7 +13,7 @@ namespace KekkeKaarten.GameObjects.MapObjects.Enemies
         public Boss(Vector2 positionOnGrid) : base("Sprites/Map/boss", positionOnGrid)
         {
             damage = 20;
-            health = 500;
+            health = 250;
             timeToKill = 10;
             enemyID = 3;
         }
