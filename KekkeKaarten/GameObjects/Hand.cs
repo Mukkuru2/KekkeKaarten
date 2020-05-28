@@ -4,7 +4,6 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using KekkeKaarten.Collisions;
 using KekkeKaarten.CSVhandling;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -54,31 +53,31 @@ namespace KekkeKaarten.GameObjects
         public void ChangeCards()
         {          
             questionarray = questionnaam.ToArray();          
-            randomRightAnswer = GameEnvironment.Random.Next(0, 17);
+            randomRightAnswer = GameEnvironment.Random.Next(0, 20);
                  
             whichCardIsCorrect = GameEnvironment.Random.Next(0, numberOfCards);
 
             correctanswer = questionarray[randomRightAnswer].Correctanswer;           
             question.Text = questionarray[randomRightAnswer].Question;
-            CardCollision.Difficulty= questionarray[randomRightAnswer].Difficulty;
+
             answers[answerNumber] = correctanswer;
             answerNumber++;
 
             for (int i = 0; i < numberOfCards; i++)
             {
                 
-                randomWrongAnswer = GameEnvironment.Random.Next(0, 18);
-                for (int x = 0; x < answerNumber; x++)
+                randomWrongAnswer = GameEnvironment.Random.Next(0, 20);
+                for (int x = 0; x < numberOfCards; x++)
                 {
-                    if(answers[x] == questionarray[randomWrongAnswer].Correctanswer)
+                    while(answers[x] == questionarray[randomWrongAnswer].Correctanswer)
                     {
-                         randomWrongAnswer = GameEnvironment.Random.Next(0, 18);
+                         randomWrongAnswer = GameEnvironment.Random.Next(0, 20);
                     }
                     
                 }
 
-                answers[answerNumber] = questionarray[randomWrongAnswer].Correctanswer; ;
-                answerNumber++;
+                answers[answernumber] = questionarray[randomWrongAnswer].Correctanswer; ;
+                answernumber++;
 
                 wrongAnswers = questionarray[randomWrongAnswer].Correctanswer;
 
@@ -105,6 +104,10 @@ namespace KekkeKaarten.GameObjects
             for (int i = 0; i < numberOfCards; i++)
             {
                 Cards.Remove(Cards.Children.ElementAt(Cards.Children.Count - 1));
+          
+            }
+            for (int i = 0; i < answernumber; i++)
+            {
                 answers[i] = "";
                 answerNumber = 0;
             }
