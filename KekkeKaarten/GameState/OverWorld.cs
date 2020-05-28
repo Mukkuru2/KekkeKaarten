@@ -138,6 +138,7 @@ namespace KekkeKaarten.GameState
             if (currentMap != null)
             {
                 this.Remove(currentMap);
+                this.Remove(enemies);
             }
             switch (id)
             {
@@ -156,12 +157,14 @@ namespace KekkeKaarten.GameState
             player.Position = currentMap.Objects[(int)(player.LocationOnGrid.X), (int)(player.LocationOnGrid.Y)].GlobalPosition;
             player.LastLocationOnGrid = player.LocationOnGrid;
 
+            enemies = new GameObjectList();
             enemies = currentMap.Enemies;
             foreach (EnemyMap enemy in enemies.Children)
             {
                 enemy.Position = currentMap.Objects[(int)enemy.LocationOnGrid.X, (int)enemy.LocationOnGrid.Y].GlobalPosition;
             }
 
+            this.Add(enemies);
             this.Add(currentMap);
         }
 
