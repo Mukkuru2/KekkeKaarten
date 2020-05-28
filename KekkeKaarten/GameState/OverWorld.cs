@@ -47,14 +47,14 @@ namespace KekkeKaarten.GameState
             {
                 foreach (EnemyMap enemy in enemies.Children)
                 {
-                    if (enemy.Position.X - enemy.Sprite.Width > 0
-                        && enemy.Position.X - enemy.Sprite.Width < GameEnvironment.Screen.X
-                        && enemy.Position.Y - enemy.Sprite.Height > 0
-                        && enemy.Position.Y - enemy.Sprite.Height < GameEnvironment.Screen.X)
+                    if (enemy.GlobalPosition.X + enemy.Sprite.Width > 0
+                        && enemy.GlobalPosition.X - enemy.Sprite.Width < GameEnvironment.Screen.X
+                        && enemy.GlobalPosition.Y + enemy.Sprite.Height > 0
+                        && enemy.GlobalPosition.Y - enemy.Sprite.Height < GameEnvironment.Screen.X)
                     {
                         enemy.Move(currentMap, player);
-                        enemy.Position = currentMap.Objects[(int)enemy.LocationOnGrid.X, (int)enemy.LocationOnGrid.Y].GlobalPosition;
                     }
+                    enemy.Position = currentMap.Objects[(int)enemy.LocationOnGrid.X, (int)enemy.LocationOnGrid.Y].GlobalPosition;
                 }
                 enemyTurn = false;
             }
@@ -111,7 +111,6 @@ namespace KekkeKaarten.GameState
                     break;
                 default:
                     break;
-
             }
 
             player.LocationOnGrid = currentMap.PlayerSpawn;
@@ -120,6 +119,11 @@ namespace KekkeKaarten.GameState
             player.LastLocationOnGrid = player.LocationOnGrid;
 
             enemies = currentMap.Enemies;
+            foreach (EnemyMap enemy in enemies.Children)
+            {
+                enemy.Position = currentMap.Objects[(int)enemy.LocationOnGrid.X, (int)enemy.LocationOnGrid.Y].GlobalPosition;
+            }
+
             this.Add(currentMap);
         }
 
