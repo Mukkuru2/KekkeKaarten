@@ -122,6 +122,8 @@ namespace KekkeKaarten.GameState
 
                         }
 
+                        this.Remove(enemy);
+
                         break;
                     }
                 }

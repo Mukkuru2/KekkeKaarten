@@ -76,10 +76,10 @@ namespace KekkeKaarten.GameObjects
                     if(answers[x] == questionarray[randomWrongAnswer].Correctanswer)
                     {
                          randomWrongAnswer = GameEnvironment.Random.Next(0, 20);
-
                     }
                     
                 }
+
                 answers[answernumber] = questionarray[randomWrongAnswer].Correctanswer; ;
                 answernumber++;
 
