@@ -18,14 +18,20 @@ namespace KekkeKaarten
         private static GameObjectList maps = new GameObjectList();
 
         public static GameObjectList Maps { get => maps; set => maps = value; }
-
+        static bool resetGame = false;
+        public static bool ResetGame { get => resetGame; set => resetGame = value; }
         public StartState()
         {
             CSVimporter.GetCSV(20);
-            LoadMaps();
+            Reset();
             this.Add(new SpriteGameObject("Backgrounds/startscreen"));
         }
-
+        public override void Reset()
+        {
+            LoadMaps();
+            base.Reset();
+            PlayerFight.HP = 100;
+        }
         public override void HandleInput(InputHelper inputHelper)
         {
             base.HandleInput(inputHelper);
@@ -36,6 +42,11 @@ namespace KekkeKaarten
         }
         public override void Update(GameTime gameTime)
         {
+            if (resetGame)
+            {
+                Reset();
+                resetGame = false;
+            }
             base.Update(gameTime);   
         }
 
