@@ -10,7 +10,10 @@ namespace KekkeKaarten.GameObjects.MapObjects.Enemies
     class EnemyMap : SpriteGameObject
     {
         protected Vector2 locationOnGrid;
-
+        public int health;
+        public int damage;
+        public int timeToKill;
+        public int enemyID;
         public EnemyMap(string assetName, Vector2 positionOnGrid) : base(assetName)
         {
             this.locationOnGrid = positionOnGrid;

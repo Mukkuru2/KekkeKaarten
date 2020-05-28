@@ -8,34 +8,43 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using KekkeKaarten.GameObjects;
 using KekkeKaarten.Collisions;
+using KekkeKaarten.GameState;
+using KekkeKaarten.GameObjects.MapObjects.Enemies;
 
 namespace KekkeKaarten
 {
     class PlayingState : GameObjectList
     {
-  
+
         public MouseSprite mouseSprite = new MouseSprite();
-    
+
         public CardCollision cardcollision;
 
-        Enemy enemy;
+        static Enemy enemy;
         Hand hand;
         PlayerFight player;
-        
+       
+
+        static int currentEnemy = 0;
+        int previousEnemy = 0;
+        public static Enemy Enemy { get => enemy; set => enemy = value; }
+        public static int CurrentEnemy { get => currentEnemy; set => currentEnemy = value; }
         public PlayingState()
         {
             this.Add(new SpriteGameObject("Backgrounds/battlescreen"));
-            this.Add(player = new PlayerFight(new Vector2(300,300)));
-            this.Add(enemy = new Enemy());;
+            this.Add(player = new PlayerFight(new Vector2(300, 300)));
+            this.Add(enemy = new Enemy());
             this.Add(new HealthBar(new Vector2(166, 65)));
 
             this.Add(hand = new Hand());
 
 
 
+
             this.Add(mouseSprite);
             cardcollision = new CardCollision(mouseSprite, enemy, hand, player);
             this.Add(cardcollision);
+
         }
         public override void HandleInput(InputHelper inputHelper)
         {
@@ -45,7 +54,7 @@ namespace KekkeKaarten
                 GameEnvironment.GameStateManager.SwitchTo("GameOverState");
             }
 
-       
+
 
 
         }
@@ -54,10 +63,18 @@ namespace KekkeKaarten
         {
             base.Update(gameTime);
             
-
+            
+            
+        }
+        public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        {
+            base.Draw(gameTime, spriteBatch);
+            
+            
         }
 
-        public static void SetCollisionMask(CardTexture card) {
+        public static void SetCollisionMask(CardTexture card)
+        {
             Color[] colorData = new Color[card.Sprite.Sprite.Width * card.Sprite.Sprite.Height];
             bool[] tempCollisionMask = new bool[(int)(card.Sprite.Sprite.Width * card.Sprite.Sprite.Height * Math.Pow(card.CardScalar, 2))];
             card.Sprite.Sprite.GetData(colorData);
