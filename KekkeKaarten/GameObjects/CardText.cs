@@ -14,7 +14,7 @@ namespace KekkeKaarten.GameObjects
         public CardText(string number, Vector2 startPosition) : base("SpriteFonts/GameFont")
         {
             Text = number;
-            position.X  = startPosition.X + 100;
+            position.X  = startPosition.X + 90;
             position.Y = startPosition.Y + 70;
             Color = Color.Black;
         }
