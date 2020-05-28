@@ -80,6 +80,8 @@ namespace KekkeKaarten.GameState
                     if (currentTile is GoldenStatue)
                     {
                         player.CardStatuesTaken++;
+                        GoldenStatue statue = (GoldenStatue)currentTile;
+                        statue.Taken = true;
                         if (player.CardStatuesTaken >= 3)
                         {
                             player.CardStatuesTaken = 0;
@@ -126,7 +128,7 @@ namespace KekkeKaarten.GameState
 
                         enemies.Remove(enemy);
                         break;
-                    } 
+                    }
                 }
             }
         }
@@ -153,7 +155,7 @@ namespace KekkeKaarten.GameState
             FullCenterMap();
             player.Position = currentMap.Objects[(int)(player.LocationOnGrid.X), (int)(player.LocationOnGrid.Y)].GlobalPosition;
             player.LastLocationOnGrid = player.LocationOnGrid;
-            
+
             enemies = currentMap.Enemies;
             foreach (EnemyMap enemy in enemies.Children)
             {

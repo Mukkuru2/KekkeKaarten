@@ -31,7 +31,7 @@ Hoeveel kosten de flippers nu?";"100% is 20 euro
 
 20% past 5 keer in 100%, want 5 x 20 = 100.
 
-20% is dus 1/5 deel van 100%.";1;Standard;verified;;1/5;1/20;1/2;1/10
+20% is dus 1/5 deel van 100%.";1;Standard;verified;;1/10;1/20;1/2;1/5
 6579;94807;select;"Kies het juiste antwoord.
 1/100 = ...%";"100/100 is 100%.
 
@@ -124,7 +124,7 @@ Wat is meer?";"20% van 300 is 300 : 5 = 60.
 2/3 van 105 is dan 35 x 2 = 70.
 
 2/3 van 105 is dus meer dan 20% van 300!";3;Standard;verified;Vraag: 20% van 300 of 2/3 van 105? kan weg toch? Staat al in de afbeelding.;20% van 300;2/3 van 105
-6579;54613;select;"Kijk naar het plaatje. Mét korting kost de televisie 240 euro.
+6579;54613;select;"Kijk naar het plaatje. Met korting kost de televisie 240 euro.
 
 Hoeveel kostte de televisie eerst?";"Met 20% korting kost de televisie 240 euro.
 240 euro is dus 80%.
