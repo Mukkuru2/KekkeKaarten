@@ -7,14 +7,11 @@ using System.Threading.Tasks;
 
 namespace KekkeKaarten.GameObjects.MapObjects
 {
-    class GoldenStatue : MapObject
+    class GoldenStatueOff : MapObject
     {
-        private bool taken = false;
-        public GoldenStatue(Vector2 position) : base("Sprites/Map/statue")
+        public GoldenStatueOff(Vector2 position) : base("Sprites/Map/statue2")
         {
             this.position = position;
         }
-
-        public bool Taken { get => taken; set => taken = value; }
     }
 }

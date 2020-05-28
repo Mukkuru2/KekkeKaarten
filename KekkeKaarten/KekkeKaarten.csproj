@@ -73,6 +73,7 @@
     <Compile Include="GameObjects\MapObjects\Enemies\Harpy.cs" />
     <Compile Include="GameObjects\MapObjects\Enemies\Slime.cs" />
     <Compile Include="GameObjects\MapObjects\Floor.cs" />
+    <Compile Include="GameObjects\MapObjects\GoldenStatueOff.cs" />
     <Compile Include="GameObjects\MapObjects\Marshland.cs" />
     <Compile Include="GameObjects\MapObjects\GoldenStatue.cs" />
     <Compile Include="GameObjects\MapObjects\Player.cs" />
