@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,15 @@ namespace KekkeKaarten.GameState
         {
             this.Add(endPoints);
             endPoints.Text = "" + Points;
+        }
+        public override void HandleInput(InputHelper inputHelper)
+        {
+            base.HandleInput(inputHelper);
+            if (inputHelper.KeyPressed(Keys.Space))
+            {
+                GameEnvironment.GameStateManager.SwitchTo("StartState");
+                StartState.ResetGame = true;
+            }
         }
         public override void Update(GameTime gameTime)
         {
