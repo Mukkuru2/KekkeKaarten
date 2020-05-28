@@ -53,6 +53,10 @@ namespace KekkeKaarten.GameObjects
                 sprite = sprites[enemyID];
                 previousenemyID = enemyID;
             }
+            if(health <= 0)
+            {
+                GameEnvironment.GameStateManager.SwitchTo("Overworld");
+            }
     }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

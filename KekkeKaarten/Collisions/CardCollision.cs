@@ -141,7 +141,7 @@ namespace KekkeKaarten.Collisions
                 {
                     Hand.numberOfCards++;
                 }
-                
+                enemy.health -= 25;
                 
                 hand.ChangeCards();
                 
