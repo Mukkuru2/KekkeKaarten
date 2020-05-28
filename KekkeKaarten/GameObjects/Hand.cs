@@ -30,7 +30,7 @@ namespace KekkeKaarten.GameObjects
         int randomNext = GameEnvironment.Random.Next(0, 20);
 
         string rightanswer;
-        string wrongasnwer;
+        string wronganswer;
 
         Question question;
 
@@ -72,12 +72,12 @@ namespace KekkeKaarten.GameObjects
 
                 randomNext = GameEnvironment.Random.Next(0, 20);
 
-                if (rightanswer == wrongasnwer)
+                if (rightanswer == wronganswer)
                 {
                     randomNext = GameEnvironment.Random.Next(0, 20);
                 }
                 rightanswer = questionarray[NextAnswer].Correctanswer;
-                wrongasnwer = questionarray[randomNext].Correctanswer;
+                wronganswer = questionarray[randomNext].Correctanswer;
 
 
                 if (i == RightAnswer)
@@ -87,7 +87,7 @@ namespace KekkeKaarten.GameObjects
                 }
                 else
                 {
-                    Cards.Add(new Card(wrongasnwer, new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 500), false,i));
+                    Cards.Add(new Card(wronganswer, new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 500), false,i));
                 }
 
             }
