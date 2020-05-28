@@ -200,6 +200,18 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Map/boss.png
 
+#begin Sprites/Map/buddhaPreview_0.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Map/buddhaPreview_0.png
+
 #begin Sprites/Map/grass.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -307,6 +319,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/Map/statue.png
+
+#begin Sprites/Map/statue2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Map/statue2.png
 
 #begin Sprites/Map/swamp.png
 /importer:TextureImporter
