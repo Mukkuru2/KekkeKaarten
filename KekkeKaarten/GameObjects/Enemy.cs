@@ -55,7 +55,14 @@ namespace KekkeKaarten.GameObjects
             }
             if(health <= 0)
             {
-                GameEnvironment.GameStateManager.SwitchTo("Overworld");
+                if (enemyID == 3)
+                {
+                    GameEnvironment.GameStateManager.SwitchTo("Winstate");
+                }
+                else
+                {
+                    GameEnvironment.GameStateManager.SwitchTo("Overworld");
+                }
             }
     }
 
