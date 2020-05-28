@@ -17,6 +17,7 @@ namespace KekkeKaarten.GameObjects.MapObjects.Enemies
             health = 75;
             timeToKill = 12;
             enemyID = 0;
+           
         }
 
         public override void Move(Map map, Player player)
