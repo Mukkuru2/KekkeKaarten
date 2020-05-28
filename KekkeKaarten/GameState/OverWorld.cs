@@ -112,7 +112,7 @@ namespace KekkeKaarten.GameState
                     if (player.CollidesWith(enemy))
                     {
 
-                        GameEnvironment.GameStateManager.SwitchTo("PlayingState");
+                        
 
                         if (PlayingState.Enemy.enemyID != enemy.enemyID)
                         {
@@ -122,6 +122,7 @@ namespace KekkeKaarten.GameState
                             PlayingState.Enemy.enemyID = enemy.enemyID;
 
                         }
+                        GameEnvironment.GameStateManager.SwitchTo("PlayingState");
 
                         enemies.Remove(enemy);
                         break;

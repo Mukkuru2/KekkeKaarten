@@ -15,15 +15,17 @@ namespace KekkeKaarten.GameObjects
         public Vector2 returnPosition;
         public SpriteSheet[] sprites;
         public int health;
+        public int returnhp;
         public int damage;
         public int enemyID;
         public int previousenemyID;
 
-        public Enemy() : base("Sprites/enemy")
+        public Enemy() : base("Sprites/Map/slime")
         {
             position.X = (GameEnvironment.Screen.X - 300) - (sprite.Width / 2);
             position.Y = 300;
             returnPosition = position;
+            returnhp = health;
 
             this.Mirror = true;
             RunToPlayer();
@@ -62,6 +64,7 @@ namespace KekkeKaarten.GameObjects
                 else
                 {
                     GameEnvironment.GameStateManager.SwitchTo("Overworld");
+                    health = returnhp;
                 }
             }
     }

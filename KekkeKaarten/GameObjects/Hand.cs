@@ -33,7 +33,7 @@ namespace KekkeKaarten.GameObjects
         private int randomWrongAnswer;
         private int randomRightAnswer;
 
-        string[] answers = new string[7];
+        string[] answers = new string[100];
 
         int answerNumber = 0;
 
@@ -67,7 +67,7 @@ namespace KekkeKaarten.GameObjects
             {
                 
                 randomWrongAnswer = GameEnvironment.Random.Next(0, questionarray.Length);
-                for (int x = 0; x < numberOfCards; x++)
+                for (int x = 0; x < answerNumber; x++)
                 {
                     while(answers[x] == questionarray[randomWrongAnswer].Correctanswer)
                     {

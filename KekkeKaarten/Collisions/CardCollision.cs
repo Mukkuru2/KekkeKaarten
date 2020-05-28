@@ -18,6 +18,7 @@ namespace KekkeKaarten.Collisions
         public bool hold = false;
         public bool StopHolding = false; // i dont know why
         bool hit = false;
+        bool wronghit = false;
         
         MouseSprite mouse;
         Enemy enemy;
@@ -131,7 +132,7 @@ namespace KekkeKaarten.Collisions
                                 card.ChangeLocation();
                                 enemy.Position = enemy.returnPosition;
                                 int multiplier = 0;
-                                if (Difficulty =="1")
+                                if (Difficulty == "1")
                                 {
                                     multiplier = 1;
                                 }
@@ -155,6 +156,27 @@ namespace KekkeKaarten.Collisions
 
                             }
                         }
+                        if (!card.rightAnswer)
+                        {
+                            if (enemy.CollidesWith(cardTexture))
+                            {
+                                if(Hand.numberOfCards == 3)
+                                {
+                                    PlayerFight.hp -= enemy.damage;
+                                    
+
+                                } else
+                                {
+                                    wronghit = true;
+                                }
+                              
+                                enemy.Position = enemy.returnPosition;
+                                
+
+
+
+                            }
+                        }
                     }
 
                 }
@@ -175,6 +197,14 @@ namespace KekkeKaarten.Collisions
                 
                
                 hit = false;
+            }
+            if(wronghit)
+            {
+                
+                hand.DeleteCards();
+                Hand.numberOfCards--;
+                hand.ChangeCards();
+                wronghit = false;
             }
         }
     }
