@@ -10,17 +10,28 @@ namespace KekkeKaarten.GameObjects
     class Card : GameObjectList
     {
         public GameObjectList cardTextures = new GameObjectList();
+        public GameObjectList cardText = new GameObjectList();
+        public CardText text;
         public Vector2 ReturnLocation;
         public bool drag = false;
         public bool rightAnswer;
-        public Card(string nummer, Vector2 position, bool Rightanswer) : base()
+        public bool kill = false;
+        private int cardID;
+        public Card(string nummer, Vector2 position, bool Rightanswer, int id) : base()
         {
+          
+
             this.position = position;
-            ReturnLocation = position;
+      
             this.Add(cardTextures);
+            this.Add(cardText);
+
+            cardID = id;
             cardTextures.Add(new CardTexture(new Vector2(0, 0)));
-            this.Add(new CardText(nummer, new Vector2(0, 0)));
+            cardText.Add(text = new CardText(nummer, new Vector2(0, 0)));
             this.rightAnswer = Rightanswer;
+            ChangeLocation();
+            
         }
 
         public override void Update(GameTime gameTime)
@@ -28,5 +39,16 @@ namespace KekkeKaarten.GameObjects
             base.Update(gameTime);
 
         }
+
+        public void ChangeLocation()
+        {
+            ReturnLocation = new Vector2((GameEnvironment.Screen.X / Hand.numberOfCards) + (224 * cardID), 500);
+            
+            position = ReturnLocation;
+        }
+
+   
+
+      
     }
 }
