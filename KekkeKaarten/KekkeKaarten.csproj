@@ -119,10 +119,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Maps\mapdatanature.png" />
-    <Content Include="Content\Sprites\player.PNG" />
-    <Content Include="Content\Sprites\playerleft.png" />
-    <Content Include="Content\Sprites\playerright.png" />
-    <Content Include="Content\Sprites\playerup.PNG" />
     <Content Include="Content\Backgrounds\battlescreen.png" />
     <Content Include="Content\Backgrounds\endscreen.jpeg" />
     <Content Include="Content\Backgrounds\startscreen.png" />
