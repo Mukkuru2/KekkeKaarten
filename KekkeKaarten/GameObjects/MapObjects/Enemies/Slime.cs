@@ -13,6 +13,10 @@ namespace KekkeKaarten.GameObjects.MapObjects.Enemies
 
         public Slime(Vector2 positionOnGrid) : base("Sprites/Map/slime", positionOnGrid)
         {
+            damage = 5;
+            health = 75;
+            timeToKill = 12;
+            enemyID = 0;
         }
 
         public override void Move(Map map, Player player)

@@ -16,6 +16,7 @@ namespace KekkeKaarten.GameState
     {
         Player player = new Player();
         GameObjectList enemies;
+
         GameObjectList maps = StartState.Maps;
         Map currentMap;
 
@@ -42,7 +43,29 @@ namespace KekkeKaarten.GameState
         {
             base.Update(gameTime);
 
+            foreach (EnemyMap enemy in enemies.Children)
+            {
+                foreach (SpriteGameObject player in player.Children)
+                {
+                    if (player.CollidesWith(enemy))
+                    {
 
+                        GameEnvironment.GameStateManager.SwitchTo("PlayingState");
+                        
+                        if (PlayingState.Enemy.enemyID != enemy.enemyID)
+                        {
+                            PlayingState.Enemy.timeToKill = enemy.timeToKill;
+                            PlayingState.Enemy.damage = enemy.damage;
+                            PlayingState.Enemy.health = enemy.health;
+                            PlayingState.Enemy.enemyID = enemy.enemyID;
+                            
+                        }
+                        
+                        break;
+                    }
+                }
+
+            }
             if (enemyTurn == true)
             {
                 foreach (EnemyMap enemy in enemies.Children)

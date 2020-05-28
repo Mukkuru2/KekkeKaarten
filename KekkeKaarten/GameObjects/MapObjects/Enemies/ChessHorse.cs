@@ -16,6 +16,10 @@ namespace KekkeKaarten.GameObjects.MapObjects.Enemies
         public bool CanMove { get => canMove; set => canMove = value; }
         public ChessHorse(Vector2 positionOnGrid) : base("Sprites/Map/horse", positionOnGrid)
         {
+            damage = 3;
+            health = 125;
+            timeToKill = 10;
+            enemyID = 2;
         }
 
         public override void Move(Map map, Player player)

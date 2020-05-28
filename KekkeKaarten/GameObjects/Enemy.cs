@@ -9,11 +9,16 @@ using System.Threading.Tasks;
 
 namespace KekkeKaarten.GameObjects
 {
-    class Enemy : RotatingSpriteGameObject
+    class Enemy : SpriteGameObject
     {
-        private int timeToKill = 5;
+        public  int timeToKill = 5;
         public Vector2 returnPosition;
-       
+        public SpriteSheet[] sprites;
+        public  int health;     
+        public int damage;
+        public int enemyID;
+        public int previousenemyID;
+
         public Enemy() : base("Sprites/enemy")
         {
             position.X = (GameEnvironment.Screen.X - 300) - (sprite.Width / 2);
@@ -22,7 +27,10 @@ namespace KekkeKaarten.GameObjects
 
             this.Mirror = true;
             RunToPlayer();
-         
+            sprites = new SpriteSheet[3];
+            sprites[0] = new SpriteSheet("Sprites/Map/slime");
+            sprites[1] = new SpriteSheet("Sprites/Map/harpy");
+            sprites[2] = new SpriteSheet("Sprites/Map/horse");
         }
 
         public override void Reset()
@@ -35,7 +43,15 @@ namespace KekkeKaarten.GameObjects
             velocity.X = (300 - position.X) / timeToKill;
         }
 
-       
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+            if (previousenemyID != enemyID)
+            {
+                sprite = sprites[enemyID];
+                previousenemyID = enemyID;
+            }
+    }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {

@@ -17,6 +17,10 @@ namespace KekkeKaarten.GameObjects.MapObjects.Enemies
 
         public Harpy(Vector2 positionOnGrid) : base("Sprites/Map/harpy", positionOnGrid)
         {
+            damage = 7;
+            health = 50;
+            timeToKill = 12;
+            enemyID = 1;
         }
 
         public override void Move(Map map, Player player)
