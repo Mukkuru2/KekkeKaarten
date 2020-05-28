@@ -42,8 +42,24 @@ namespace KekkeKaarten.GameObjects
 
         public void ChangeLocation()
         {
-            ReturnLocation = new Vector2((GameEnvironment.Screen.X / Hand.numberOfCards) + (224 * cardID), 500);
-            
+            if (Hand.numberOfCards == 3)
+            {
+                ReturnLocation = new Vector2((GameEnvironment.Screen.X / Hand.numberOfCards) + (224 * cardID), 500);
+            }
+            else if (Hand.numberOfCards == 4)
+            {
+                ReturnLocation = new Vector2((584) + (224 * cardID), 500);
+            }
+            else if (Hand.numberOfCards == 5)
+            {
+                ReturnLocation = new Vector2((GameEnvironment.Screen.X / Hand.numberOfCards) + (224 * cardID), 500);
+            }
+            else
+            {
+                ReturnLocation = new Vector2((GameEnvironment.Screen.X / Hand.numberOfCards) + (224 * cardID), 500);
+            }
+
+
             position = ReturnLocation;
         }
 
