@@ -47,7 +47,7 @@ namespace KekkeKaarten.Collisions
 
             if(player.CollidesWith(enemy))
             {
-                player.hp--;
+                PlayerFight.HP--;
                 enemy.Position = enemy.returnPosition;
             }
             foreach (Card card in Hand.Cards.Children)
