@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using KekkeKaarten.CSVhandling;
+using KekkeKaarten.GameState;
 
 namespace KekkeKaarten.Collisions
 {
@@ -16,6 +18,7 @@ namespace KekkeKaarten.Collisions
         public bool hold = false;
         public bool StopHolding = false; // i dont know why
         bool hit = false;
+        
         MouseSprite mouse;
         Enemy enemy;
         Hand hand;
@@ -125,6 +128,7 @@ namespace KekkeKaarten.Collisions
                                 hit = true;
                                 card.ChangeLocation();
                                 enemy.Position = enemy.returnPosition;
+                                WinState.Points += 25;
 
                             }
                         }

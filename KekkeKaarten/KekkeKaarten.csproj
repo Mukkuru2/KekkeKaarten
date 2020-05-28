@@ -86,6 +86,7 @@
     <Compile Include="GameState\PlayingState.cs" />
     <Compile Include="GameState\StartState.cs" />
     <Compile Include="GameObjects\CardTexture.cs" />
+    <Compile Include="GameState\WinState.cs" />
     <Compile Include="KekkeKaarten.cs" />
     <Compile Include="GameManagement\AnimatedGameObject.cs" />
     <Compile Include="GameManagement\Animation.cs" />
