@@ -33,7 +33,7 @@ namespace KekkeKaarten.GameState
         public override void Reset()
         {
             base.Reset();
-            SetMap("BossRoom");
+            SetMap("Overworld");
         }
         public override void HandleInput(InputHelper inputHelper)
         {
