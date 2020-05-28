@@ -14,7 +14,7 @@ namespace KekkeKaarten.GameObjects
         public  int timeToKill = 5;
         public Vector2 returnPosition;
         public SpriteSheet[] sprites;
-        public  int health;     
+        public int health;
         public int damage;
         public int enemyID;
         public int previousenemyID;
@@ -48,6 +48,7 @@ namespace KekkeKaarten.GameObjects
             base.Update(gameTime);
             if (previousenemyID != enemyID)
             {
+                RunToPlayer();
                 sprite = sprites[enemyID];
                 previousenemyID = enemyID;
             }

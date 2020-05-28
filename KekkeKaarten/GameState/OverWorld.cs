@@ -24,12 +24,18 @@ namespace KekkeKaarten.GameState
 
         public OverWorld() : base()
         {
-            SetMap("Overworld");
+            Reset();
             this.Add(enemies);
             this.Add(player);
 
             //TODO add enemy count
 
+        }
+
+        public override void Reset()
+        {
+            base.Reset();
+            SetMap("Overworld");
         }
         public override void HandleInput(InputHelper inputHelper)
         {
