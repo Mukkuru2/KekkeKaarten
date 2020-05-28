@@ -19,7 +19,7 @@ namespace KekkeKaarten.GameObjects
         public int enemyID;
         public int previousenemyID;
 
-        public Enemy() : base("Sprites/enemy")
+        public Enemy() : base("Sprites/Map/slime")
         {
             position.X = (GameEnvironment.Screen.X - 300) - (sprite.Width / 2);
             position.Y = 300;

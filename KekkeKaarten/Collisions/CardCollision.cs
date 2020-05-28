@@ -125,12 +125,12 @@ namespace KekkeKaarten.Collisions
                             {
                                 //enemy.Position = new Vector2(0, -1000);
                                 card.Position = card.ReturnLocation;
-                                Console.WriteLine(cardTexture.Position);
+                                
                                 card.drag = false;
                                 hit = true;
                                 card.ChangeLocation();
                                 enemy.Position = enemy.returnPosition;
-                                int multiplier = 0;
+                                int multiplier = 1;
                                 if (Difficulty =="1")
                                 {
                                     multiplier = 1;
@@ -152,6 +152,7 @@ namespace KekkeKaarten.Collisions
                                     multiplier = 5;
                                 }
                                 WinState.Points += multiplier * 10;
+                                Console.WriteLine(WinState.Points);
 
                             }
                         }
