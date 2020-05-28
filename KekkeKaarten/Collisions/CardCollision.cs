@@ -136,8 +136,13 @@ namespace KekkeKaarten.Collisions
             }
             if(hit)
             {
-                Hand.numberOfCards++;
                 hand.DeleteCards();
+                if(Hand.numberOfCards < 6)
+                {
+                    Hand.numberOfCards++;
+                }
+                
+                
                 hand.ChangeCards();
                 
                 

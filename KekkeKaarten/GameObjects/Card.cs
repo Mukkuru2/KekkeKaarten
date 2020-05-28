@@ -52,7 +52,7 @@ namespace KekkeKaarten.GameObjects
             }
             else if (Hand.numberOfCards == 5)
             {
-                ReturnLocation = new Vector2((GameEnvironment.Screen.X / Hand.numberOfCards) + (224 * cardID), 500);
+                ReturnLocation = new Vector2(350 + (224 * cardID), 500);
             }
             else
             {
