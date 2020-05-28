@@ -54,7 +54,7 @@ namespace KekkeKaarten.GameObjects
                             playerSpawn = new Vector2(xMap, yMap);
                             break;
                         case 3:
-                            Add(new GoldenStatue("Sprites/Map/statue", position), xMap, yMap);
+                            Add(new GoldenStatue(position), xMap, yMap);
                             break;
                         case 4:
                             Add(new BossRoomTeleport("Sprites/Map/teleporter", position), xMap, yMap);
@@ -93,6 +93,21 @@ namespace KekkeKaarten.GameObjects
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
+            for (int yMap = 0; yMap < map.GetLength(0); yMap++)
+            {
+                for (int xMap = 0; xMap < map.GetLength(1); xMap++)
+                {
+                    if (grid[xMap, yMap] is GoldenStatue)
+                    {
+
+                        GoldenStatue statue = (GoldenStatue)grid[xMap, yMap];
+                        if (statue.Taken)
+                        {
+                            Add(new GoldenStatueOff(statue.Position), xMap, yMap);
+                        }
+                    }
+                }
+            }
         }
     }
 }
