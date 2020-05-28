@@ -28,8 +28,6 @@ namespace KekkeKaarten.GameState
             this.Add(enemies);
             this.Add(player);
 
-            //TODO add enemy count
-
         }
 
         public override void Reset()
@@ -90,10 +88,10 @@ namespace KekkeKaarten.GameState
                     }
                     if (currentTile is BossRoomTeleport)
                     {
-                        if (player.CanFightBoss)
-                        {
+                        //if (player.CanFightBoss)
+                        //{
                             SetMap("BossRoom");
-                        }
+                        //}
                     }
                 }
                 else

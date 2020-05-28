@@ -27,10 +27,11 @@ namespace KekkeKaarten.GameObjects
 
             this.Mirror = true;
             RunToPlayer();
-            sprites = new SpriteSheet[3];
+            sprites = new SpriteSheet[4];
             sprites[0] = new SpriteSheet("Sprites/Map/slime");
             sprites[1] = new SpriteSheet("Sprites/Map/harpy");
             sprites[2] = new SpriteSheet("Sprites/Map/horse");
+            sprites[3] = new SpriteSheet("Sprites/Map/boss");
         }
 
         public override void Reset()

@@ -67,6 +67,7 @@
     <Compile Include="GameObjects\HealthBar.cs" />
     <Compile Include="GameObjects\Map.cs" />
     <Compile Include="GameObjects\MapObjects\BossRoomTeleport.cs" />
+    <Compile Include="GameObjects\MapObjects\Enemies\Boss.cs" />
     <Compile Include="GameObjects\MapObjects\Enemies\ChessHorse.cs" />
     <Compile Include="GameObjects\MapObjects\Enemies\EnemyMap.cs" />
     <Compile Include="GameObjects\MapObjects\Enemies\Harpy.cs" />

@@ -77,24 +77,25 @@
       <FileName>GameManagement\SpriteGameObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.ChessHorse">
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.Boss">
     <Position X="13.25" Y="8.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GameObjects\MapObjects\Enemies\ChessHorse.cs</FileName>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MapObjects\Enemies\Boss.cs</FileName>
+      <NewMemberFileName>GameObjects\MapObjects\Enemies\ChessHorse.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.EnemyMap">
     <Position X="14" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAIAAAACAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAQAAAIAAgAAAAAAAAAAAAKAAAACAAAAAAAAAAAg=</HashCode>
       <FileName>GameObjects\MapObjects\Enemies\EnemyMap.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.Harpy">
     <Position X="15.5" Y="8.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAACAAAIQgAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\MapObjects\Enemies\Harpy.cs</FileName>
     </TypeIdentifier>
   </Class>

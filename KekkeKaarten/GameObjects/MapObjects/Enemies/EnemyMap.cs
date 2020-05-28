@@ -14,7 +14,7 @@ namespace KekkeKaarten.GameObjects.MapObjects.Enemies
         public int damage;
         public int timeToKill;
         public int enemyID;
-        public EnemyMap(string assetName, Vector2 positionOnGrid) : base(assetName)
+        public EnemyMap(string assetName, Vector2 positionOnGrid) : base(assetName, 1)
         {
             this.locationOnGrid = positionOnGrid;
         }
