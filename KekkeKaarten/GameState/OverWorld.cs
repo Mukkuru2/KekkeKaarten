@@ -104,8 +104,9 @@ namespace KekkeKaarten.GameState
         }
         private void playerEnemyColision()
         {
-            foreach (EnemyMap enemy in enemies.Children)
+            for (int i = 0; i < enemies.Children.Count; i++)
             {
+                EnemyMap enemy = (EnemyMap)enemies.Children[i];
                 foreach (SpriteGameObject player in player.Children)
                 {
                     if (player.CollidesWith(enemy))
@@ -122,10 +123,9 @@ namespace KekkeKaarten.GameState
 
                         }
 
-                        this.Remove(enemy);
-
+                        enemies.Remove(enemy);
                         break;
-                    }
+                    } 
                 }
             }
         }
