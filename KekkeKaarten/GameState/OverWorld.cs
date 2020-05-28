@@ -1,6 +1,7 @@
 ﻿using KekkeKaarten.GameManagement.MapLoading;
 using KekkeKaarten.GameObjects;
 using KekkeKaarten.GameObjects.MapObjects;
+using KekkeKaarten.GameObjects.MapObjects.Enemies;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -14,23 +15,19 @@ namespace KekkeKaarten.GameState
     class OverWorld : GameObjectList
     {
         Player player = new Player();
+        GameObjectList enemies;
         GameObjectList maps = StartState.Maps;
         Map currentMap;
 
-        int currentMove, enemyTotal = 0;
+        private bool enemyTurn = false;
 
         public OverWorld() : base()
         {
             SetMap("Overworld");
+            this.Add(enemies);
             this.Add(player);
 
-            foreach (GameObject obj in children)
-            {
-                if (obj is Player || obj is Enemy)
-                {
-                    enemyTotal++;
-                }
-            }
+            //TODO add enemy count
 
         }
         public override void HandleInput(InputHelper inputHelper)
@@ -45,39 +42,32 @@ namespace KekkeKaarten.GameState
         {
             base.Update(gameTime);
 
-            int movementCounter = 0;
-            bool canMove = true;
 
-            foreach (GameObject obj in children)
+            if (enemyTurn == true)
             {
-                if (obj is Player || obj is Enemy)
+                foreach (EnemyMap enemy in enemies.Children)
                 {
-                    if (movementCounter == currentMove && canMove == true)
-                    {
-                        canMove = false;
-                        currentMove++;
-                    }
-                    movementCounter++;
+                    if (enemy.Position.X - enemy.Sprite.Width > 0
+                        && enemy.Position.X - enemy.Sprite.Width < GameEnvironment.Screen.X
+                        && enemy.Position.Y - enemy.Sprite.Height > 0
+                        && enemy.Position.Y - enemy.Sprite.Height < GameEnvironment.Screen.X)
 
+                    enemy.Move(currentMap, player);
+                    enemy.Position = currentMap.Objects[(int)enemy.LocationOnGrid.X, (int)enemy.LocationOnGrid.Y].GlobalPosition;
                 }
-                else
-                {
-                    obj.Update(gameTime);
-                }
-            }
-            if (currentMove == enemyTotal)
-            {
-                currentMove = 0;
+                enemyTurn = false;
             }
 
-            if (!(player.lastLocationOnGrid == player.locationOnGrid))
+            if (!(player.LastLocationOnGrid == player.LocationOnGrid))
             {
 
-                MapObject currentTile = (MapObject)currentMap.Objects[(int)(player.locationOnGrid.X), (int)(player.locationOnGrid.Y)];
+                MapObject currentTile = (MapObject)currentMap.Objects[(int)(player.LocationOnGrid.X), (int)(player.LocationOnGrid.Y)];
                 if (!currentTile.IsSolid)
                 {
                     player.Position = currentTile.GlobalPosition;
-                    player.lastLocationOnGrid = player.locationOnGrid;
+                    player.LastLocationOnGrid = player.LocationOnGrid;
+
+                    enemyTurn = true;
 
                     if (currentTile is GoldenStatue)
                     {
@@ -90,7 +80,7 @@ namespace KekkeKaarten.GameState
                 }
                 else
                 {
-                    player.locationOnGrid = player.lastLocationOnGrid;
+                    player.LocationOnGrid = player.LastLocationOnGrid;
                 }
                 CenterMap();
 
@@ -117,16 +107,20 @@ namespace KekkeKaarten.GameState
                     break;
 
             }
-            player.locationOnGrid = currentMap.PlayerSpawn;
+
+            player.LocationOnGrid = currentMap.PlayerSpawn;
             FullCenterMap();
-            player.Position = currentMap.Objects[(int)(player.locationOnGrid.X), (int)(player.locationOnGrid.Y)].GlobalPosition;
-            player.lastLocationOnGrid = player.locationOnGrid;
+            player.Position = currentMap.Objects[(int)(player.LocationOnGrid.X), (int)(player.LocationOnGrid.Y)].GlobalPosition;
+            player.LastLocationOnGrid = player.LocationOnGrid;
+
+            enemies = currentMap.Enemies;
+
             this.Add(currentMap);
         }
 
         private void FullCenterMap()
         {
-            currentMap.Position = new Vector2(-(player.locationOnGrid.X) * currentMap.CellWidth + GameEnvironment.Screen.X / 2, -(player.locationOnGrid.Y) * currentMap.CellHeight + GameEnvironment.Screen.Y / 2);
+            currentMap.Position = new Vector2(-(player.LocationOnGrid.X) * currentMap.CellWidth + GameEnvironment.Screen.X / 2, -(player.LocationOnGrid.Y) * currentMap.CellHeight + GameEnvironment.Screen.Y / 2);
         }
 
         private void CenterMap()

@@ -25,7 +25,6 @@ namespace KekkeKaarten.GameObjects
          
         }
 
-
         public override void Reset()
         {
             base.Reset();
