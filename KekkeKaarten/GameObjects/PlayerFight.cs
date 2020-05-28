@@ -10,7 +10,7 @@ namespace KekkeKaarten
     class PlayerFight : SpriteGameObject
     {
         public int hp = 1;
-        public PlayerFight(Vector2 spawnposition) : base("Sprites/player")
+        public PlayerFight(Vector2 spawnposition) : base("Sprites/Map/player")
         {
             Position = spawnposition;
         }
