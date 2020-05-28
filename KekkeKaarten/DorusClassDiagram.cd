@@ -14,13 +14,6 @@
       <FileName>GameObjects\MapObjects\BossRoomTeleport.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KekkeKaarten.GameObjects.MapObjects.Floor">
-    <Position X="7.5" Y="10.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GameObjects\MapObjects\Floor.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="KekkeKaarten.GameObjects.MapObjects.GoldenStatueOff">
     <Position X="11" Y="10.5" Width="1.5" />
     <TypeIdentifier>
