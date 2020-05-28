@@ -9,10 +9,10 @@ namespace KekkeKaarten.GameObjects.MapObjects
     {
         private readonly Dictionary<Keys, Vector2> MovementDict = new Dictionary<Keys, Vector2>();
 
-        SpriteGameObject up = new SpriteGameObject("Sprites/playerup");
-        SpriteGameObject down = new SpriteGameObject("Sprites/player");
-        SpriteGameObject left = new SpriteGameObject("Sprites/playerleft");
-        SpriteGameObject right = new SpriteGameObject("Sprites/playerright");
+        SpriteGameObject up = new SpriteGameObject("Sprites/Map/playerup");
+        SpriteGameObject down = new SpriteGameObject("Sprites/Map/player");
+        SpriteGameObject left = new SpriteGameObject("Sprites/Map/playerleft");
+        SpriteGameObject right = new SpriteGameObject("Sprites/Map/playerright");
         
         private int walkTimer = 10;
         private int walk = 10;

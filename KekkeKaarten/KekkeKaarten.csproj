@@ -78,7 +78,7 @@
     <Compile Include="GameObjects\MapObjects\ToxicFloor.cs" />
     <Compile Include="GameObjects\MapObjects\Wall.cs" />
     <Compile Include="GameObjects\MouseSprite.cs" />
-    <Compile Include="GameObjects\Player.cs" />
+    <Compile Include="GameObjects\PlayerFight.cs" />
     <Compile Include="GameState\GameOverState.cs" />
     <Compile Include="GameState\OverWorld.cs" />
     <Compile Include="GameState\PlayingState.cs" />
@@ -116,10 +116,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Maps\mapdatanature.png" />
-    <Content Include="Content\Sprites\player.PNG" />
-    <Content Include="Content\Sprites\playerleft.png" />
-    <Content Include="Content\Sprites\playerright.png" />
-    <Content Include="Content\Sprites\playerup.PNG" />
     <Content Include="Content\Backgrounds\battlescreen.png" />
     <Content Include="Content\Backgrounds\endscreen.jpeg" />
     <Content Include="Content\Backgrounds\startscreen.png" />
@@ -133,7 +129,18 @@
     <Content Include="Content\Sprites\cursor.png" />
     <Content Include="Content\Sprites\enemy.png" />
     <Content Include="Content\Sprites\health.png" />
-    <Content Include="Content\Sprites\Map\floor.png" />
+    <Content Include="Content\Sprites\Map\grass.png" />
+    <Content Include="Content\Sprites\Map\harpy.png" />
+    <Content Include="Content\Sprites\Map\horse.png" />
+    <Content Include="Content\Sprites\Map\player.PNG" />
+    <Content Include="Content\Sprites\Map\playerleft.png" />
+    <Content Include="Content\Sprites\Map\playerright.png" />
+    <Content Include="Content\Sprites\Map\playerup.PNG" />
+    <Content Include="Content\Sprites\Map\slime.png" />
+    <Content Include="Content\Sprites\Map\statue.png" />
+    <Content Include="Content\Sprites\Map\swamp.png" />
+    <Content Include="Content\Sprites\Map\teleporter.png" />
+    <Content Include="Content\Sprites\Map\toxic.png" />
     <Content Include="Content\Sprites\Map\wall.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
