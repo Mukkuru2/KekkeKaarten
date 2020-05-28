@@ -88,10 +88,10 @@ namespace KekkeKaarten.GameState
                     }
                     if (currentTile is BossRoomTeleport)
                     {
-                        //if (player.CanFightBoss)
-                        //{
+                        if (player.CanFightBoss)
+                        {
                             SetMap("BossRoom");
-                        //}
+                        }
                     }
                 }
                 else

@@ -7,11 +7,17 @@ using System.Threading.Tasks;
 
 namespace KekkeKaarten.GameObjects.MapObjects
 {
-    class BossRoomTeleport : MapObject
+    class BossRoomTeleport : GameObjectList
     {
-        public BossRoomTeleport(String asset, Vector2 position) : base(asset)
+        SpriteGameObject cardNotCollected = new SpriteGameObject("Sprites/Map/statue");
+        SpriteGameObject cardCollected = new SpriteGameObject("Sprites/Map/statue2");
+
+        public BossRoomTeleport(String asset, Vector2 position) : base()
         {
             this.position = position;
+            this.Add(cardNotCollected);
+            this.Add(cardNotCollected);
+
         }
     }
 }
