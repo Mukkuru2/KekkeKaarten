@@ -14,13 +14,19 @@ namespace KekkeKaarten.Collisions
     {
         public bool drag = false;
         public bool hold = false;
+        public bool StopHolding = false; // i dont know why
+        bool hit = false;
         MouseSprite mouse;
         Enemy enemy;
-        public CardCollision(MouseSprite mouse, Enemy enemy)
+        Hand hand;
+        PlayerFight player;
+        public CardCollision(MouseSprite mouse, Enemy enemy, Hand hand, PlayerFight player)
         {
 
             this.mouse = mouse;
             this.enemy = enemy;
+            this.hand = hand;
+            this.player = player;
         }
 
         public override void HandleInput(InputHelper inputHelper)
@@ -32,10 +38,18 @@ namespace KekkeKaarten.Collisions
                 drag = true;
             }
             else { drag = false; }
+
+            
         }
 
         public override void Update(GameTime gameTime)
         {
+
+            if(player.CollidesWith(enemy))
+            {
+                player.hp--;
+                enemy.Position = enemy.returnPosition;
+            }
             foreach (Card card in Hand.Cards.Children)
             {
                 foreach (CardTexture cardTexture in card.cardTextures.Children)
@@ -90,8 +104,13 @@ namespace KekkeKaarten.Collisions
                     if (card.drag)
                     {
                         card.Position = mouse.Position - new Vector2(40, 100);
+                      
                     }
-                    else card.Position = card.ReturnLocation;
+                    else 
+                    {
+                        card.Position = card.ReturnLocation;
+
+                    }
 
                     if (card.drag)
                     {
@@ -99,11 +118,12 @@ namespace KekkeKaarten.Collisions
                         {
                             if (enemy.CollidesWith(cardTexture))
                             {
-                                enemy.Position = new Vector2(0, -1000);
+                                //enemy.Position = new Vector2(0, -1000);
                                 card.Position = card.ReturnLocation;
                                 Console.WriteLine(cardTexture.Position);
                                 card.drag = false;
-                                Hand.addcard = true;
+                                hit = true;
+                                card.ChangeLocation();
 
                             }
                         }
@@ -113,7 +133,16 @@ namespace KekkeKaarten.Collisions
 
 
             }
-
+            if(hit)
+            {
+                Hand.numberOfCards++;
+                hand.DeleteCards();
+                hand.ChangeCards();
+                
+                
+               
+                hit = false;
+            }
         }
     }
 }

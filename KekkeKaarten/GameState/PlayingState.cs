@@ -13,38 +13,28 @@ namespace KekkeKaarten
 {
     class PlayingState : GameObjectList
     {
-     /*   public static GameObjectList Cards = new GameObjectList();*/
+  
         public MouseSprite mouseSprite = new MouseSprite();
-    /*    public string[] numbers = new string[] { "1", "3", "4" };*/
+    
         public CardCollision cardcollision;
-        /*public static bool addcard = false;*/
-    /*    bool right = false;*/
+
         Enemy enemy;
         Hand hand;
+        PlayerFight player;
         
         public PlayingState()
         {
             this.Add(new SpriteGameObject("Backgrounds/battlescreen"));
-
-            this.Add(enemy = new Enemy());
+            this.Add(player = new PlayerFight(new Vector2(300,300)));
+            this.Add(enemy = new Enemy());;
             this.Add(new HealthBar(new Vector2(166, 65)));
 
             this.Add(hand = new Hand());
 
-     /*       for (int i = 0; i < 3; i++)
-            {
-                if (!right)
-                {
-                    Cards.Add(new Card(numbers[i], new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 500), true));
-                    right = true;
-                }
-                else Cards.Add(new Card(numbers[i], new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 500), false));
 
-
-            }*/
 
             this.Add(mouseSprite);
-            cardcollision = new CardCollision(mouseSprite, enemy);
+            cardcollision = new CardCollision(mouseSprite, enemy, hand, player);
             this.Add(cardcollision);
         }
         public override void HandleInput(InputHelper inputHelper)
@@ -63,13 +53,10 @@ namespace KekkeKaarten
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-     /*       if (addcard)
-            {
-                Cards.Add(new Card("4", new Vector2(GameEnvironment.Screen.X / 3 + (200 * 3), 500), false));
-                addcard = false;
-            }*/
+            
 
         }
+
         public static void SetCollisionMask(CardTexture card) {
             Color[] colorData = new Color[card.Sprite.Sprite.Width * card.Sprite.Sprite.Height];
             bool[] tempCollisionMask = new bool[(int)(card.Sprite.Sprite.Width * card.Sprite.Sprite.Height * Math.Pow(card.CardScalar, 2))];
