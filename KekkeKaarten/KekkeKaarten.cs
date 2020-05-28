@@ -26,6 +26,7 @@ namespace KekkeKaarten
             GameStateManager.AddGameState("StartState", new StartState());
             GameStateManager.AddGameState("GameOverState", new GameOverState());
             GameStateManager.AddGameState("Overworld", new OverWorld());
+            GameStateManager.AddGameState("Winstate", new WinState());
 
 
             GameStateManager.SwitchTo("StartState");

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using KekkeKaarten.Collisions;
 using KekkeKaarten.CSVhandling;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -59,7 +60,7 @@ namespace KekkeKaarten.GameObjects
 
             correctanswer = questionarray[randomRightAnswer].Correctanswer;           
             question.Text = questionarray[randomRightAnswer].Question;
-
+            CardCollision.Difficulty= questionarray[randomRightAnswer].Difficulty;
             answers[answerNumber] = correctanswer;
             answerNumber++;
 

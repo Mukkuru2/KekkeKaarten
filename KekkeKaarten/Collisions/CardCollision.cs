@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using KekkeKaarten.CSVhandling;
+using KekkeKaarten.GameState;
 
 namespace KekkeKaarten.Collisions
 {
@@ -16,10 +18,13 @@ namespace KekkeKaarten.Collisions
         public bool hold = false;
         public bool StopHolding = false; // i dont know why
         bool hit = false;
+        
         MouseSprite mouse;
         Enemy enemy;
         Hand hand;
         PlayerFight player;
+        private static string difficulty;
+        public static string Difficulty { get => difficulty; set => difficulty = value; }
         public CardCollision(MouseSprite mouse, Enemy enemy, Hand hand, PlayerFight player)
         {
 
@@ -125,6 +130,28 @@ namespace KekkeKaarten.Collisions
                                 hit = true;
                                 card.ChangeLocation();
                                 enemy.Position = enemy.returnPosition;
+                                int multiplier = 0;
+                                if (Difficulty =="1")
+                                {
+                                    multiplier = 1;
+                                }
+                                if (Difficulty == "2")
+                                {
+                                    multiplier = 2;
+                                }
+                                if (Difficulty == "3")
+                                {
+                                    multiplier = 3;
+                                }
+                                if (Difficulty == "4")
+                                {
+                                    multiplier = 4;
+                                }
+                                if (Difficulty == "5")
+                                {
+                                    multiplier = 5;
+                                }
+                                WinState.Points += multiplier * 10;
 
                             }
                         }
