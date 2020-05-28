@@ -30,7 +30,7 @@ namespace KekkeKaarten
         {
             LoadMaps();
             base.Reset();
-            PlayerFight.HP = 1;
+            PlayerFight.HP = 100;
         }
         public override void HandleInput(InputHelper inputHelper)
         {
