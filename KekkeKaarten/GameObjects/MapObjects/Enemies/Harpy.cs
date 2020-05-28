@@ -11,6 +11,8 @@ namespace KekkeKaarten.GameObjects.MapObjects.Enemies
     {
         private static readonly Vector2[] PossibleMoves = GetMoves();
 
+       
+
         public Harpy(Vector2 positionOnGrid) : base("Sprites/Map/harpy", positionOnGrid)
         {
             damage = 7;

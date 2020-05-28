@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +10,7 @@ namespace KekkeKaarten.GameObjects.MapObjects
 {
     class Floor : MapObject
     {
+
         public Floor(String asset, Vector2 position) : base(asset)
         {
             this.position = position;

@@ -1,4 +1,4 @@
-﻿using KekkeKaarten.GameManagement.MapLoading;
+﻿        using KekkeKaarten.GameManagement.MapLoading;
 using KekkeKaarten.GameObjects;
 using KekkeKaarten.GameObjects.MapObjects;
 using KekkeKaarten.GameObjects.MapObjects.Enemies;
@@ -37,7 +37,6 @@ namespace KekkeKaarten.GameState
             if (inputHelper.KeyPressed(Keys.Space))
             {
                 GameEnvironment.GameStateManager.SwitchTo("PlayingState");
-
             }
         }
         public override void Update(GameTime gameTime)
@@ -75,12 +74,12 @@ namespace KekkeKaarten.GameState
                         && enemy.Position.X - enemy.Sprite.Width < GameEnvironment.Screen.X
                         && enemy.Position.Y - enemy.Sprite.Height > 0
                         && enemy.Position.Y - enemy.Sprite.Height < GameEnvironment.Screen.X)
-
+                    {
                         enemy.Move(currentMap, player);
-                    enemy.Position = currentMap.Objects[(int)enemy.LocationOnGrid.X, (int)enemy.LocationOnGrid.Y].GlobalPosition;
+                        enemy.Position = currentMap.Objects[(int)enemy.LocationOnGrid.X, (int)enemy.LocationOnGrid.Y].GlobalPosition;
+                    }
                 }
                 enemyTurn = false;
-
             }
 
             if (!(player.LastLocationOnGrid == player.LocationOnGrid))
@@ -96,11 +95,19 @@ namespace KekkeKaarten.GameState
 
                     if (currentTile is GoldenStatue)
                     {
-                        //set bool taken for that specific statue to true, add +1 golden card to player
+                        player.CardStatuesTaken++;
+                        if (player.CardStatuesTaken >= 3)
+                        {
+                            player.CardStatuesTaken = 0;
+                            player.CanFightBoss = true;
+                        }
                     }
                     if (currentTile is BossRoomTeleport)
                     {
-                        SetMap("BossRoom");
+                        if (player.CanFightBoss)
+                        {
+                            SetMap("BossRoom");
+                        }
                     }
                 }
                 else
@@ -108,10 +115,7 @@ namespace KekkeKaarten.GameState
                     player.LocationOnGrid = player.LastLocationOnGrid;
                 }
                 CenterMap();
-
             }
-
-
         }
 
         private void SetMap(String id)
@@ -139,7 +143,6 @@ namespace KekkeKaarten.GameState
             player.LastLocationOnGrid = player.LocationOnGrid;
 
             enemies = currentMap.Enemies;
-
             this.Add(currentMap);
         }
 

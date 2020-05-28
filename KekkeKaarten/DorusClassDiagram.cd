@@ -77,5 +77,54 @@
       <FileName>GameManagement\SpriteGameObject.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.ChessHorse">
+    <Position X="13.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MapObjects\Enemies\ChessHorse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.EnemyMap">
+    <Position X="14" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAIAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MapObjects\Enemies\EnemyMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.Harpy">
+    <Position X="15.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MapObjects\Enemies\Harpy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.Slime">
+    <Position X="13.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MapObjects\Enemies\Slime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameManagement.MapLoading.LoadMap">
+    <Position X="16" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameManagement\MapLoading\LoadMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.Map">
+    <Position X="18.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAEAAAAAAABAAABAAAAAAAAAEAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameObjectGrid">
+    <Position X="18.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAACAAAIABkBAAAAAIAAAACAAAAEAAAAAwAgAAEA=</HashCode>
+      <FileName>GameManagement\GameObjectGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
