@@ -60,7 +60,7 @@ namespace KekkeKaarten.GameObjects
 
             correctanswer = questionarray[randomRightAnswer].Correctanswer;           
             question.Text = questionarray[randomRightAnswer].Question;
-
+            CardCollision.Difficulty= questionarray[randomRightAnswer].Difficulty;
             answers[answerNumber] = correctanswer;
             answerNumber++;
 
