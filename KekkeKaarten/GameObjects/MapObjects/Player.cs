@@ -18,12 +18,14 @@ namespace KekkeKaarten.GameObjects.MapObjects
         private int walk = 10;
 
         private int cardStatuesTaken = 0;
+        private bool canFightBoss = false;
 
         private Vector2 locationOnGrid, lastLocationOnGrid;
 
         public int CardStatuesTaken { get => cardStatuesTaken; set => cardStatuesTaken = value; }
         public Vector2 LocationOnGrid { get => locationOnGrid; set => locationOnGrid = value; }
         public Vector2 LastLocationOnGrid { get => lastLocationOnGrid; set => lastLocationOnGrid = value; }
+        public bool CanFightBoss { get => canFightBoss; set => canFightBoss = value; }
 
         public Player() : base(1) // in front of everything else
         {
