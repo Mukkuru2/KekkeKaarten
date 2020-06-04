@@ -44,7 +44,7 @@ namespace KekkeKaarten.GameState
             }
             if (inputHelper.KeyPressed(Keys.NumPad9))
             {
-                GameEnvironment.GameStateManager.SwitchTo("WinState");
+                GameEnvironment.GameStateManager.SwitchTo("Winstate");
             }
         }
         public override void Update(GameTime gameTime)
