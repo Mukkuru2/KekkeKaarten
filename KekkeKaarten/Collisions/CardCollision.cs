@@ -133,26 +133,11 @@ namespace KekkeKaarten.Collisions
                                 card.ChangeLocation();
                                 enemy.Position = enemy.returnPosition;
                                 int multiplier = 0;
-                                if (Difficulty == "1")
+                                if (Difficulty != null)
                                 {
-                                    multiplier = 1;
+                                    multiplier = int.Parse(Difficulty);
                                 }
-                                if (Difficulty == "2")
-                                {
-                                    multiplier = 2;
-                                }
-                                if (Difficulty == "3")
-                                {
-                                    multiplier = 3;
-                                }
-                                if (Difficulty == "4")
-                                {
-                                    multiplier = 4;
-                                }
-                                if (Difficulty == "5")
-                                {
-                                    multiplier = 5;
-                                }
+
                                 WinState.Points += multiplier * 10;
 
                             }
