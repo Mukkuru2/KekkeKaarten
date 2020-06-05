@@ -51,7 +51,7 @@ namespace KekkeKaarten.GameState
         {
             base.Update(gameTime);
 
-            playerEnemyColision();
+            PlayerEnemyColision();
 
 
             if (enemyTurn == true)
@@ -106,9 +106,9 @@ namespace KekkeKaarten.GameState
                 }
                 CenterMap();
             }
-            playerEnemyColision();
+            PlayerEnemyColision();
         }
-        private void playerEnemyColision()
+        private void PlayerEnemyColision()
         {
             for (int i = 0; i < enemies.Children.Count; i++)
             {
@@ -117,8 +117,6 @@ namespace KekkeKaarten.GameState
                 {
                     if (player.CollidesWith(enemy))
                     {
-
-                        
 
                         if (PlayingState.Enemy.enemyID != enemy.enemyID)
                         {

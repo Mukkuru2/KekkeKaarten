@@ -207,7 +207,7 @@ namespace KekkeKaarten.Collisions
                 hand.DeleteCards();
                 Hand.numberOfCards--;
                 hand.ChangeCards();
-
+                wronghit = false;
             }
         }
     }
