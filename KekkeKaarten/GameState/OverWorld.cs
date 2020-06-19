@@ -14,6 +14,7 @@ namespace KekkeKaarten.GameState
 {
     class OverWorld : GameObjectList
     {
+        ParticleSystem particle = new ParticleSystem();
         Player player = new Player();
         GameObjectList enemies;
 
@@ -27,7 +28,7 @@ namespace KekkeKaarten.GameState
             Reset();
             this.Add(enemies);
             this.Add(player);
-
+            this.Add(particle);
         }
 
         public override void Reset()
@@ -118,14 +119,13 @@ namespace KekkeKaarten.GameState
                     if (player.CollidesWith(enemy))
                     {
 
-                        if (PlayingState.Enemy.enemyID != enemy.enemyID)
-                        {
+                        
                             PlayingState.Enemy.timeToKill = enemy.timeToKill;
                             PlayingState.Enemy.damage = enemy.damage;
                             PlayingState.Enemy.health = enemy.health;
                             PlayingState.Enemy.enemyID = enemy.enemyID;
 
-                        }
+                        
                         GameEnvironment.GameStateManager.SwitchTo("PlayingState");
 
                         enemies.Remove(enemy);
