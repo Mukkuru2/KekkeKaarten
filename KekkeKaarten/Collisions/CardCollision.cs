@@ -136,7 +136,9 @@ namespace KekkeKaarten.Collisions
                                 card.drag = false;
                                 hit = true;
                                 card.ChangeLocation();
-                                enemy.Position = enemy.returnPosition;
+                                enemy.running = false;
+                                enemy.toplocationX = (enemy.returnPosition.X + enemy.Position.X) / 2;
+                                enemy.Velocity = new Vector2(20, 0);
                                 int multiplier = 0;
                                 if (Difficulty != null)
                                 {
@@ -163,7 +165,8 @@ namespace KekkeKaarten.Collisions
                                     wronghit = true;
                                 }
 
-                                enemy.Position = enemy.returnPosition;
+                                enemy.running = false;
+                                enemy.Velocity = new Vector2(20, 0) ;
 
 
 

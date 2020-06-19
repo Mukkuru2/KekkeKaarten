@@ -19,6 +19,9 @@ namespace KekkeKaarten.GameObjects
         public int damage;
         public int enemyID;
         public int previousenemyID;
+        public bool running = true;
+        public float toplocationY = 0;
+        public float toplocationX = 0;
 
         public Enemy() : base("Sprites/Map/slime")
         {
@@ -46,9 +49,23 @@ namespace KekkeKaarten.GameObjects
             velocity.X = (300 - position.X) / timeToKill;
         }
 
+
+        
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
+
+            if(!running)
+            {
+                position.X += 20;
+                position.Y = 0.000234375f * ((position.X - toplocationX) * (position.X - toplocationX)) + 250;
+
+                if(position.X >= returnPosition.X)
+                {
+                    RunToPlayer();
+                    running = true;
+                }
+            }
             if (previousenemyID != enemyID)
             {
                 RunToPlayer();
