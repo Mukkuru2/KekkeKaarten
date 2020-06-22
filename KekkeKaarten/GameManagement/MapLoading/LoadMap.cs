@@ -71,7 +71,7 @@ namespace KekkeKaarten.GameManagement.MapLoading
 
 
                     //Enemies
-                    //Enemy1
+                    //Horse
                     if (color == new Color(100, 0, 0)) {
                         map[xMap, yMap] = 7;
                     }

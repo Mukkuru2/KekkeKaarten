@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="KekkeKaarten.CSVhandling.CSVimporter">
-    <Position X="3.25" Y="5.25" Width="2.25" />
+    <Position X="26.25" Y="0.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAACAAAAAAABAAAAAAQAAAAAAAA=</HashCode>
       <FileName>CSVhandling\CSVimporter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.MapObjects.BossRoomTeleport">
-    <Position X="7.25" Y="9" Width="1.75" />
+    <Position X="4.25" Y="8.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\MapObjects\BossRoomTeleport.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.MapObjects.GoldenStatueOff">
-    <Position X="11" Y="10.5" Width="1.5" />
+    <Position X="11.25" Y="8.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\MapObjects\GoldenStatueOff.cs</FileName>
@@ -23,56 +23,56 @@
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.MapObjects.Marshland">
-    <Position X="9.25" Y="9" Width="1.5" />
+    <Position X="6.75" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\MapObjects\Marshland.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.MapObjects.ToxicFloor">
-    <Position X="11" Y="9" Width="1.5" />
+    <Position X="13.5" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\MapObjects\ToxicFloor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.MapObjects.Wall">
-    <Position X="9.25" Y="10.5" Width="1.5" />
+    <Position X="9" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\MapObjects\Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.StartState">
-    <Position X="5.75" Y="5.25" Width="2.25" />
+    <Position X="6.25" Y="15" Width="2" />
     <TypeIdentifier>
       <HashCode>AIQAAACAAAAABAGAAAABAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
       <FileName>GameState\StartState.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.MapObjects.MapObject">
-    <Position X="11.5" Y="5.75" Width="1.5" />
+    <Position X="8.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\MapObjects\MapObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameObjectList">
-    <Position X="6.75" Y="1.25" Width="2.25" />
+    <Position X="6.25" Y="10.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAYAAACAAAAABgQAAAAEBAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameManagement\GameObjectList.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SpriteGameObject">
-    <Position X="11.75" Y="0.75" Width="2.5" />
+    <Position X="14" Y="0.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>CAAAAAAABAAAAgAAAAAABEQAgDAAAAAQAAAAAAgIAAA=</HashCode>
       <FileName>GameManagement\SpriteGameObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.Boss">
-    <Position X="13.25" Y="8.5" Width="1.5" />
+    <Position X="15.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\MapObjects\Enemies\Boss.cs</FileName>
@@ -80,45 +80,59 @@
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.EnemyMap">
-    <Position X="14" Y="5.75" Width="1.5" />
+    <Position X="19" Y="5.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAIAAgAAAAAAAAAAAAKAAAACAAAAAAAAAAAg=</HashCode>
       <FileName>GameObjects\MapObjects\Enemies\EnemyMap.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.Harpy">
-    <Position X="15.5" Y="8.5" Width="1.5" />
+    <Position X="20.25" Y="9.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAIQgAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\MapObjects\Enemies\Harpy.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.Slime">
-    <Position X="13.25" Y="11.25" Width="1.5" />
+    <Position X="18" Y="9.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\MapObjects\Enemies\Slime.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameManagement.MapLoading.LoadMap">
-    <Position X="16" Y="5.75" Width="1.5" />
+    <Position X="1.25" Y="16.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameManagement\MapLoading\LoadMap.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.Map">
-    <Position X="18.25" Y="6.25" Width="1.5" />
+    <Position X="3.25" Y="16.25" Width="2" />
     <TypeIdentifier>
       <HashCode>BAQAEAAAAAAABAAABAAAAAAAAAEAAAABAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\Map.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameObjectGrid">
-    <Position X="18.25" Y="0.75" Width="1.5" />
+    <Position X="3.25" Y="10.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAYAAACAAAIABkBAAAAAIAAAACAAAAEAAAAAwAgAAEA=</HashCode>
       <FileName>GameManagement\GameObjectGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.ChessHorse">
+    <Position X="22.5" Y="9.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAIQgAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\MapObjects\Enemies\ChessHorse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.CSVhandling.GameQuestion">
+    <Position X="29" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAiQACRAAAAkQAAAAAAACAAAAQgAAAEAAAAAAAAIkA=</HashCode>
+      <FileName>CSVhandling\GameQuestion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
