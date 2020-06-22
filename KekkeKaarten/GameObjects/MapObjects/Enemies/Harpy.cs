@@ -25,6 +25,7 @@ namespace KekkeKaarten.GameObjects.MapObjects.Enemies
 
         public override void Move(Map map, Player player)
         {
+            base.Move(map, player);
             if (canMove)
             {
                 //set initial values, there will always have to be a move better then bestMove

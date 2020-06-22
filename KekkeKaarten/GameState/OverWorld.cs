@@ -21,6 +21,7 @@ namespace KekkeKaarten.GameState
         Map currentMap;
 
         private bool enemyTurn = false;
+        private float scrollspeed = 16.0f;
 
         public OverWorld() : base()
         {
@@ -52,60 +53,9 @@ namespace KekkeKaarten.GameState
             base.Update(gameTime);
 
             PlayerEnemyColision();
+            CenterMap();
+            PlayerWalk();
 
-
-            if (enemyTurn == true)
-            {
-                foreach (EnemyMap enemy in enemies.Children)
-                {
-                    if (enemy.GlobalPosition.X + enemy.Sprite.Width > 0
-                        && enemy.GlobalPosition.X - enemy.Sprite.Width < GameEnvironment.Screen.X
-                        && enemy.GlobalPosition.Y + enemy.Sprite.Height > 0
-                        && enemy.GlobalPosition.Y - enemy.Sprite.Height < GameEnvironment.Screen.X)
-                    {
-                        enemy.Move(currentMap, player);
-                    }
-                    enemy.Position = currentMap.Objects[(int)enemy.LocationOnGrid.X, (int)enemy.LocationOnGrid.Y].GlobalPosition;
-                }
-                enemyTurn = false;
-            }
-
-            if (!(player.LastLocationOnGrid == player.LocationOnGrid))
-            {
-
-                MapObject currentTile = (MapObject)currentMap.Objects[(int)(player.LocationOnGrid.X), (int)(player.LocationOnGrid.Y)];
-                if (!currentTile.IsSolid)
-                {
-                    player.Position = currentTile.GlobalPosition;
-                    player.LastLocationOnGrid = player.LocationOnGrid;
-
-                    enemyTurn = true;
-
-                    if (currentTile is GoldenStatue)
-                    {
-                        player.CardStatuesTaken++;
-                        GoldenStatue statue = (GoldenStatue)currentTile;
-                        statue.Taken = true;
-                        if (player.CardStatuesTaken >= 3)
-                        {
-                            player.CardStatuesTaken = 0;
-                            player.CanFightBoss = true;
-                        }
-                    }
-                    if (currentTile is BossRoomTeleport)
-                    {
-                        if (player.CanFightBoss)
-                        {
-                            SetMap("BossRoom");
-                        }
-                    }
-                }
-                else
-                {
-                    player.LocationOnGrid = player.LastLocationOnGrid;
-                }
-                CenterMap();
-            }
             PlayerEnemyColision();
         }
         private void PlayerEnemyColision()
@@ -113,24 +63,17 @@ namespace KekkeKaarten.GameState
             for (int i = 0; i < enemies.Children.Count; i++)
             {
                 EnemyMap enemy = (EnemyMap)enemies.Children[i];
-                foreach (SpriteGameObject player in player.Children)
+                if (player.LocationOnGrid == enemy.LocationOnGrid)
                 {
-                    if (player.CollidesWith(enemy))
-                    {
+                    PlayingState.Enemy.timeToKill = enemy.timeToKill;
+                    PlayingState.Enemy.damage = enemy.damage;
+                    PlayingState.Enemy.health = enemy.health;
+                    PlayingState.Enemy.enemyID = enemy.enemyID;
 
-                        if (PlayingState.Enemy.enemyID != enemy.enemyID)
-                        {
-                            PlayingState.Enemy.timeToKill = enemy.timeToKill;
-                            PlayingState.Enemy.damage = enemy.damage;
-                            PlayingState.Enemy.health = enemy.health;
-                            PlayingState.Enemy.enemyID = enemy.enemyID;
+                    GameEnvironment.GameStateManager.SwitchTo("PlayingState");
 
-                        }
-                        GameEnvironment.GameStateManager.SwitchTo("PlayingState");
-
-                        enemies.Remove(enemy);
-                        break;
-                    }
+                    enemies.Remove(enemy);
+                    break;
                 }
             }
         }
@@ -177,25 +120,100 @@ namespace KekkeKaarten.GameState
 
         private void CenterMap()
         {
-            while (player.GlobalPosition.X <= 600)
+            if (player.GlobalPosition.X <= 600)
             {
-                currentMap.Position = currentMap.Position + new Vector2(currentMap.CellWidth, 0);
-                player.Position = player.Position + new Vector2(currentMap.CellWidth, 0);
+                MoveScreen(new Vector2(currentMap.CellWidth / scrollspeed, 0));
             }
-            while (player.GlobalPosition.X >= GameEnvironment.Screen.X - 600)
+            if (player.GlobalPosition.X >= GameEnvironment.Screen.X - 600)
             {
-                currentMap.Position = currentMap.Position + new Vector2(-currentMap.CellWidth, 0);
-                player.Position = player.Position + new Vector2(-currentMap.CellWidth, 0);
+                MoveScreen(new Vector2(-currentMap.CellWidth / scrollspeed, 0));
             }
-            while (player.GlobalPosition.Y <= 400)
+            if (player.GlobalPosition.Y <= 400)
             {
-                currentMap.Position = currentMap.Position + new Vector2(0, currentMap.CellHeight);
-                player.Position = player.Position + new Vector2(0, currentMap.CellHeight);
+                MoveScreen(new Vector2(0, currentMap.CellWidth / scrollspeed));
             }
-            while (player.GlobalPosition.Y >= GameEnvironment.Screen.Y - 400)
+            if (player.GlobalPosition.Y >= GameEnvironment.Screen.Y - 400)
             {
-                currentMap.Position = currentMap.Position + new Vector2(0, -currentMap.CellHeight);
-                player.Position = player.Position + new Vector2(0, -currentMap.CellHeight);
+                MoveScreen(new Vector2(0, -currentMap.CellWidth / scrollspeed));
+            }
+        }
+
+        private void MoveScreen(Vector2 move)
+        {
+            currentMap.Position = currentMap.Position + move;
+            player.Position = player.Position + move;
+            foreach (EnemyMap enemy in enemies.Children)
+            {
+                enemy.Position = enemy.Position + move;
+            }
+        }
+
+        private void PlayerWalk()
+        {
+            MapObject currentTile = (MapObject)currentMap.Objects[(int)(player.LocationOnGrid.X), (int)(player.LocationOnGrid.Y)];
+            if (!currentTile.IsSolid)
+            {
+                if (player.StepsTaken < scrollspeed)
+                {
+                    player.Position = currentTile.GlobalPosition - (player.LocationOnGrid - player.LastLocationOnGrid) * (1 - ((player.StepsTaken + 1) / scrollspeed)) * currentMap.CellWidth;
+                    player.StepsTaken++;
+                    enemyTurn = true;
+                }
+                else
+                {
+                    EnemyMovement();
+                }
+
+                if (currentTile is GoldenStatue)
+                {
+                    player.CardStatuesTaken++;
+                    GoldenStatue statue = (GoldenStatue)currentTile;
+                    statue.Taken = true;
+                    if (player.CardStatuesTaken >= 3)
+                    {
+                        player.CardStatuesTaken = 0;
+                        player.CanFightBoss = true;
+                    }
+                }
+                if (currentTile is BossRoomTeleport)
+                {
+                    if (player.CanFightBoss)
+                    {
+                        SetMap("BossRoom");
+                    }
+                }
+            }
+            else
+            {
+                player.LocationOnGrid = player.LastLocationOnGrid;
+            }
+        }
+
+        private void EnemyMovement()
+        {
+            if (enemyTurn)
+            {
+                foreach (EnemyMap enemy in enemies.Children)
+                {
+                    enemy.StepsTaken = 0;
+                    if (enemy.GlobalPosition.X + enemy.Sprite.Width > 0
+                        && enemy.GlobalPosition.X - enemy.Sprite.Width < GameEnvironment.Screen.X
+                        && enemy.GlobalPosition.Y + enemy.Sprite.Height > 0
+                        && enemy.GlobalPosition.Y - enemy.Sprite.Height < GameEnvironment.Screen.X)
+                    {
+                        enemy.Move(currentMap, player);
+                    }
+                }
+                enemyTurn = false;
+            }
+            foreach (EnemyMap enemy in enemies.Children)
+            {
+                if (enemy.StepsTaken < scrollspeed / 2)
+                {
+                    MapObject currentTile = (MapObject)currentMap.Objects[(int)(enemy.LocationOnGrid.X), (int)(enemy.LocationOnGrid.Y)];
+                    enemy.Position = currentTile.GlobalPosition - (enemy.LocationOnGrid - enemy.LastLocationOnGrid) * (1 - ((enemy.StepsTaken + 1) / (scrollspeed / 2))) * currentMap.CellWidth;
+                    enemy.StepsTaken++;
+                }
             }
         }
     }
