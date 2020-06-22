@@ -14,6 +14,7 @@ namespace KekkeKaarten.GameState
 {
     class OverWorld : GameObjectList
     {
+        ParticleSystem particle = new ParticleSystem();
         Player player = new Player();
         GameObjectList enemies;
 
@@ -28,7 +29,7 @@ namespace KekkeKaarten.GameState
             Reset();
             this.Add(enemies);
             this.Add(player);
-
+            this.Add(particle);
         }
 
         public override void Reset()

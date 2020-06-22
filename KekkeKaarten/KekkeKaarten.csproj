@@ -80,6 +80,9 @@
     <Compile Include="GameObjects\MapObjects\ToxicFloor.cs" />
     <Compile Include="GameObjects\MapObjects\Wall.cs" />
     <Compile Include="GameObjects\MouseSprite.cs" />
+    <Compile Include="GameObjects\Particle.cs" />
+    <Compile Include="GameObjects\ParticlePosition.cs" />
+    <Compile Include="GameObjects\ParticleSystem.cs" />
     <Compile Include="GameObjects\PlayerFight.cs" />
     <Compile Include="GameObjects\Question.cs" />
     <Compile Include="GameState\GameOverState.cs" />
@@ -137,8 +140,8 @@
     <Content Include="Content\Sprites\card2.png" />
     <Content Include="Content\Sprites\card_back.png" />
     <Content Include="Content\Sprites\cursor.png" />
-    <Content Include="Content\Sprites\enemy.png" />
     <Content Include="Content\Sprites\health.png" />
+    <Content Include="Content\Sprites\particle.png" />
     <Content Include="Content\Sprites\Map\grass.png" />
     <Content Include="Content\Sprites\Map\harpy.png" />
     <Content Include="Content\Sprites\Map\horse.png" />

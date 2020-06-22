@@ -17,8 +17,9 @@ namespace KekkeKaarten
     {
 
         public MouseSprite mouseSprite = new MouseSprite();
-
+        ParticleSystem particleSystem;
         public CardCollision cardcollision;
+
 
         static Enemy enemy;
         Hand hand;
@@ -33,14 +34,14 @@ namespace KekkeKaarten
             this.Add(player = new PlayerFight(new Vector2(300, 300)));
             this.Add(enemy = new Enemy());
             this.Add(new HealthBar(new Vector2(166, 65)));
-
+            this.Add(particleSystem = new ParticleSystem());
             this.Add(hand = new Hand());
 
 
 
 
             this.Add(mouseSprite);
-            cardcollision = new CardCollision(mouseSprite, enemy, hand, player);
+            cardcollision = new CardCollision(mouseSprite, enemy, hand, player, particleSystem);
             this.Add(cardcollision);
             this.Add(hp);
             hp.Text = "" + PlayerFight.HP;

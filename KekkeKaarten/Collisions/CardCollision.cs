@@ -24,15 +24,18 @@ namespace KekkeKaarten.Collisions
         Enemy enemy;
         Hand hand;
         PlayerFight player;
+        ParticleSystem particleSystem;
+        
         private static string difficulty;
         public static string Difficulty { get => difficulty; set => difficulty = value; }
-        public CardCollision(MouseSprite mouse, Enemy enemy, Hand hand, PlayerFight player)
+        public CardCollision(MouseSprite mouse, Enemy enemy, Hand hand, PlayerFight player, ParticleSystem particleSystem)
         {
 
             this.mouse = mouse;
             this.enemy = enemy;
             this.hand = hand;
             this.player = player;
+            this.particleSystem = particleSystem;
         }
 
         public override void HandleInput(InputHelper inputHelper)
@@ -56,6 +59,8 @@ namespace KekkeKaarten.Collisions
                 PlayerFight.HP -= enemy.damage;
                 
                 enemy.Position = enemy.returnPosition;
+                particleSystem.ParticleGeneration(40, new Vector2(player.Position.X +(player.Width/2), player.Position.Y + (player.Height / 2)));
+
             }
             foreach (Card card in Hand.Cards.Children)
             {
@@ -131,7 +136,9 @@ namespace KekkeKaarten.Collisions
                                 card.drag = false;
                                 hit = true;
                                 card.ChangeLocation();
-                                enemy.Position = enemy.returnPosition;
+                                enemy.running = false;
+                                enemy.toplocationX = (enemy.returnPosition.X + enemy.Position.X) / 2;
+                                enemy.Velocity = new Vector2(20, 0);
                                 int multiplier = 0;
                                 if (Difficulty == "1")
                                 {
@@ -173,7 +180,8 @@ namespace KekkeKaarten.Collisions
                                     wronghit = true;
                                 }
 
-                                enemy.Position = enemy.returnPosition;
+                                enemy.running = false;
+                                enemy.Velocity = new Vector2(20, 0) ;
 
 
 
