@@ -17,6 +17,7 @@ namespace KekkeKaarten.GameObjects
         public bool rightAnswer;
         public bool kill = false;
         private int cardID;
+        public bool remove = false;
         public Card(string nummer, Vector2 position, bool Rightanswer, int id) : base()
         {
           

@@ -95,52 +95,7 @@ namespace KekkeKaarten.GameObjects
         }
 
 
-
-        /*      randomRightAnswer = GameEnvironment.Random.Next(0, questionarray.Length);
-
-              whichCardIsCorrect = GameEnvironment.Random.Next(0, numberOfCards);
-
-              correctanswer = questionarray[randomRightAnswer].Correctanswer;           
-              question.Text = questionarray[randomRightAnswer].Question;
-              CardCollision.Difficulty = questionarray[randomRightAnswer].Difficulty;
-              answers[answerNumber] = correctanswer;
-              answerNumber++;
-
-              for (int i = 0; i < numberOfCards; i++)
-              {
-
-                  randomWrongAnswer = GameEnvironment.Random.Next(0, questionarray.Length);
-                  for (int x = 0; x < answerNumber; x++)
-                  {
-                      while(answers[x] == questionarray[randomWrongAnswer].Correctanswer)
-                      {
-                           randomWrongAnswer = GameEnvironment.Random.Next(0, questionarray.Length);
-                      }
-
-                  }
-
-                  answers[answerNumber] = questionarray[randomWrongAnswer].Correctanswer; ;
-                  answerNumber++;
-
-                  wrongAnswer = questionarray[randomWrongAnswer].Correctanswer;
-
-
-
-                  if (i == whichCardIsCorrect)
-                  {
-                      Cards.Add(new Card(correctanswer, new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 500), true, i));
-
-                  }
-                  else
-                  {
-                      Cards.Add(new Card(wrongAnswer, new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 500), false, i));
-                  }
-
-              }*/
-
-    
-
-        
+       
 
         public void DeleteCards()
         {
@@ -157,6 +112,25 @@ namespace KekkeKaarten.GameObjects
             }
 
             
+        }
+
+        public void cardDelete() 
+        {
+           for (int i = 0; i < numberOfCards; i++)
+		    {
+                Card card = (Card)Cards.Children.ElementAt(i);
+                Console.WriteLine("2");
+                if (card.remove) 
+                {
+                    Console.WriteLine("1");
+                    Cards.Children.Remove(card);
+                    break;
+                }
+
+		    }
+
+
+   
         }
 
 

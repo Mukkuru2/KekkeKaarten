@@ -25,8 +25,8 @@ namespace KekkeKaarten.Collisions
         Hand hand;
         PlayerFight player;
         ParticleSystem particleSystem;
-        QuestionCounter answeredcorrectly;
-
+        QuestionCounter answeredcorrectly;  
+        
         private static string difficulty;
         public static string Difficulty { get => difficulty; set => difficulty = value; }
         public CardCollision(MouseSprite mouse, Enemy enemy, Hand hand, PlayerFight player, ParticleSystem particleSystem, QuestionCounter answeredcorrectly)
@@ -59,9 +59,9 @@ namespace KekkeKaarten.Collisions
             if (player.CollidesWith(enemy))
             {
                 PlayerFight.HP -= enemy.damage;
-
+                
                 enemy.Position = enemy.returnPosition;
-                particleSystem.ParticleGeneration(40, new Vector2(player.Position.X + (player.Width / 2), player.Position.Y + (player.Height / 2)));
+                particleSystem.ParticleGeneration(40, new Vector2(player.Position.X +(player.Width/2), player.Position.Y + (player.Height / 2)));
 
             }
             foreach (Card card in Hand.Cards.Children)
@@ -130,7 +130,7 @@ namespace KekkeKaarten.Collisions
                     {
                         if (card.rightAnswer)
                         {
-                            if (enemy.CollidesWith(cardTexture) && enemy.running)
+                            if (enemy.CollidesWith(cardTexture))
                             {
                                 //enemy.Position = new Vector2(0, -1000);
                                 card.Position = card.ReturnLocation;
@@ -139,10 +139,9 @@ namespace KekkeKaarten.Collisions
                                 hit = true;
                                 card.ChangeLocation();
                                 enemy.running = false;
-                                enemy.ThrowPosition = enemy.Position;
-                                //enemy.toplocationX = (enemy.returnPosition.X + enemy.Position.X) / 2;
-                                //enemy.Velocity = new Vector2(20, 0);
-                                answeredcorrectly.getScore++;
+                                enemy.toplocationX = (enemy.returnPosition.X + enemy.Position.X) / 2;
+                                enemy.Velocity = new Vector2(20, 0);
+                                answeredcorrectly.getScore++;   
                                 int multiplier = 0;
                                 if (Difficulty == "1")
                                 {
@@ -172,6 +171,8 @@ namespace KekkeKaarten.Collisions
                         {
                             if (enemy.CollidesWith(cardTexture))
                             {
+                                card.drag = false;
+                                card.remove = true;
                                 if (Hand.numberOfCards == 3)
                                 {
                                     PlayerFight.hp -= enemy.damage;
@@ -185,8 +186,8 @@ namespace KekkeKaarten.Collisions
                                 }
 
                                 enemy.running = false;
-                                enemy.Velocity = new Vector2(20, 0);
-                                enemy.ThrowPosition = enemy.Position;
+                                enemy.Velocity = new Vector2(20, 0) ;
+
 
 
 
@@ -205,21 +206,20 @@ namespace KekkeKaarten.Collisions
                 {
                     Hand.numberOfCards++;
                 }
-
                 enemy.health -= 25;
 
                 hand.ChangeCards();
 
-                GameEnvironment.AssetManager.PlaySound("Audio/Effects/correctanswer");
+
 
                 hit = false;
             }
             if (wronghit)
             {
-
-                hand.DeleteCards();
+                
+                hand.cardDelete();
                 Hand.numberOfCards--;
-                hand.ChangeCards();
+              
 
                 wronghit = false;
             }
