@@ -38,8 +38,8 @@ namespace KekkeKaarten
             this.Add(enemy = new Enemy());
             this.Add(healthBar);
             this.Add(enemyHealth);
-            this.Add(particleSystem = new ParticleSystem());
             this.Add(hand = new Hand());
+            this.Add(particleSystem = new ParticleSystem());
 
 
 

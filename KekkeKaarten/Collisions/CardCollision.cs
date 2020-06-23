@@ -169,7 +169,7 @@ namespace KekkeKaarten.Collisions
                                 enemy.running = false;
                                 //enemy.Velocity = new Vector2(20, 0);
                                 enemy.ThrowPosition = enemy.Position;
-
+                                GameEnvironment.AssetManager.PlaySound("Audio/Effects/wronganswer");
 
 
                             }
@@ -192,7 +192,8 @@ namespace KekkeKaarten.Collisions
                 hand.ChangeCards();
                 foreach (Card card in Hand.Cards.Children)
                 {
-                    particleSystem.ParticleGeneration(40, new Vector2(card.Position.X, card.Position.Y), "Sprites/particlegray");
+                    Texture2D cardTexture = GameEnvironment.AssetManager.GetSprite("Sprites/card");
+                    particleSystem.ParticleGeneration(40, new Vector2(card.Position.X + cardTexture.Width / 2, card.Position.Y + cardTexture.Height / 2), "Sprites/particlegray");
                 }
 
                 GameEnvironment.AssetManager.PlaySound("Audio/Effects/correctanswer");
@@ -204,8 +205,6 @@ namespace KekkeKaarten.Collisions
                 
                 hand.cardDelete();
                 Hand.numberOfCards--;
-
-                GameEnvironment.AssetManager.PlaySound("Audio/Effects/wronganswer");
 
                 wronghit = false;
             }

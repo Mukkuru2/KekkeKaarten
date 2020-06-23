@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="KekkeKaarten.Collisions.CardCollision">
-    <Position X="51" Y="11" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAECBAAAAAwAiAAAAAEAAAAACAAAJAAAAAAAAAAI=</HashCode>
-      <FileName>Collisions\CardCollision.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="KekkeKaarten.CSVhandling.CSVimporter">
     <Position X="75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
@@ -41,7 +34,7 @@
   <Class Name="AssetManager">
     <Position X="71.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAEAAAAAAAAAkAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAgAAEAAAAAAAAAkAAAAAAACAAAAAQAAAAAA=</HashCode>
       <FileName>GameManagement\AssetManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -162,7 +155,7 @@
   <Class Name="KekkeKaarten.PlayingState">
     <Position X="66.75" Y="11" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAgCAAAAAAgBgAAAAAAAAQAAKAgABAABAAAAAAAI=</HashCode>
+      <HashCode>AAQAAgCAAAAAAgBgAAAAAAAAAAAKIgABAAAAAAAQAAI=</HashCode>
       <FileName>GameState\PlayingState.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -190,7 +183,7 @@
   <Class Name="KekkeKaarten.GameObjects.Card">
     <Position X="60" Y="11" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAQAAAAADggIAABCAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <HashCode>CAQAAAAADggIAABGAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\Card.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -204,28 +197,28 @@
   <Class Name="KekkeKaarten.GameObjects.CardTexture">
     <Position X="28.5" Y="16" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAQAAAAAAIAgAAAAAAAAAAACAAAAAAAAAAAQgIAAA=</HashCode>
+      <HashCode>AAQAQAAAAAAAAgAAAAAAAAAAACAAAAAAAAAAAQgIAAA=</HashCode>
       <FileName>GameObjects\CardTexture.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.Enemy">
     <Position X="33" Y="11.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAQCAAAAAxgAAAAAABAAAACgAABAEAAAAAACAgAg=</HashCode>
+      <HashCode>AAQQAQCAAAAAzgAAAAgABAAAACgAADAEAAAAAACAgAg=</HashCode>
       <FileName>GameObjects\Enemy.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.Hand">
     <Position X="69" Y="11" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAQAABAAAIABEAAAAAAAAAAIAAZAAAAAAAgAAgAIAFA=</HashCode>
+      <HashCode>IAQAADAAAIAREAAAAAAAAAAIAAZAAAAAAAgAAgAIAEA=</HashCode>
       <FileName>GameObjects\Hand.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.HealthBar">
     <Position X="3.75" Y="11.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ACAQAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAhAAAA=</HashCode>
       <FileName>GameObjects\HealthBar.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -296,7 +289,7 @@
   <Class Name="KekkeKaarten.GameObjects.MapObjects.Player">
     <Position X="55.5" Y="11" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAQCIICAAAACAAEAAAABBACEAIAIBACAACAAAgAAgAA=</HashCode>
+      <HashCode>gAQCIICAAAACAAEAAAABBACEAIAIJACAACAAAgAAgAA=</HashCode>
       <FileName>GameObjects\MapObjects\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -353,15 +346,22 @@
   <Class Name="KekkeKaarten.GameState.WinState">
     <Position X="62.25" Y="11" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAACAAAAAgAAAAEAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAACAAAAAgAAAAEAAAAAAAAAAAAAAAAgAAAAIAAA=</HashCode>
       <FileName>GameState\WinState.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameState.OverWorld">
     <Position X="57.75" Y="11" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IIQAAAGAAAAAFAAAACgAAAEAAAEIACABAAAAAAABAgA=</HashCode>
+      <HashCode>IIQAAAGAAAAAnAAAACgAAAEAAAEIACABACAAAAABAgA=</HashCode>
       <FileName>GameState\OverWorld.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.Collisions.CardCollision">
+    <Position X="51" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAECBAAAAAwAiAAAAAEAAAAACAAAJAAAAAEAAAAI=</HashCode>
+      <FileName>Collisions\CardCollision.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="IGameLoopObject" Collapsed="true">
