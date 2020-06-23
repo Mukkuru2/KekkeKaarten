@@ -185,7 +185,6 @@ namespace KekkeKaarten.Collisions
                                 }
 
                                 enemy.running = false;
-                                enemy.Velocity = new Vector2(20, 0);
                                 enemy.ThrowPosition = enemy.Position;
 
 
