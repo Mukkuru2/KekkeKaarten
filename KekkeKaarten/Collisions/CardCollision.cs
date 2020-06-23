@@ -25,10 +25,11 @@ namespace KekkeKaarten.Collisions
         Hand hand;
         PlayerFight player;
         ParticleSystem particleSystem;
+        QuestionCounter answeredcorrectly;  
         
         private static string difficulty;
         public static string Difficulty { get => difficulty; set => difficulty = value; }
-        public CardCollision(MouseSprite mouse, Enemy enemy, Hand hand, PlayerFight player, ParticleSystem particleSystem)
+        public CardCollision(MouseSprite mouse, Enemy enemy, Hand hand, PlayerFight player, ParticleSystem particleSystem, QuestionCounter answeredcorrectly)
         {
 
             this.mouse = mouse;
@@ -36,6 +37,7 @@ namespace KekkeKaarten.Collisions
             this.hand = hand;
             this.player = player;
             this.particleSystem = particleSystem;
+            this.answeredcorrectly = answeredcorrectly;
         }
 
         public override void HandleInput(InputHelper inputHelper)
@@ -139,6 +141,7 @@ namespace KekkeKaarten.Collisions
                                 enemy.running = false;
                                 enemy.toplocationX = (enemy.returnPosition.X + enemy.Position.X) / 2;
                                 enemy.Velocity = new Vector2(20, 0);
+                                answeredcorrectly.getScore++;   
                                 int multiplier = 0;
                                 if (Difficulty != null)
                                 {

@@ -27,13 +27,11 @@ namespace KekkeKaarten.CSVhandling
             this.difficulty = difficulty;
             this.comments = comments;
             this.correctanswer = correctanswer;
-            if (wrongAnswers[1] != null)
+            if (wrongAnswers[2] != null)
             {
                 this.wrongAnswers = wrongAnswers;
             }
-            else {
-                this.wrongAnswer = wrongAnswers[0];
-            }
+    
             
         }
 
