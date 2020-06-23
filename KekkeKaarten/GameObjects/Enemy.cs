@@ -14,7 +14,7 @@ namespace KekkeKaarten.GameObjects
         public  int timeToKill = 5;
         public Vector2 returnPosition;
         private Vector2 throwPosition;
-        private float maxHeight = 100;
+        private float maxHeight = 300;
 
         public SpriteSheet[] sprites;
         public int health;
@@ -31,7 +31,7 @@ namespace KekkeKaarten.GameObjects
         public Enemy() : base("Sprites/Map/slime")
         {
             position.X = (GameEnvironment.Screen.X - 300) - (sprite.Width / 2);
-            position.Y = 300;
+            position.Y = 500;
             returnPosition = position;
             returnhp = health;
 
@@ -41,7 +41,7 @@ namespace KekkeKaarten.GameObjects
             sprites[0] = new SpriteSheet("Sprites/Map/slime");
             sprites[1] = new SpriteSheet("Sprites/Map/harpy");
             sprites[2] = new SpriteSheet("Sprites/Map/horse");
-            sprites[3] = new SpriteSheet("Sprites/Map/boss");
+            sprites[3] = new SpriteSheet("Sprites/Map/bossBlanc");
         }
 
         public override void Reset()
@@ -68,6 +68,7 @@ namespace KekkeKaarten.GameObjects
 
                 if(position.X >= returnPosition.X)
                 {
+                    position.Y = 500;
                     RunToPlayer();
                     running = true;
                 }

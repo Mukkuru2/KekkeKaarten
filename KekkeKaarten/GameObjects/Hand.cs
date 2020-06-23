@@ -83,12 +83,12 @@ namespace KekkeKaarten.GameObjects
 
                 if (i == whichCardIsCorrect)
                 {
-                    Cards.Add(new Card(correctanswer, new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 500), true, i));
+                    Cards.Add(new Card(correctanswer, new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 700), true, i));
 
                 }
                 else
                 {
-                    Cards.Add(new Card(wrongAnswers[i], new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 500), false, i));
+                    Cards.Add(new Card(wrongAnswers[i], new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 700), false, i));
                 }
 
             }

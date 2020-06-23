@@ -38,13 +38,13 @@ namespace KekkeKaarten.GameObjects
 
         }
         
-        public void ParticleGeneration(int totalParticles, Vector2 partPos)
+        public void ParticleGeneration(int totalParticles, Vector2 partPos, string sprite)
         {
             this.Add(new ParticlePosition(partPos));
             ParticlePosition yamum = (ParticlePosition)this.Children.ElementAt(this.Children.Count - 1);
             for (int i = 0; i <= totalParticles; i++)
             {
-                yamum.Add(new Particle(new Vector2(random.Next(-50, 50), random.Next(-50, 50))));
+                yamum.Add(new Particle(new Vector2(random.Next(-50, 50), random.Next(-50, 50)), sprite));
             }
         }
        

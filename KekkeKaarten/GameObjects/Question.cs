@@ -20,7 +20,10 @@ namespace KekkeKaarten.GameObjects
         }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            base.Draw(gameTime, spriteBatch);
+            if (visible)
+            {
+                spriteBatch.DrawString(spriteFont, text, GlobalPosition, color, 0.0f, new Vector2(0, 0), 0.5f, SpriteEffects.None, 0.0f);
+            }
         }
 
 

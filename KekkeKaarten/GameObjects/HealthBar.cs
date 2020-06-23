@@ -13,17 +13,20 @@ namespace KekkeKaarten.GameObjects
     {
         private Vector2 scalar = Vector2.One;
         private Color hpColor = new Color(255, 0, 0);
-        private float maxWidth = 1.0f;
+        private float maxHeight = 1.0f;
 
-        public HealthBar(Vector2 startposition, float maxWidth) : base("Sprites/health")
+        public HealthBar(Vector2 startposition, float maxheight) : base("Sprites/health")
         {
             position = startposition;
-            this.maxWidth = maxWidth;
+            this.maxHeight = maxheight;
+            origin = new Vector2(0, sprite.Height);
         }
 
-        public void UpdateHp(int hp) {
-            scalar.X = hp / 100.0f * maxWidth;
-            hpColor = new Color(hp / 100.0f * 255, 1.0f - (hp / 100.0f) * 255, 0);
+        public void UpdateHp(float hp) {
+            scalar.Y = hp / 100.0f * maxHeight;
+            int red = (int)((100 - hp) / 50.0f * 255);
+            int green = (int)((hp) / 50.0f * 255);
+            hpColor = new Color(red,green,0);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

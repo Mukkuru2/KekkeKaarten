@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,7 +16,8 @@ namespace KekkeKaarten.GameState
 {
     class OverWorld : GameObjectList
     {
-        ParticleSystem particle = new ParticleSystem();
+        private static ParticleSystem particle = new ParticleSystem();
+        public static ParticleSystem Particle { get => particle; set => particle = value; }
         Player player = new Player();
         GameObjectList enemies;
 
@@ -57,10 +59,10 @@ namespace KekkeKaarten.GameState
         {
             base.Update(gameTime);
 
-        scrollspeed = (float)player.Walk / 3 * 2;
+            scrollspeed = (float)player.Walk / 3 * 2;
 
 
-        PlayerEnemyColision();
+            PlayerEnemyColision();
             CenterMap();
             PlayerWalk();
 
@@ -149,7 +151,11 @@ namespace KekkeKaarten.GameState
         }
 
         private void MoveScreen(Vector2 move)
-        {
+        {foreach(ParticlePosition p in particle.Children)
+            {
+                p.Position += move;
+            }
+            
             currentMap.Position = currentMap.Position + move;
             player.Position = player.Position + move;
             foreach (EnemyMap enemy in enemies.Children)

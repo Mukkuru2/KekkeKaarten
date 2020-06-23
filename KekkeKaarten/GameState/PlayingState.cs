@@ -21,7 +21,8 @@ namespace KekkeKaarten
         public CardCollision cardcollision;
         QuestionCounter correctanswers;
 
-        HealthBar healthBar = new HealthBar(new Vector2(166, 65), 5.0f);
+        HealthBar healthBar = new HealthBar(new Vector2(100, GameEnvironment.Screen.Y - 100), 5.0f);
+        HealthBar enemyHealth = new HealthBar(new Vector2(GameEnvironment.Screen.X - 200, GameEnvironment.Screen.Y - 100), 5.0f);
 
         static Enemy enemy;
         Hand hand;
@@ -34,9 +35,10 @@ namespace KekkeKaarten
         {
             this.Add(correctanswers = new QuestionCounter(new Vector2(500,100)));
             this.Add(new SpriteGameObject("Backgrounds/battlescreen"));
-            this.Add(player = new PlayerFight(new Vector2(300, 300)));
+            this.Add(player = new PlayerFight(new Vector2(300, 500)));
             this.Add(enemy = new Enemy());
             this.Add(healthBar);
+            this.Add(enemyHealth);
             this.Add(particleSystem = new ParticleSystem());
             this.Add(hand = new Hand());
 
@@ -68,6 +70,7 @@ namespace KekkeKaarten
             base.Update(gameTime);
 
             healthBar.UpdateHp(PlayerFight.HP);
+            enemyHealth.UpdateHp(enemy.health);
 
             if (PlayingState.HP.Text != "" + PlayerFight.HP){
                 PlayingState.HP.Text = "" + PlayerFight.HP;

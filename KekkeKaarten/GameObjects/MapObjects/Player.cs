@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using KekkeKaarten.GameState;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,7 +66,7 @@ namespace KekkeKaarten.GameObjects.MapObjects
                         locationOnGrid += kvp.Value;
                         walkTimer = 0;
                         stepsTaken = 0;
-
+                        OverWorld.Particle.ParticleGeneration(40, new Vector2(Position.X + 30, Position.Y + 30), "Sprites/particlegreen");
                         foreach (SpriteGameObject dir in this.children)
                         {
                             dir.Visible = false;
