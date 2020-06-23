@@ -26,10 +26,8 @@ namespace KekkeKaarten.GameObjects
         }
         public override void Update(GameTime gameTime)
         {
-
+            Console.WriteLine("aaaa");
             this.Text = score.ToString();
-
-
         }
 
         public int getScore
