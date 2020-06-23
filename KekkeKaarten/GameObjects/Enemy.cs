@@ -90,5 +90,14 @@ namespace KekkeKaarten.GameObjects
         {
             base.Draw(gameTime, spriteBatch);
         }
+
+        public override void HandleInput(InputHelper inputHelper)
+        {
+            base.HandleInput(inputHelper);
+            if (inputHelper.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.O)) {
+                GameEnvironment.GameStateManager.SwitchTo("Overworld");
+                health = returnhp;
+            }
+        }
     }
 }

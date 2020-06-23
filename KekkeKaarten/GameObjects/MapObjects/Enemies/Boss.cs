@@ -20,6 +20,7 @@ namespace KekkeKaarten.GameObjects.MapObjects.Enemies
 
         public override void Move(Map map, Player player)
         {
+            base.Move(map, player);
         }
     }
 }

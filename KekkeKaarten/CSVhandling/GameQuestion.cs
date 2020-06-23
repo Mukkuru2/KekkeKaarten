@@ -16,7 +16,6 @@ namespace KekkeKaarten.CSVhandling
         private string comments;
         private string correctanswer;
         private string[] wrongAnswers;
-        private string wrongAnswer;
 
         public GameQuestion(string missionID, string id, string question, string didYouKnow, string difficulty, string comments, string correctanswer, string[] wrongAnswers)
         {
@@ -31,7 +30,6 @@ namespace KekkeKaarten.CSVhandling
             {
                 this.wrongAnswers = wrongAnswers;
             }
-    
             
         }
 
@@ -43,6 +41,5 @@ namespace KekkeKaarten.CSVhandling
         public string Comments { get => comments; set => comments = value; }
         public string Correctanswer { get => correctanswer; set => correctanswer = value; }
         public string[] WrongAnswers { get => wrongAnswers; set => wrongAnswers = value; }
-        public string WrongAnswer { get => wrongAnswer; set => wrongAnswer = value; }
     }
 }

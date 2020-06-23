@@ -14,8 +14,9 @@ namespace KekkeKaarten.GameObjects.MapObjects
         SpriteGameObject left = new SpriteGameObject("Sprites/Map/playerleft");
         SpriteGameObject right = new SpriteGameObject("Sprites/Map/playerright");
         
-        private int walkTimer = 10;
-        private int walk = 10;
+        private int walkTimer = 24;
+        private int walk = 24;
+        private int stepsTaken = 0;
 
         private int cardStatuesTaken = 0;
         private bool canFightBoss = false;
@@ -26,6 +27,7 @@ namespace KekkeKaarten.GameObjects.MapObjects
         public Vector2 LocationOnGrid { get => locationOnGrid; set => locationOnGrid = value; }
         public Vector2 LastLocationOnGrid { get => lastLocationOnGrid; set => lastLocationOnGrid = value; }
         public bool CanFightBoss { get => canFightBoss; set => canFightBoss = value; }
+        public int StepsTaken { get => stepsTaken; set => stepsTaken = value; }
 
         public Player() : base(1) // in front of everything else
         {
@@ -59,6 +61,7 @@ namespace KekkeKaarten.GameObjects.MapObjects
                         lastLocationOnGrid = locationOnGrid;
                         locationOnGrid += kvp.Value;
                         walkTimer = 0;
+                        stepsTaken = 0;
 
                         foreach (SpriteGameObject dir in this.children) {
                             dir.Visible = false;
@@ -69,49 +72,6 @@ namespace KekkeKaarten.GameObjects.MapObjects
                         break;
                     }
                 }
-
-                /*
-                if (inputHelper.IsKeyDown(Keys.Up))
-                {
-                    lastLocationOnGrid = locationOnGrid;
-                    locationOnGrid.Y--;
-                    up.Visible = true;
-                    down.Visible = false;
-                    left.Visible = false;
-                    right.Visible = false;
-                    walkTimer = 0;
-                }
-                if (inputHelper.IsKeyDown(Keys.Down))
-                {
-                    lastLocationOnGrid = locationOnGrid;
-                    locationOnGrid.Y++;
-                    up.Visible = false;
-                    down.Visible = true;
-                    left.Visible = false;
-                    right.Visible = false;
-                    walkTimer = 0;
-                }
-                if (inputHelper.IsKeyDown(Keys.Left))
-                {
-                    lastLocationOnGrid = locationOnGrid;
-                    locationOnGrid.X--;
-                    up.Visible = false;
-                    down.Visible = false;
-                    left.Visible = true;
-                    right.Visible = false;
-                    walkTimer = 0;
-                }
-                if (inputHelper.IsKeyDown(Keys.Right))
-                {
-                    lastLocationOnGrid = locationOnGrid;
-                    locationOnGrid.X++;
-                    up.Visible = false;
-                    down.Visible = false;
-                    left.Visible = false;
-                    right.Visible = true;
-                    walkTimer = 0;
-                }
-                */
             }
             else walkTimer++;
         }
