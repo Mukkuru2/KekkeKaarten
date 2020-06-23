@@ -10,12 +10,15 @@ namespace KekkeKaarten.GameObjects
 {
     class QuestionCounter : TextGameObject
     {
-        public int score;
+        public int score = 0;
         public QuestionCounter(Vector2 startPosition) : base("SpriteFonts/GameFont")
         {
-            Text = "0";
+            //Text = score.ToString();
+            Text = "o";
             position.X = startPosition.X;
             position.Y = startPosition.Y;
+            Color = Color.Black;    
+            Reset();
       
         }
 
@@ -27,7 +30,7 @@ namespace KekkeKaarten.GameObjects
         public override void Update(GameTime gameTime)
         {
 
-            this.Text = score.ToString();
+            this.text = score.ToString();
 
 
         }
