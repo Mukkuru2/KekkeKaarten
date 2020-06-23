@@ -210,9 +210,10 @@ namespace KekkeKaarten.Collisions
                 enemy.health -= 25;
 
                 hand.ChangeCards();
-
-
-
+                foreach (Card card in Hand.Cards.Children)
+                {
+                    particleSystem.ParticleGeneration(40, new Vector2(card.Position.X, card.Position.Y), "Sprites/particlegray");
+                }
                 hit = false;
             }
             if (wronghit)
