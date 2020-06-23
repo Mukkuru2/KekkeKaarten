@@ -15,24 +15,26 @@ namespace KekkeKaarten.GameObjects
     class Hand : GameObjectList
     {
 
-    
+
         public static GameObjectList Cards = new GameObjectList();
         public GameObjectList KillList = new GameObjectList();
-    
 
-      
+
+
         public static int numberOfCards = 3;
         Question question;
 
-        List<GameQuestion> questionnaam = CSVimporter.GetCSV(20);
-        GameQuestion[] questionarray = new GameQuestion[20];
+        List<GameQuestion> questionnaam = CSVimporter.GetCSV(5);
+        GameQuestion[] questionarray = new GameQuestion[5];
 
         private int whichCardIsCorrect;
         private string correctanswer;
-        private string wrongAnswers;
+     
+        private string[] wrongAnswers = new string[6];
 
-        private int randomWrongAnswer;
+        
         private int randomRightAnswer;
+        private int otherRightAnwer;
 
         string[] answers = new string[100];
 
@@ -40,9 +42,10 @@ namespace KekkeKaarten.GameObjects
 
 
 
+
         public Hand()
         {
-            
+
             this.Add(Cards);
             this.Add(KillList);
             this.Add(question = new Question(""));
@@ -52,53 +55,92 @@ namespace KekkeKaarten.GameObjects
         }
 
         public void ChangeCards()
-        {          
-            questionarray = questionnaam.ToArray();          
+        {
+            questionarray = questionnaam.ToArray();
             randomRightAnswer = GameEnvironment.Random.Next(0, questionarray.Length);
-                 
-            whichCardIsCorrect = GameEnvironment.Random.Next(0, numberOfCards);
+            otherRightAnwer = GameEnvironment.Random.Next(0, questionarray.Length);
 
-            correctanswer = questionarray[randomRightAnswer].Correctanswer;           
+            while(randomRightAnswer == otherRightAnwer)
+            {
+                otherRightAnwer = GameEnvironment.Random.Next(0, questionarray.Length);
+            }
+            whichCardIsCorrect = GameEnvironment.Random.Next(0, numberOfCards);
+            correctanswer = questionarray[randomRightAnswer].Correctanswer;
             question.Text = questionarray[randomRightAnswer].Question;
-            CardCollision.Difficulty = questionarray[randomRightAnswer].Difficulty;
-            answers[answerNumber] = correctanswer;
-            answerNumber++;
 
             for (int i = 0; i < numberOfCards; i++)
             {
-                
-                randomWrongAnswer = GameEnvironment.Random.Next(0, questionarray.Length);
-                for (int x = 0; x < answerNumber; x++)
+                if (i <= 2)
                 {
-                    while(answers[x] == questionarray[randomWrongAnswer].Correctanswer)
-                    {
-                         randomWrongAnswer = GameEnvironment.Random.Next(0, questionarray.Length);
-                    }
-                    
+                    wrongAnswers[i] = questionarray[randomRightAnswer].WrongAnswers[i];
                 }
-
-                answers[answerNumber] = questionarray[randomWrongAnswer].Correctanswer; ;
-                answerNumber++;
-
-                wrongAnswers = questionarray[randomWrongAnswer].Correctanswer;
+                if (i > 2)
+                {
+                    wrongAnswers[i] = questionarray[otherRightAnwer].WrongAnswers[i-3];
+                }
 
 
 
                 if (i == whichCardIsCorrect)
                 {
                     Cards.Add(new Card(correctanswer, new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 500), true, i));
-                    
+
                 }
                 else
                 {
-                    Cards.Add(new Card(wrongAnswers, new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 500), false, i));
+                    Cards.Add(new Card(wrongAnswers[i], new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 500), false, i));
                 }
 
             }
-
-
-
         }
+
+
+
+        /*      randomRightAnswer = GameEnvironment.Random.Next(0, questionarray.Length);
+
+              whichCardIsCorrect = GameEnvironment.Random.Next(0, numberOfCards);
+
+              correctanswer = questionarray[randomRightAnswer].Correctanswer;           
+              question.Text = questionarray[randomRightAnswer].Question;
+              CardCollision.Difficulty = questionarray[randomRightAnswer].Difficulty;
+              answers[answerNumber] = correctanswer;
+              answerNumber++;
+
+              for (int i = 0; i < numberOfCards; i++)
+              {
+
+                  randomWrongAnswer = GameEnvironment.Random.Next(0, questionarray.Length);
+                  for (int x = 0; x < answerNumber; x++)
+                  {
+                      while(answers[x] == questionarray[randomWrongAnswer].Correctanswer)
+                      {
+                           randomWrongAnswer = GameEnvironment.Random.Next(0, questionarray.Length);
+                      }
+
+                  }
+
+                  answers[answerNumber] = questionarray[randomWrongAnswer].Correctanswer; ;
+                  answerNumber++;
+
+                  wrongAnswer = questionarray[randomWrongAnswer].Correctanswer;
+
+
+
+                  if (i == whichCardIsCorrect)
+                  {
+                      Cards.Add(new Card(correctanswer, new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 500), true, i));
+
+                  }
+                  else
+                  {
+                      Cards.Add(new Card(wrongAnswer, new Vector2(GameEnvironment.Screen.X / 3 + (200 * i), 500), false, i));
+                  }
+
+              }*/
+
+    
+
+        
 
         public void DeleteCards()
         {
@@ -110,7 +152,8 @@ namespace KekkeKaarten.GameObjects
             for (int i = 0; i < answerNumber; i++)
             {
                 answers[i] = "";
-                answerNumber = 0;
+                wrongAnswers[i] = "";
+;                answerNumber = 0;
             }
 
             

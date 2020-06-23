@@ -19,6 +19,7 @@ namespace KekkeKaarten
         public MouseSprite mouseSprite = new MouseSprite();
         ParticleSystem particleSystem;
         public CardCollision cardcollision;
+        QuestionCounter correctanswers;
 
         HealthBar healthBar = new HealthBar(new Vector2(166, 65), 5.0f);
 
@@ -31,6 +32,7 @@ namespace KekkeKaarten
 
         public PlayingState()
         {
+            this.Add(correctanswers = new QuestionCounter(new Vector2(100,100)));
             this.Add(new SpriteGameObject("Backgrounds/battlescreen"));
             this.Add(player = new PlayerFight(new Vector2(300, 300)));
             this.Add(enemy = new Enemy());
@@ -42,7 +44,7 @@ namespace KekkeKaarten
 
 
             this.Add(mouseSprite);
-            cardcollision = new CardCollision(mouseSprite, enemy, hand, player, particleSystem);
+            cardcollision = new CardCollision(mouseSprite, enemy, hand, player, particleSystem, correctanswers);
             this.Add(cardcollision);
             this.Add(hp);
             hp.Text = "" + PlayerFight.HP;
