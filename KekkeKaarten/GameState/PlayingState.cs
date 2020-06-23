@@ -20,6 +20,7 @@ namespace KekkeKaarten
         ParticleSystem particleSystem;
         public CardCollision cardcollision;
 
+        HealthBar healthBar = new HealthBar(new Vector2(166, 65), 5.0f);
 
         static Enemy enemy;
         Hand hand;
@@ -33,7 +34,7 @@ namespace KekkeKaarten
             this.Add(new SpriteGameObject("Backgrounds/battlescreen"));
             this.Add(player = new PlayerFight(new Vector2(300, 300)));
             this.Add(enemy = new Enemy());
-            this.Add(new HealthBar(new Vector2(166, 65)));
+            this.Add(healthBar);
             this.Add(particleSystem = new ParticleSystem());
             this.Add(hand = new Hand());
 
@@ -63,6 +64,9 @@ namespace KekkeKaarten
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
+
+            healthBar.UpdateHp(PlayerFight.HP);
+
             if (PlayingState.HP.Text != "" + PlayerFight.HP){
                 PlayingState.HP.Text = "" + PlayerFight.HP;
             }

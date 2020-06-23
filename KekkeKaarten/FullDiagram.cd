@@ -3,7 +3,7 @@
   <Class Name="KekkeKaarten.Collisions.CardCollision">
     <Position X="51" Y="11" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAECBAAAAAwAiAAAAAEAAAAAAAAAJAAAAAAAAAAI=</HashCode>
+      <HashCode>AAQAAECBAAAAAwAiAAAAAEAAAAACAAAJAAAAAAAAAAI=</HashCode>
       <FileName>Collisions\CardCollision.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -162,7 +162,7 @@
   <Class Name="KekkeKaarten.PlayingState">
     <Position X="66.75" Y="11" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAgCAAAAAAgBgAAAAAAAAQAAIAgABAABAAAAAAAI=</HashCode>
+      <HashCode>AAQAAgCAAAAAAgBgAAAAAAAAQAAKAgABAABAAAAAAAI=</HashCode>
       <FileName>GameState\PlayingState.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -211,7 +211,7 @@
   <Class Name="KekkeKaarten.GameObjects.Enemy">
     <Position X="33" Y="11.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAQAAAAAAhgAAAAAABAAAACAAABAEAAAAAACAgAg=</HashCode>
+      <HashCode>AAQAAQCAAAAAxgAAAAAABAAAACgAABAEAAAAAACAgAg=</HashCode>
       <FileName>GameObjects\Enemy.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -276,6 +276,7 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\MapObjects\GoldenStatueOff.cs</FileName>
+      <NewMemberFileName>GameObjects\MapObjects\GoldenStatue.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.MapObjects.MapObject">
@@ -295,7 +296,7 @@
   <Class Name="KekkeKaarten.GameObjects.MapObjects.Player">
     <Position X="55.5" Y="11" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAQCIICAAAACAAEAAAABBACAAIAIAACAACAAAgAAgAA=</HashCode>
+      <HashCode>gAQCIICAAAACAAEAAAABBACEAIAIBACAACAAAgAAgAA=</HashCode>
       <FileName>GameObjects\MapObjects\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -318,6 +319,7 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObjects\MapObjects\Enemies\Boss.cs</FileName>
+      <NewMemberFileName>GameObjects\MapObjects\Enemies\ChessHorse.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.ChessHorse">
@@ -330,7 +332,7 @@
   <Class Name="KekkeKaarten.GameObjects.MapObjects.Enemies.EnemyMap">
     <Position X="38.5" Y="11.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAAAIAAgAAAAAAAAAAAAKAAAACAAAAAAAAAAAg=</HashCode>
+      <HashCode>AAACAQAAAIAAgAAAAAAAAACEAKAABACAAAAAAAAAAAg=</HashCode>
       <FileName>GameObjects\MapObjects\Enemies\EnemyMap.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -348,18 +350,18 @@
       <FileName>GameObjects\MapObjects\Enemies\Slime.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KekkeKaarten.GameState.OverWorld">
-    <Position X="57.75" Y="11" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AIQAAACAAAAABAAAACAAAAEAAAEAACABAAAAAAARAAA=</HashCode>
-      <FileName>GameState\OverWorld.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="KekkeKaarten.GameState.WinState">
     <Position X="62.25" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAACAAAAAgAAAAEAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
       <FileName>GameState\WinState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KekkeKaarten.GameState.OverWorld">
+    <Position X="57.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IIQAAAGAAAAAFAAAACgAAAEAAAEIACABAAAAAAABAgA=</HashCode>
+      <FileName>GameState\OverWorld.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="IGameLoopObject" Collapsed="true">

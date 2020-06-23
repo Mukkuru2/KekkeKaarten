@@ -3,6 +3,7 @@ using KekkeKaarten.GameObjects;
 using KekkeKaarten.GameObjects.MapObjects;
 using KekkeKaarten.GameObjects.MapObjects.Enemies;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
@@ -21,8 +22,10 @@ namespace KekkeKaarten.GameState
         GameObjectList maps = StartState.Maps;
         Map currentMap;
 
+        private Random _r = new Random();
+
         private bool enemyTurn = false;
-        private float scrollspeed = 16.0f;
+        private float scrollspeed = 8.0f;
 
         public OverWorld() : base()
         {
@@ -36,6 +39,7 @@ namespace KekkeKaarten.GameState
         {
             base.Reset();
             SetMap("Overworld");
+            GameEnvironment.AssetManager.SetVolume(0.4f);
         }
         public override void HandleInput(InputHelper inputHelper)
         {
@@ -53,7 +57,10 @@ namespace KekkeKaarten.GameState
         {
             base.Update(gameTime);
 
-            PlayerEnemyColision();
+        scrollspeed = (float)player.Walk / 3 * 2;
+
+
+        PlayerEnemyColision();
             CenterMap();
             PlayerWalk();
 
@@ -72,6 +79,8 @@ namespace KekkeKaarten.GameState
                     PlayingState.Enemy.enemyID = enemy.enemyID;
 
                     GameEnvironment.GameStateManager.SwitchTo("PlayingState");
+
+                    GameEnvironment.AssetManager.PlaySound("Audio/Effects/roar");
 
                     enemies.Remove(enemy);
                     break;
@@ -154,6 +163,17 @@ namespace KekkeKaarten.GameState
             MapObject currentTile = (MapObject)currentMap.Objects[(int)(player.LocationOnGrid.X), (int)(player.LocationOnGrid.Y)];
             if (!currentTile.IsSolid)
             {
+                if (player.StepsTaken == 0)
+                {
+                    if (_r.NextDouble() < 0.5)
+                    {
+                        GameEnvironment.AssetManager.PlaySound("Audio/Effects/walk1");
+                    }
+                    else
+                    {
+                        GameEnvironment.AssetManager.PlaySound("Audio/Effects/walk2");
+                    }
+                }
                 if (player.StepsTaken < scrollspeed)
                 {
                     player.Position = currentTile.GlobalPosition - (player.LocationOnGrid - player.LastLocationOnGrid) * (1 - ((player.StepsTaken + 1) / scrollspeed)) * currentMap.CellWidth;

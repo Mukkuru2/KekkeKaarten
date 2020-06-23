@@ -33,6 +33,10 @@ public class AssetManager
         MediaPlayer.Play(contentManager.Load<Song>(assetName));
     }
 
+    public void SetVolume(float vol) {
+        SoundEffect.MasterVolume = vol;
+    }
+
     public ContentManager Content
     {
         get { return contentManager; }

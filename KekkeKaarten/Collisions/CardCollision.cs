@@ -128,7 +128,7 @@ namespace KekkeKaarten.Collisions
                     {
                         if (card.rightAnswer)
                         {
-                            if (enemy.CollidesWith(cardTexture))
+                            if (enemy.CollidesWith(cardTexture) && enemy.running)
                             {
                                 //enemy.Position = new Vector2(0, -1000);
                                 card.Position = card.ReturnLocation;
@@ -201,11 +201,12 @@ namespace KekkeKaarten.Collisions
                 {
                     Hand.numberOfCards++;
                 }
+
                 enemy.health -= 25;
 
                 hand.ChangeCards();
 
-
+                GameEnvironment.AssetManager.PlaySound("Audio/Effects/correctanswer");
 
                 hit = false;
             }

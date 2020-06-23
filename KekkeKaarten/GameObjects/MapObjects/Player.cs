@@ -13,9 +13,9 @@ namespace KekkeKaarten.GameObjects.MapObjects
         SpriteGameObject down = new SpriteGameObject("Sprites/Map/player");
         SpriteGameObject left = new SpriteGameObject("Sprites/Map/playerleft");
         SpriteGameObject right = new SpriteGameObject("Sprites/Map/playerright");
-        
-        private int walkTimer = 24;
-        private int walk = 24;
+
+        private int walkTimer;
+        private int walk = 12;
         private int stepsTaken = 0;
 
         private int cardStatuesTaken = 0;
@@ -28,6 +28,7 @@ namespace KekkeKaarten.GameObjects.MapObjects
         public Vector2 LastLocationOnGrid { get => lastLocationOnGrid; set => lastLocationOnGrid = value; }
         public bool CanFightBoss { get => canFightBoss; set => canFightBoss = value; }
         public int StepsTaken { get => stepsTaken; set => stepsTaken = value; }
+        public int Walk { get => walk; set => walk = value; }
 
         public Player() : base(1) // in front of everything else
         {
@@ -40,11 +41,13 @@ namespace KekkeKaarten.GameObjects.MapObjects
             left.Visible = false;
             right.Visible = false;
 
-            MovementDict.Add(Keys.Up, new Vector2(0 , -1));
-            MovementDict.Add(Keys.Down, new Vector2(0 , 1));
+            MovementDict.Add(Keys.Up, new Vector2(0, -1));
+            MovementDict.Add(Keys.Down, new Vector2(0, 1));
             MovementDict.Add(Keys.Left, new Vector2(-1, 0));
-            MovementDict.Add(Keys.Right, new Vector2(1 , 0));
-            
+            MovementDict.Add(Keys.Right, new Vector2(1, 0));
+
+            walkTimer = walk;
+
         }
 
         public override void HandleInput(InputHelper inputHelper)
@@ -53,7 +56,7 @@ namespace KekkeKaarten.GameObjects.MapObjects
             if (walkTimer == walk)
             {
 
-                for(int i = 0; i < MovementDict.Count; i++)
+                for (int i = 0; i < MovementDict.Count; i++)
                 {
                     KeyValuePair<Keys, Vector2> kvp = MovementDict.ElementAt(i);
                     if (inputHelper.IsKeyDown(kvp.Key))
@@ -63,7 +66,8 @@ namespace KekkeKaarten.GameObjects.MapObjects
                         walkTimer = 0;
                         stepsTaken = 0;
 
-                        foreach (SpriteGameObject dir in this.children) {
+                        foreach (SpriteGameObject dir in this.children)
+                        {
                             dir.Visible = false;
                         }
 
@@ -71,6 +75,15 @@ namespace KekkeKaarten.GameObjects.MapObjects
 
                         break;
                     }
+                }
+
+                if (inputHelper.IsKeyDown(Keys.LeftShift))
+                {
+                    walk = 12;
+                }
+                else
+                {
+                    walk = 24;
                 }
             }
             else walkTimer++;
