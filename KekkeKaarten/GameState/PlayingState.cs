@@ -32,7 +32,7 @@ namespace KekkeKaarten
 
         public PlayingState()
         {
-            this.Add(correctanswers = new QuestionCounter(new Vector2(100,100)));
+           
             this.Add(new SpriteGameObject("Backgrounds/battlescreen"));
             this.Add(player = new PlayerFight(new Vector2(300, 500)));
             this.Add(enemy = new Enemy());
@@ -45,6 +45,7 @@ namespace KekkeKaarten
 
 
             this.Add(mouseSprite);
+            this.Add(correctanswers = new QuestionCounter(new Vector2(500, 25)));
             cardcollision = new CardCollision(mouseSprite, enemy, hand, player, particleSystem, correctanswers);
             this.Add(cardcollision);
 

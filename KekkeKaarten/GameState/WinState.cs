@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using KekkeKaarten.GameObjects;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
@@ -11,17 +12,20 @@ namespace KekkeKaarten.GameState
     class WinState:GameObjectList
     {
         public TextGameObject endPoints = new TextGameObject("SpriteFonts/GameFont");
-        public TextGameObject Victory = new TextGameObject("SpriteFonts/GameFont");
+        static public TextGameObject correct = new TextGameObject("SpriteFonts/GameFont");
+        static public string Correct{ get => correct.Text; set => correct.Text = value; }
         private static int points = 0;
         public static int Points { get => points; set => points = value; }
         public WinState() : base()
         {
-            this.Add(Victory);
+            this.Add(new SpriteGameObject("Backgrounds/winscreen"));
             this.Add(endPoints);
-            Victory.Text = "you win";
+            this.Add(correct);
             endPoints.Text = "" + Points;
-            Victory.Position = new Vector2(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2 - 200);
-            endPoints.Position = new Vector2(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
+            correct.Text = "0";
+            
+            endPoints.Position = new Vector2(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 3 * 2 + 60);
+            correct.Position = new Vector2(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y - 160);
         }
         public override void HandleInput(InputHelper inputHelper)
         {

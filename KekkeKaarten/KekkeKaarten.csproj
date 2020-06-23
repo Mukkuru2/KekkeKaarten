@@ -124,6 +124,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Backgrounds\winscreen.png" />
     <Content Include="Content\Maps\mapdatanature.png" />
     <Content Include="Content\Backgrounds\battlescreen.png" />
     <Content Include="Content\Backgrounds\endscreen.jpeg" />

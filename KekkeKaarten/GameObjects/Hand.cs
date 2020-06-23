@@ -67,7 +67,9 @@ namespace KekkeKaarten.GameObjects
             whichCardIsCorrect = GameEnvironment.Random.Next(0, numberOfCards);
             correctanswer = questionarray[randomRightAnswer].Correctanswer;
             question.Text = questionarray[randomRightAnswer].Question;
-
+            //verwijder deze nu eens niet alsjeblieft
+            CardCollision.Difficulty = questionarray[randomRightAnswer].Difficulty;
+            // ff mooi gemarkeert zo
             for (int i = 0; i < numberOfCards; i++)
             {
                 if (i <= 2)
