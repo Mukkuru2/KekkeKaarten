@@ -202,10 +202,7 @@ namespace KekkeKaarten.Collisions
             }
             if (hit)
             {
-                foreach(Card card in Hand.Cards.Children)
-                {
-                    particleSystem.ParticleGeneration(40, new Vector2(card.Position.X, card.Position.Y), "Sprites/particlegray");
-                }
+                
                 
                 hand.DeleteCards();
                 if (Hand.numberOfCards < 6)
@@ -216,7 +213,10 @@ namespace KekkeKaarten.Collisions
                 enemy.health -= 25;
 
                 hand.ChangeCards();
-
+                foreach (Card card in Hand.Cards.Children)
+                {
+                    particleSystem.ParticleGeneration(40, new Vector2(card.Position.X, card.Position.Y), "Sprites/particlegray");
+                }
                 GameEnvironment.AssetManager.PlaySound("Audio/Effects/correctanswer");
 
                 hit = false;
