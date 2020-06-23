@@ -142,7 +142,9 @@
     <Content Include="Content\Sprites\card_back.png" />
     <Content Include="Content\Sprites\cursor.png" />
     <Content Include="Content\Sprites\health.png" />
-    <Content Include="Content\Sprites\particle.png" />
+    <Content Include="Content\Sprites\particlegreen.png" />
+    <Content Include="Content\Sprites\particlegray.png" />
+    <Content Include="Content\Sprites\particlered.png" />
     <Content Include="Content\Sprites\Map\grass.png" />
     <Content Include="Content\Sprites\Map\harpy.png" />
     <Content Include="Content\Sprites\Map\horse.png" />

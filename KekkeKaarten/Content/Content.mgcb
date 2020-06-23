@@ -31,29 +31,11 @@
 /processorParam:Quality=Best
 /build:Audio/Effects/roar.wav
 
-#begin Audio/Effects/roar.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:Audio/Effects/roar.wav
-
 #begin Audio/Effects/walk1.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:Audio/Effects/walk1.wav
-
-#begin Audio/Effects/walk1.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:Audio/Effects/walk1.wav
-
-#begin Audio/Effects/walk2.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:Audio/Effects/walk2.wav
 
 #begin Audio/Effects/walk2.wav
 /importer:WavImporter
@@ -428,7 +410,7 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Map/wall.png
 
-#begin Sprites/particle.png
+#begin Sprites/particlegray.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -438,5 +420,29 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Sprites/particle.png
+/build:Sprites/particlegray.png
+
+#begin Sprites/particlegreen.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/particlegreen.png
+
+#begin Sprites/particlered.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/particlered.png
 

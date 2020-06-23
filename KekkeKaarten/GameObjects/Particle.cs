@@ -9,15 +9,13 @@ namespace KekkeKaarten.GameObjects
 {
     class Particle : SpriteGameObject
     {
-        
-        public Particle(Vector2 velocity) : base("Sprites/particle")
+        public Particle(Vector2 velocity, string sprite) : base(sprite)
         {
             this.velocity = velocity;
         }
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-
         }
     }
 }

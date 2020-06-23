@@ -61,7 +61,7 @@ namespace KekkeKaarten.Collisions
                 PlayerFight.HP -= enemy.damage;
 
                 enemy.Position = enemy.returnPosition;
-                particleSystem.ParticleGeneration(40, new Vector2(player.Position.X + (player.Width / 2), player.Position.Y + (player.Height / 2)));
+                particleSystem.ParticleGeneration(40, new Vector2(player.Position.X + (player.Width / 2), player.Position.Y + (player.Height / 2)), "Sprites/particlered");
 
             }
             foreach (Card card in Hand.Cards.Children)
@@ -200,6 +200,11 @@ namespace KekkeKaarten.Collisions
             }
             if (hit)
             {
+                foreach(Card card in Hand.Cards.Children)
+                {
+                    particleSystem.ParticleGeneration(40, new Vector2(card.Position.X, card.Position.Y), "Sprites/particlegray");
+                }
+                
                 hand.DeleteCards();
                 if (Hand.numberOfCards < 6)
                 {
