@@ -23,7 +23,7 @@ namespace KekkeKaarten.GameObjects
 
         public void UpdateHp(int hp) {
             scalar.X = hp / 100.0f * maxWidth;
-            hpColor = new Color(hp / 100 * 255, 1 - (hp / 100 * 255), 0);
+            hpColor = new Color(hp / 100.0f * 255, 1.0f - (hp / 100.0f) * 255, 0);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

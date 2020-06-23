@@ -170,8 +170,11 @@ namespace KekkeKaarten.Collisions
                         }
                         if (!card.rightAnswer)
                         {
+                            
                             if (enemy.CollidesWith(cardTexture))
                             {
+                                card.drag = false;
+                                card.remove = true;
                                 if (Hand.numberOfCards == 3)
                                 {
                                     PlayerFight.hp -= enemy.damage;
@@ -185,7 +188,6 @@ namespace KekkeKaarten.Collisions
                                 }
 
                                 enemy.running = false;
-                                enemy.Velocity = new Vector2(20, 0);
                                 enemy.ThrowPosition = enemy.Position;
 
 
@@ -222,9 +224,9 @@ namespace KekkeKaarten.Collisions
             if (wronghit)
             {
 
-                hand.DeleteCards();
+                hand.cardDelete();
                 Hand.numberOfCards--;
-                hand.ChangeCards();
+         
 
                 wronghit = false;
             }

@@ -14,7 +14,6 @@ namespace KekkeKaarten.GameObjects
         public  int timeToKill = 5;
         public Vector2 returnPosition;
         private Vector2 throwPosition;
-        private Vector2 offset;
         private float maxHeight = 100;
 
         public SpriteSheet[] sprites;
@@ -64,7 +63,7 @@ namespace KekkeKaarten.GameObjects
             if(!running)
             {
                 float c = -throwPosition.X + returnPosition.X;
-                position.X += c / 50;
+                position.X += 20;
                 position.Y = 750.0f / (float)Math.Pow(c, 2) * (float)Math.Pow(position.X - (throwPosition.X + c / 2), 2) + maxHeight;
 
                 if(position.X >= returnPosition.X)
