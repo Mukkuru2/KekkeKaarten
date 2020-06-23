@@ -13,8 +13,7 @@ namespace KekkeKaarten.GameObjects
         public int score = 0;
         public QuestionCounter(Vector2 startPosition) : base("SpriteFonts/GameFont")
         {
-            //Text = score.ToString();
-            Text = "o";
+            Text = score.ToString();
             position.X = startPosition.X;
             position.Y = startPosition.Y;
             Color = Color.Black;    
@@ -30,7 +29,7 @@ namespace KekkeKaarten.GameObjects
         public override void Update(GameTime gameTime)
         {
 
-            this.text = score.ToString();
+            this.text = "Number of questions right: " + score.ToString();
 
 
         }
