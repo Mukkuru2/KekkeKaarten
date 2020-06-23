@@ -61,7 +61,7 @@ namespace KekkeKaarten.Collisions
                 PlayerFight.HP -= enemy.damage;
                 
                 enemy.Position = enemy.returnPosition;
-                particleSystem.ParticleGeneration(40, new Vector2(player.Position.X +(player.Width/2), player.Position.Y + (player.Height / 2)));
+                particleSystem.ParticleGeneration(40, new Vector2(player.Position.X +(player.Width/2), player.Position.Y + (player.Height / 2)), "Sprites/particlered");
 
             }
             foreach (Card card in Hand.Cards.Children)
@@ -139,8 +139,9 @@ namespace KekkeKaarten.Collisions
                                 hit = true;
                                 card.ChangeLocation();
                                 enemy.running = false;
-                                enemy.toplocationX = (enemy.returnPosition.X + enemy.Position.X) / 2;
-                                enemy.Velocity = new Vector2(20, 0);
+                                enemy.ThrowPosition = enemy.Position;
+                                //enemy.toplocationX = (enemy.returnPosition.X + enemy.Position.X) / 2;
+                                //enemy.Velocity = new Vector2(20, 0);
                                 answeredcorrectly.getScore++;   
                                 int multiplier = 0;
                                 if (Difficulty == "1")
