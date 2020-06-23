@@ -25,8 +25,8 @@ namespace KekkeKaarten.Collisions
         Hand hand;
         PlayerFight player;
         ParticleSystem particleSystem;
-        QuestionCounter answeredcorrectly;  
-        
+        QuestionCounter answeredcorrectly;
+
         private static string difficulty;
         public static string Difficulty { get => difficulty; set => difficulty = value; }
         public CardCollision(MouseSprite mouse, Enemy enemy, Hand hand, PlayerFight player, ParticleSystem particleSystem, QuestionCounter answeredcorrectly)
@@ -59,9 +59,9 @@ namespace KekkeKaarten.Collisions
             if (player.CollidesWith(enemy))
             {
                 PlayerFight.HP -= enemy.damage;
-                
+
                 enemy.Position = enemy.returnPosition;
-                particleSystem.ParticleGeneration(40, new Vector2(player.Position.X +(player.Width/2), player.Position.Y + (player.Height / 2)));
+                particleSystem.ParticleGeneration(40, new Vector2(player.Position.X + (player.Width / 2), player.Position.Y + (player.Height / 2)));
 
             }
             foreach (Card card in Hand.Cards.Children)
@@ -139,9 +139,10 @@ namespace KekkeKaarten.Collisions
                                 hit = true;
                                 card.ChangeLocation();
                                 enemy.running = false;
-                                enemy.toplocationX = (enemy.returnPosition.X + enemy.Position.X) / 2;
-                                enemy.Velocity = new Vector2(20, 0);
-                                answeredcorrectly.getScore++;   
+                                enemy.ThrowPosition = enemy.Position;
+                                //enemy.toplocationX = (enemy.returnPosition.X + enemy.Position.X) / 2;
+                                //enemy.Velocity = new Vector2(20, 0);
+                                answeredcorrectly.getScore++;
                                 int multiplier = 0;
                                 if (Difficulty == "1")
                                 {
@@ -184,8 +185,8 @@ namespace KekkeKaarten.Collisions
                                 }
 
                                 enemy.running = false;
-                                enemy.Velocity = new Vector2(20, 0) ;
-
+                                enemy.Velocity = new Vector2(20, 0);
+                                enemy.ThrowPosition = enemy.Position;
 
 
 
@@ -215,7 +216,7 @@ namespace KekkeKaarten.Collisions
             }
             if (wronghit)
             {
-                
+
                 hand.DeleteCards();
                 Hand.numberOfCards--;
                 hand.ChangeCards();

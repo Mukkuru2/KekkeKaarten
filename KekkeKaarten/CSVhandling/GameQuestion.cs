@@ -26,11 +26,9 @@ namespace KekkeKaarten.CSVhandling
             this.difficulty = difficulty;
             this.comments = comments;
             this.correctanswer = correctanswer;
-            if (wrongAnswers[2] != null)
-            {
-                this.wrongAnswers = wrongAnswers;
-            }
-            
+            this.wrongAnswers = wrongAnswers;
+
+
         }
 
         public string MissionID { get => missionID; set => missionID = value; }

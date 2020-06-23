@@ -37,17 +37,15 @@ namespace KekkeKaarten.CSVhandling
                     string[] wrongAnswers = new string[3];
                     try
                     {
-                        wrongAnswers[0] = values[10];
-                        wrongAnswers[1] = values[11];
-                        wrongAnswers[2] = values[12];
+                        if (values[12] != null)
+                        {
+                            wrongAnswers[0] = values[10];
+                            wrongAnswers[1] = values[11];
+                            wrongAnswers[2] = values[12];
+                            QuestionList.Add(new GameQuestion(values[0], values[1], values[3], values[4], values[5], values[8], values[9], wrongAnswers));
+                        }
                     }
-                    catch
-                    {
-                        //TODO: what if values don't exist? make a way to get other values here
-                    }
-
-                    QuestionList.Add(new GameQuestion(values[0], values[1], values[3], values[4], values[5], values[8], values[9], wrongAnswers));
-
+                    catch { }
                 }
             }
 

@@ -15,7 +15,7 @@ namespace KekkeKaarten.GameObjects
         {
             Text = number;
             position.X = GameEnvironment.Screen.X / 4;
-            position.Y = 200;
+            position.Y = 100;
             Color = Color.Black;
         }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

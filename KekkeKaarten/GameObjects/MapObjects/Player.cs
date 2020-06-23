@@ -53,7 +53,7 @@ namespace KekkeKaarten.GameObjects.MapObjects
         public override void HandleInput(InputHelper inputHelper)
         {
             base.HandleInput(inputHelper);
-            if (walkTimer == walk)
+            if (walkTimer >= walk)
             {
 
                 for (int i = 0; i < MovementDict.Count; i++)

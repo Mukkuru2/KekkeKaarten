@@ -22,7 +22,6 @@ namespace KekkeKaarten
         public static bool ResetGame { get => resetGame; set => resetGame = value; }
         public StartState()
         {
-            CSVimporter.GetCSV(20);
             Reset();
             this.Add(new SpriteGameObject("Backgrounds/startscreen"));
         }

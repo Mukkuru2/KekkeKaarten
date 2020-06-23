@@ -13,6 +13,10 @@ namespace KekkeKaarten.GameObjects
     {
         public  int timeToKill = 5;
         public Vector2 returnPosition;
+        private Vector2 throwPosition;
+        private Vector2 offset;
+        private float maxHeight = 100;
+
         public SpriteSheet[] sprites;
         public int health;
         public int returnhp;
@@ -22,6 +26,8 @@ namespace KekkeKaarten.GameObjects
         public bool running = true;
         public float toplocationY = 0;
         public float toplocationX = 0;
+
+        public Vector2 ThrowPosition { get => throwPosition; set => throwPosition = value; }
 
         public Enemy() : base("Sprites/Map/slime")
         {
@@ -57,8 +63,9 @@ namespace KekkeKaarten.GameObjects
 
             if(!running)
             {
-                position.X += 20;
-                position.Y = 0.000234375f * ((position.X - toplocationX) * (position.X - toplocationX)) + 250;
+                float c = -throwPosition.X + returnPosition.X;
+                position.X += c / 50;
+                position.Y = 750.0f / (float)Math.Pow(c, 2) * (float)Math.Pow(position.X - (throwPosition.X + c / 2), 2) + maxHeight;
 
                 if(position.X >= returnPosition.X)
                 {
