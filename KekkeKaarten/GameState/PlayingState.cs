@@ -33,7 +33,7 @@ namespace KekkeKaarten
 
         public PlayingState()
         {
-            this.Add(correctanswers = new QuestionCounter(new Vector2(100,100)));
+            this.Add(correctanswers = new QuestionCounter(new Vector2(500,100)));
             this.Add(new SpriteGameObject("Backgrounds/battlescreen"));
             this.Add(player = new PlayerFight(new Vector2(300, 500)));
             this.Add(enemy = new Enemy());
