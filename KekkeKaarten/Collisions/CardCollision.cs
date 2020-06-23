@@ -143,11 +143,9 @@ namespace KekkeKaarten.Collisions
                                 //enemy.toplocationX = (enemy.returnPosition.X + enemy.Position.X) / 2;
                                 //enemy.Velocity = new Vector2(20, 0);
                                 answeredcorrectly.getScore++;   
-                                int multiplier = int.Parse(Difficulty); 
-                                
+                                int multiplier = int.Parse(Difficulty);
+                                WinState.Correct = "" + answeredcorrectly.getScore;
                                 WinState.Points += multiplier * 10;
-                                Console.WriteLine(multiplier);
-                                Console.WriteLine(WinState.Points);
                             }
                         }
                         if (!card.rightAnswer)
