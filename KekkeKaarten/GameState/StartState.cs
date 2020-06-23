@@ -24,7 +24,7 @@ namespace KekkeKaarten
         {
             Reset();
             this.Add(new SpriteGameObject("Backgrounds/startscreen"));
-        }
+
         public override void Reset()
         {
             LoadMaps();
