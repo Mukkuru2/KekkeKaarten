@@ -17,8 +17,8 @@ namespace KekkeKaarten.GameObjects.MapObjects.Enemies
         public ChessHorse(Vector2 positionOnGrid) : base("Sprites/Map/horse", positionOnGrid)
         {
             damage = 3;
-            health = 125;
-            timeToKill = 10;
+            health = 100;
+            timeToKill = 15;
             enemyID = 2;
         }
 

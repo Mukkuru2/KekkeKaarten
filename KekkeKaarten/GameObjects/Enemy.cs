@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,6 +19,7 @@ namespace KekkeKaarten.GameObjects
 
         public SpriteSheet[] sprites;
         public int health;
+        public float questionDifficulty = 1.0f;
         public int returnhp;
         public int damage;
         public int enemyID;
@@ -47,11 +49,13 @@ namespace KekkeKaarten.GameObjects
         public override void Reset()
         {
             base.Reset();
+            position.X = (GameEnvironment.Screen.X - 300) - (sprite.Width / 2);
+            position.Y = 500;
         }
 
         public void RunToPlayer()
         {
-            velocity.X = (300 - position.X) / timeToKill;
+            velocity.X = (300 - position.X) / (timeToKill * (0.5f + questionDifficulty / 2));
         }
 
 

@@ -22,7 +22,7 @@ namespace KekkeKaarten.GameObjects
         {
             if (visible)
             {
-                spriteBatch.DrawString(spriteFont, text, GlobalPosition, color, 0.0f, new Vector2(0, 0), 0.5f, SpriteEffects.None, 0.0f);
+                spriteBatch.DrawString(spriteFont, text, GlobalPosition, color, 0.0f, new Vector2(0, 0), 0.8f, SpriteEffects.None, 0.0f);
             }
         }
 

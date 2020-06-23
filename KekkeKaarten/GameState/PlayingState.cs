@@ -27,8 +27,7 @@ namespace KekkeKaarten
         static Enemy enemy;
         Hand hand;
         PlayerFight player;
-        static TextGameObject hp = new TextGameObject("SpriteFonts/GameFont");
-        static public TextGameObject HP { get => hp; set => hp = value; }
+
         public static Enemy Enemy { get => enemy; set => enemy = value; }
 
         public PlayingState()
@@ -48,8 +47,6 @@ namespace KekkeKaarten
             this.Add(mouseSprite);
             cardcollision = new CardCollision(mouseSprite, enemy, hand, player, particleSystem, correctanswers);
             this.Add(cardcollision);
-            this.Add(hp);
-            hp.Text = "" + PlayerFight.HP;
 
         }
         public override void HandleInput(InputHelper inputHelper)
@@ -71,10 +68,6 @@ namespace KekkeKaarten
 
             healthBar.UpdateHp(PlayerFight.HP);
             enemyHealth.UpdateHp(enemy.health);
-
-            if (PlayingState.HP.Text != "" + PlayerFight.HP){
-                PlayingState.HP.Text = "" + PlayerFight.HP;
-            }
         }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {

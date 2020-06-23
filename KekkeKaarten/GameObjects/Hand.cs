@@ -24,8 +24,8 @@ namespace KekkeKaarten.GameObjects
         public static int numberOfCards = 3;
         Question question;
 
-        List<GameQuestion> questionnaam = CSVimporter.GetCSV(5);
-        GameQuestion[] questionarray = new GameQuestion[5];
+        List<GameQuestion> questionnaam = CSVimporter.GetCSV(20);
+        GameQuestion[] questionarray = new GameQuestion[20];
 
         private int whichCardIsCorrect;
         private string correctanswer;

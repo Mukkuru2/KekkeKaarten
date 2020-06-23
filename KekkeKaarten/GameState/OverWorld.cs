@@ -20,6 +20,7 @@ namespace KekkeKaarten.GameState
         public static ParticleSystem Particle { get => particle; set => particle = value; }
         Player player = new Player();
         GameObjectList enemies;
+        Objectives objectives = new Objectives();
 
         GameObjectList maps = StartState.Maps;
         Map currentMap;
@@ -35,6 +36,7 @@ namespace KekkeKaarten.GameState
             this.Add(enemies);
             this.Add(player);
             this.Add(particle);
+            this.Add(objectives);
         }
 
         public override void Reset()
@@ -79,6 +81,8 @@ namespace KekkeKaarten.GameState
                     PlayingState.Enemy.damage = enemy.damage;
                     PlayingState.Enemy.health = enemy.health;
                     PlayingState.Enemy.enemyID = enemy.enemyID;
+
+                    enemy.Reset();
 
                     GameEnvironment.GameStateManager.SwitchTo("PlayingState");
 
@@ -200,6 +204,7 @@ namespace KekkeKaarten.GameState
                     {
                         player.CardStatuesTaken = 0;
                         player.CanFightBoss = true;
+                        objectives.CurrentObjective = 1;
                     }
                 }
                 if (currentTile is BossRoomTeleport)

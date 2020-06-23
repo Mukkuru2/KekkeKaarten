@@ -80,6 +80,7 @@
     <Compile Include="GameObjects\MapObjects\ToxicFloor.cs" />
     <Compile Include="GameObjects\MapObjects\Wall.cs" />
     <Compile Include="GameObjects\MouseSprite.cs" />
+    <Compile Include="GameObjects\Objectives.cs" />
     <Compile Include="GameObjects\Particle.cs" />
     <Compile Include="GameObjects\ParticlePosition.cs" />
     <Compile Include="GameObjects\ParticleSystem.cs" />
